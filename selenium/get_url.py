@@ -6,11 +6,11 @@ import urllib.request
 
 file_names=['banbi','bir','goldenbough','minumin','minumsa','panmidong','pulp','semicolon']
 column_num=[13,15,13,13,13,13,13,13]     #웹주소있는 컬럼 모음
-index=4
+index=2
 #크롬 열기
 driver = webdriver.Chrome()
                     #파일 이름                                   시트선택
-df=pd.read_excel('./Book_DB/'+file_names[index]+'-books2.xls',sheet_name='Worksheet')
+df=pd.read_excel('./Book_DB/'+file_names[index]+'-books.xls',sheet_name='Worksheet')
 
 
 
@@ -27,7 +27,7 @@ for i in range(len(df)):
 
 #이미지 url 컬럼 추가 후 엑셀 파일로 저장
 df['이미지 주소']=url_list
-df.to_excel('./Book_DB/'+file_names[index]+'-books2_img_url.xls', index=False)
+df.to_excel('./Book_DB/'+file_names[index]+'-books_img_url.xls', index=False)
 
 
 driver.close()      #브라우저 종료
