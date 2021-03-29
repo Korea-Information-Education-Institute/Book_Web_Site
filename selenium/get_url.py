@@ -12,7 +12,7 @@ driver = webdriver.Chrome()
                     #파일 이름                                   시트선택
 df=pd.read_excel('./Book_DB/'+file_names[index]+'-books.xls',sheet_name='Worksheet')
 
-
+ 
 
 url_list=[]
 for i in range(len(df)):
