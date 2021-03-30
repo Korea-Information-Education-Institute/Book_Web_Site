@@ -1,4 +1,5 @@
 .wrap{
+    
 }
 
 /*///////////////////
@@ -59,12 +60,13 @@
 
 .moving{
     position: absolute;
-    top: 30px;
+    top: 50px;
     left: 50px;
     line-height:5px solid black;
     background-color: beige; /*임시 배경*/
     width: 880px;
     height: 300px;
+    
 }
 
 .moving li{
@@ -73,8 +75,8 @@
 
 .box{
     position: absolute;
-    left:200px;
     top: 400px;
+    left: 105px;
 }
 
 .box > ul > li{
