@@ -1,17 +1,16 @@
 import pymysql
 
-conn=pymysql.connect(host='127.0.0.1',user='root',password='rnjsdudwn1',db='aaaa',charset='utf8')
+conn=pymysql.connect(host='http://khsung0.dothome.co.kr/myadmin/',user='khsung0',password='gmltjd1!',db='khsung0',charset='utf8')
 cur=conn.cursor()
-cur.execute("create table if not exists test(id char(4), username char(15))")
-cur.execute("insert into test values('test','test')")
-cur.execute("insert into test values('user','user')")
+#cur.execute("create table if not exists test(id char(4), username char(15))")
+cur.execute("insert into khsung0 values('test','test','test','test','2012-02-10','w')")
 conn.commit()
 
-cur.execute("select * from test")
-while True:
-    row=cur.fetchone()
-    if row==None:
-        break
-    print(row)
+# cur.execute("select * from test")
+# while True:
+#     row=cur.fetchone()
+#     if row==None:
+#         break
+#     print(row)
 
 conn.close()
