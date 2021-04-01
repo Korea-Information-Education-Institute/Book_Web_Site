@@ -12,8 +12,6 @@ driver = webdriver.Chrome()
                     #파일 이름                                   시트선택
 df=pd.read_excel('./Book_DB/'+file_names[index]+'-books.xls',sheet_name='Worksheet')
 
- 
-
 url_list=[]
 for i in range(len(df)):
     driver.get(df.values[i][column_num[index]])         #해당 주소로 이동
@@ -28,6 +26,5 @@ for i in range(len(df)):
 #이미지 url 컬럼 추가 후 엑셀 파일로 저장
 df['이미지 주소']=url_list
 df.to_excel('./Book_DB/'+file_names[index]+'-books_img_url.xls', index=False)
-
 
 driver.close()      #브라우저 종료
