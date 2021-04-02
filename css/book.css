@@ -1,25 +1,85 @@
 @charset "UTF-8";
 /*///////////////////
 
-        nav 부분
+        navbar 부분
 
     ////////////////////*/
-.nav__inner {
-  position: relative;
+.navbar {
   width: 980px;
   height: 50px;
+  position: relative;
   margin: 0px auto;
-  background-color: forestgreen;
-  /* 임시 배경 */ }
-  .nav__inner logo {
+  background-color: coral; }
+  .navbar__brand {
+    text-align: center;
+    line-height: 50px;
     position: absolute;
-    left: 0px;
     top: 0px;
-    width: 50px;
+    left: 0px;
+    width: 60px;
     height: 50px; }
-  .nav__inner search {
+  .navbar__nav {
     position: absolute;
-    right: 0px;
-    top: 0px; }
+    top: 0px;
+    left: 80px;
+    width: 200px;
+    height: 50px; }
+    .navbar__nav .link {
+      display: inline-block;
+      width: 50px;
+      height: 50px;
+      text-align: center;
+      line-height: 50px; }
+  .navbar__form {
+    width: 250px;
+    height: 50px;
+    position: absolute;
+    top: 0px;
+    right: 0px; }
+    .navbar__form .searchbox {
+      width: 171px;
+      height: 46px; }
+    .navbar__form .btn {
+      border-collapse: collapse;
+      width: 75px;
+      height: 50px; }
+
+/*///////////////////
+
+        article 부분
+
+    ////////////////////*/
+.book {
+  width: 980px;
+  height: 1000px;
+  margin: 0px auto;
+  position: relative; }
+  .book .toc {
+    background-color: brown;
+    width: 200px;
+    height: 600px;
+    position: absolute;
+    top: 20px;
+    left: 20px; }
+    .book .toc__title {
+      text-align: center; }
+  .book .info-table {
+    background-color: darksalmon;
+    width: 400px;
+    height: 400px;
+    position: absolute;
+    top: 20px;
+    right: 20px; }
+
+/*///////////////////
+
+        footer 부분
+
+    ////////////////////*/
+.footer {
+  width: 980px;
+  height: 200px;
+  margin: 0px auto;
+  background-color: coral; }
 
 /*# sourceMappingURL=book.css.map */
