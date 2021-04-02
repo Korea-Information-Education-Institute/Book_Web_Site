@@ -9,53 +9,18 @@
 </head>
 
 <?php
+//세션에 user_id 변수가 있을 경우 로그인 상태로 판단
   if( isset( $_SESSION[ 'user_id' ] ) ) {
     echo "<style>#logined{display:inline-block;}</style>";
     echo "<style>#logouted{display:none;}</style>";
+//변수가 없으면 로그아웃된 상태로 판단
   }else{
     echo "<style>#logined{display:none;}</style>";
     echo "<style>#logouted{display:inline-block;}</style>";
+    echo "<script>alert('로그인을 하십시오.')</script>";
+    echo "<script>location.href='./login.html';</script>";
   }
 ?>
-
-<script language="javascript">
-    function input_check(){
-        var login_form=document.register;
-        if (login_form.user_id.value==""){
-            alert("아이디를 입력하세요.");
-            return false;
-        }else if(login_form.checked_id.value==0){
-            alert("ID 중복을 확인하세요.");
-            return false;
-        }else if(login_form.user_pw.value==""){
-            alert("비밀번호를 입력하세요.");
-            return false;
-        }else if(login_form.user_pw_check.value==""){
-            alert("비밀번호확인을 입력하세요.");
-            return false;
-        }else if(login_form.user_pw_check.value!=login_form.user_pw.value){
-            alert("비밀번호확인이 다릅니다.");
-            return false;
-        }else if(login_form.user_nickname.value==""){
-            alert("닉네임을 입력하세요.");
-            return false;
-        }else if(login_form.user_name.value==""){
-            alert("이름을 입력하세요.");
-            return false;
-        }else{
-            return true;
-        }
-    }
-    function duplicated_check(){
-        var login_form=document.register;
-        if (login_form.user_id.value==""){
-            alert("아이디를 입력하세요.");
-        }else{
-            url="id_check.php?user_id="+login_form.user_id.value;
-            window.open(url,"ID check","width=500, height=250, scrollbars=no, resizeable=no");
-        }
-    }
-</script>
 
 <body>
     <div class="wrap">
@@ -72,9 +37,15 @@
                         <li><a href="./mypage.php">마이페이지</a></li>
                     </ul>
                 </div>
-                <div class="login_menu">
+                <div class="login_menu" id="logouted">
                     <button type="button" onClick="location.href='./login.html'">로그인</button>
                     <button type="button" onClick="location.href='./register.html'">회원가입</button>
+                </div>
+	            <div class="login_menu" id="logined">
+                    	    <?php
+		            echo $_SESSION['user_name']."님 환영합니다.";
+	                ?>
+                    <button type="button" onClick="location.href='./logout.php'">로그아웃</button>
                 </div>
                 <div class="search">
                     <input type="text">
@@ -84,7 +55,30 @@
         </div>
         <div class="container">
             <div class="container_inner">
-                
+                <?php
+		if( isset( $_SESSION[ 'user_id' ] ) ) {
+			if(include('./dbconnect.php')){
+				$user_id=$_SESSION[ 'user_id' ];
+				$sql="SELECT * FROM user WHERE user_id='$user_id'";
+				$result=mysqli_query($conn, $sql);
+
+				//결과는 1행밖에 없기 때문에 while문은 한번만 반복
+				while($row=mysqli_fetch_array($result)){
+					echo "<p>아이디 : {$row['user_id']}</p>";
+					echo "<p>닉네임 : {$row['user_nickname']}</p>";
+					echo "<p>이름 : {$row['user_name']}</p>";
+					echo "<p>생일 : {$row['user_birth']}</p>";
+					if ($row['user_gender']=="m"){
+						echo "<p>성별 : 남성</p>";
+					}else{
+						echo "<p>성별 : 여성</p>";
+					}
+				}
+			}
+			mysqli_close($conn);
+		}
+	    ?>
+	    <button type="button" onClick="location.href='./change_pw.php'">비밀번호 변경</button>
             </div>
         </div>
         <div class="footer">

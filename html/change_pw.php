@@ -24,14 +24,17 @@
 
 <script language="javascript">
     function input_check(){
-        var login_form=document.login;
-        if (login_form.change_user_pw.value==""){
+        var change_pw_form=document.change_pw;
+        if (change_pw_form.user_pw.value==""){
+            alert("현재 비밀번호를 입력하세요.");
+            return false;
+        }else if(change_pw_form.change_user_pw.value==""){
             alert("변경 비밀번호를 입력하세요.");
             return false;
-        }else if(login_form.change_user_pw1.value==""){
+        }else if(change_pw_form.change_user_pw1.value==""){
             alert("변경 비밀번호 확인을 입력하세요.");
             return false;
-        }else if(login_form.change_user_pw.value!=login_form.change_user_pw1.value){
+        }else if(change_pw_form.change_user_pw.value!=change_pw_form.change_user_pw1.value){
             alert("변경 비밀번호 확인이 다릅니다.");
             return false;
         }else{
