@@ -23,25 +23,41 @@
             </form>
         </nav>
         <article class="book">
-            <div class="toc">
-                <h3 class="toc__title">목차</h3>
+            <div class="intro">
+                <div class="btn-group">
+                <button class="btn" type="button">편집</button><!--
+                --><button class="btn" type="button">토론</button><!--
+                --><button class="btn" type="button">좋아요</button>
+                </div>
+                <div class="toc" id="toc">
+                    <h3 class="toc__title">목차</h3>
+                    <ul class="toc__indent">
+                        <li class="item"><a href="#h_1">1.</a>개요</li>
+                    </ul>
+                </div>
+                <table class="info-table">
+                    <tr class="tr">
+                        <td class="td" colspan="2"><img class="book-img" src="#" alt="책 표지" ></td>
+                    </tr>
+                    <tr class="tr">
+                        <td class="td" class="book-title" colspan="2">책 제목</td>
+                    </tr>
+                    <tr class="tr">
+                        <td class="td" >출판사</td>
+                        <td class="td" ></td>
+                    </tr>
+                    <tr class="tr">
+                        <td class="td" >출판일</td>
+                        <td class="td" ></td>
+                    </tr>
+                </table>
             </div>
-            <table class="info-table">
-                <tr>
-                    <td class="book-img" colspan="2"></td>
-                </tr>
-                <tr>
-                    <td class="book-title" colspan="2">책 제목</td>
-                </tr>
-                <tr>
-                    <td>출판사</td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td>출판일</td>
-                    <td></td>
-                </tr>
-            </table>
+            <div class="heading">
+                <h2><a href="#toc" id="h_1">1.</a>개요</h2>
+            </div>
+            <div class="heading-content">
+                <p>내용 입니다.</p>
+            </div>
         </article>
         <footer class="footer">
             <p>푸터입니다.</p>
