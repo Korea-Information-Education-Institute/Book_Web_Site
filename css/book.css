@@ -51,25 +51,50 @@
     ////////////////////*/
 .book {
   width: 980px;
-  height: 1000px;
+  height: auto;
   margin: 0px auto;
   position: relative; }
-  .book .toc {
-    background-color: brown;
-    width: 200px;
-    height: 600px;
-    position: absolute;
-    top: 20px;
-    left: 20px; }
-    .book .toc__title {
-      text-align: center; }
-  .book .info-table {
-    background-color: darksalmon;
-    width: 400px;
-    height: 400px;
-    position: absolute;
-    top: 20px;
-    right: 20px; }
+  .book .intro {
+    width: 980px;
+    height: 700px; }
+    .book .intro .toc {
+      background-color: brown;
+      width: 200px;
+      height: 600px;
+      position: absolute;
+      top: 20px;
+      left: 20px; }
+      .book .intro .toc__title {
+        text-align: center; }
+      .book .intro .toc__indent {
+        padding-left: 20px; }
+    .book .intro .info-table {
+      background-color: darksalmon;
+      width: 400px;
+      height: 400px;
+      position: absolute;
+      top: 80px;
+      right: 20px; }
+      .book .intro .info-table .book-img {
+        display: block;
+        width: 280px;
+        height: 160px;
+        margin: 0px auto; }
+      .book .intro .info-table .td {
+        text-align: center;
+        line-height: 100px; }
+    .book .intro .btn-group {
+      width: 200px;
+      height: 40px;
+      position: absolute;
+      top: 20px;
+      right: 20px; }
+      .book .intro .btn-group .btn {
+        border-collapse: collapse;
+        width: 66.6666666667px;
+        height: 40px; }
+  .book .heading {
+    border-bottom: solid 1px; }
 
 /*///////////////////
 
