@@ -9,14 +9,36 @@
 </head>
 
 <?php
+//세션에 user_id 변수가 있을 경우 로그인 상태로 판단
   if( isset( $_SESSION[ 'user_id' ] ) ) {
     echo "<style>#logined{display:inline-block;}</style>";
     echo "<style>#logouted{display:none;}</style>";
+//변수가 없으면 로그아웃된 상태로 판단
   }else{
     echo "<style>#logined{display:none;}</style>";
     echo "<style>#logouted{display:inline-block;}</style>";
+    echo "<script>alert('로그인을 하십시오.')</script>";
+    echo "<script>location.href='./login.html';</script>";
   }
 ?>
+
+<script language="javascript">
+    function input_check(){
+        var login_form=document.login;
+        if (login_form.change_user_pw.value==""){
+            alert("변경 비밀번호를 입력하세요.");
+            return false;
+        }else if(login_form.change_user_pw1.value==""){
+            alert("변경 비밀번호 확인을 입력하세요.");
+            return false;
+        }else if(login_form.change_user_pw.value!=login_form.change_user_pw1.value){
+            alert("변경 비밀번호 확인이 다릅니다.");
+            return false;
+        }else{
+            return true;
+        }
+    }
+</script>
 
 <body>
     <div class="wrap">
@@ -39,7 +61,7 @@
                 </div>
 	            <div class="login_menu" id="logined">
                     <?php
-		            echo $_SESSION['user_name']."님 환영합니다.";
+		                echo $_SESSION['user_name']."님 환영합니다.";
 	                ?>
                     <button type="button" onClick="location.href='./logout.php'">로그아웃</button>
                 </div>
@@ -51,32 +73,12 @@
         </div>
         <div class="container">
             <div class="container_inner">
-                <div class="moving">
-                    <ul>
-                        <li>1</li>
-                        <li>2</li>
-                        <li>3</li>
-                        <li>4</li>
-                        <li>5</li>
-                    </ul>
-                </div>
-                <div class="box">
-                   <ul class="section">
-                       <li>책1</li>
-                       <li>책1</li>
-                       <li>책1</li>
-                   </ul>
-                   <ul class="section">
-                       <li>책1</li>
-                       <li>책1</li>
-                       <li>책1</li>
-                   </ul>
-                   <ul class="section">
-                       <li>책1</li>
-                       <li>책1</li>
-                       <li>책1</li>
-                   </ul>
-                </div>
+                <form method="POST" name="change_pw" action="./change_pw_check.php" onsubmit="return input_check()">
+                    <p>현재 비밀번호 : <input type="password" name="user_pw"></p>
+                    <p>변경 비밀번호 : <input type="password"  name="change_user_pw"></p>
+                    <p>변경 비밀번호 확인 : <input type="password"  name="change_user_pw1"></p>
+                    <p><input type="submit" value="변경하기">&nbsp;&nbsp;&nbsp;&nbsp;<input type="reset" value="초기화"></p>
+                </form>
             </div>
         </div>
         <div class="footer">
