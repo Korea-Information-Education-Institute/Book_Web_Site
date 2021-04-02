@@ -36,6 +36,12 @@
         right: 0px;
         top: 0px;
     }
+    #logouted{
+        display:inline-block;
+    }
+    #logined{
+        display:none;
+    }
     .search{
         position: absolute;
         left: 150px;

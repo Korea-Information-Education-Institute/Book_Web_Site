@@ -1,17 +1,29 @@
 <!DOCTYPE html>
 <html lang="ko">
+<?php session_start(); ?>
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="../css/basic.css">
-    <link rel="stylesheet" href="../css/index.css">
+    <link rel="stylesheet" href="../css/index.css?after"> <!--  캐시문제로 서버에서 외부스타일시트 변경사항이 적용안되어 임의의 문자열삽입 -->
     <title>Document</title>
 </head>
+
+<?php
+  if( isset( $_SESSION[ 'user_id' ] ) ) {
+    echo "<style>#logined{display:inline-block;}</style>";
+    echo "<style>#logouted{display:none;}</style>";
+  }else{
+    echo "<style>#logined{display:none;}</style>";
+    echo "<style>#logouted{display:inline-block;}</style>";
+  }
+?>
+
 <body>
     <div class="wrap">
         <div class="header">
             <div class="header_inner">
                 <div class="header_logo">
-                <a href=""><img src="#" alt="로고"></a>
+                <a href="./index.php"><img src="#" alt="로고"></a>
                 </div>
                 <div class="header_nav">
                     <ul>
@@ -21,9 +33,15 @@
                         <li><a href="">마이페이지</a></li>
                     </ul>
                 </div>
-                <div class="login_menu">
-                    <button type="button">로그인</button>
-                    <button type="button">회원가입</button>
+                <div class="login_menu" id="logouted">
+                    <button type="button" onClick="location.href='./login.html'">로그인</button>
+                    <button type="button" onClick="location.href='./register.html'">회원가입</button>
+                </div>
+	            <div class="login_menu" id="logined">
+                    <?php
+		echo $_SESSION['user_name']."님 환영합니다.";
+	         ?>
+                    <button type="button" onClick="logout()">로그아웃</button>
                 </div>
                 <div class="search">
                     <input type="text">
@@ -68,5 +86,18 @@
         </div>
     </div>
 </body>
+
+<!-- 실행여부에 관계없이 php코드가 실행되는듯
+이 코드가 위에 있을경우 세션이 삭제됨
+그래서 아래에 작성 -->
+<script>
+	function logout(){
+		<?php
+			//user_id와 user_name 세션 삭제
+			unset($_SESSION['user_id']);
+			unset($_SESSION['user_name']); 
+		?>
+		window.location.reload();
+	}
+</script>
 </html>
-<?php print "hello"?>
