@@ -4,43 +4,64 @@
     <meta charset="UTF-8">
     <link rel="stylesheet" href="../css/book.css">
     <link rel="stylesheet" href="../css/basic.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Document</title>
 </head>
 <body>
     <div class="wrap">
-        <div class="nav">
-            <div class="nav__inner">
-                <div class="logo">
-                    <!-- 로고 이미지 첨부 -->               
-                    <div class="logo__inner">
-                        <a href="./index.php"><img src="#" alt="로고" style="width: 100%; height: 100%;"></a>
-                    </div>
-                </div>
-                <form class="search">
-                    <input class="bar" type="text">
-                    <span class="btn" onclick="doucment.getElementsByClassName('nav__search').submit()">검색</span>
-                </form>
-                <!--메뉴 추가 
-                <div class="nav__menu">
-                    <a class="item" href="#"></a>
-                    <a class="item" href="#"></a>
-                    <a class="item" href="#"></a>
-                    <a class="item" href="#"></a>
-                </div> -->
+        <nav class="navbar">
+            <a class="navbar__brand" href="#">BRAND</a>
+            <div class="navbar__nav">
+                <a class="link" href="#">link1</a><!--
+                --><a class="link" href="#">link2</a><!--
+                --><a class="link" href="#">link3</a><!--
+                --><a class="link" href="#">link4</a>
             </div>
-        </div>
-        <div class="article">
-            <div class="article__inner">
-                <div class="toc">
-                    <div class="toc__inner">
-                        
-                    </div>
+            <form class="navbar__form" role="search">
+                <input class="searchbox" type="text" placeholder="Search"><!--
+                --><button class="btn" type="submit">Submit</button>
+            </form>
+        </nav>
+        <article class="book">
+            <div class="intro">
+                <div class="btn-group">
+                <button class="btn" type="button">편집</button><!--
+                --><button class="btn" type="button">토론</button><!--
+                --><button class="btn" type="button">좋아요</button>
                 </div>
-                <div class="book">
-                    
+                <div class="toc" id="toc">
+                    <h3 class="toc__title">목차</h3>
+                    <ul class="toc__indent">
+                        <li class="item"><a href="#h_1">1.</a>개요</li>
+                    </ul>
                 </div>
+                                <table class="info-table">
+                    <tr class="tr">
+                        <td class="td" colspan="2"><img class="book-img" src="#" alt="책 표지" ></td>
+                    </tr>
+                    <tr class="tr">
+                        <td class="td" class="book-title" colspan="2">책 제목</td>
+                    </tr>
+                    <tr class="tr">
+                        <td class="td" >출판사</td>
+                        <td class="td" ></td>
+                    </tr>
+                    <tr class="tr">
+                        <td class="td" >출판일</td>
+                        <td class="td" ></td>
+                    </tr>
+                </table>
             </div>
-        </div>
+            <div class="heading">
+                <h2><a href="#toc" id="h_1">1.</a>개요</h2>
+            </div>
+            <div class="heading-content">
+                <p>내용 입니다.</p>
+            </div>
+            </article>
+        <footer class="footer">
+            <p>푸터입니다.</p>
+        </footer>
     </div>
 </body>
 </html>
