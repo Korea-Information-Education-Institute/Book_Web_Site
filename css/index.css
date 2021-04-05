@@ -49,7 +49,7 @@
 
     ////////////////////*/
 .container{
-    
+    position: relative;
 }
 .container_inner{
     position: relative;
