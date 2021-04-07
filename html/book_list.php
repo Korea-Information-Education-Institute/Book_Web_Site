@@ -3,10 +3,11 @@
 <?php session_start(); ?>
 <head>
     <meta charset="UTF-8">
+    <link rel="stylesheet" href="../css/book.css">
     <link rel="stylesheet" href="../css/basic.css">
     <link rel="stylesheet" href="../css/index.css">
     <link rel="stylesheet" href="../css/aside.css?after"> <!-- 서버에서 캐시문제로 css적용안되어 임의의 문자열 추가시켜서 적용 -->
-    <title>Document</title>
+    <title>책분야</title>
 </head>
 
 <?php
@@ -20,60 +21,69 @@
 ?>
 
 <style>
+    .container_list{
+        width: 1400px;
+        height: 1400px;
+        margin: 0 auto;
+        position: relative;
+    }
+    .aside{
+        width: 240px;
+        height: 580px;
+        float: left; 
+        background-color: antiquewhite;
+        padding: 10px;
+        margin-right: 20px;
+        margin-top: 60px;
+        
+    }
+    .aside h3   {
+        padding-top: 15px;
+        padding-left: 5px;
+    }
+    .aside p{
+        padding-left: 15px;
+    }
     .book_index{
-        margin-top: 20px;
-        margin-bottom: 20px;
+        margin-top: 30px;
+        margin-left: 20px;
+    }
+    .book_container{
+        width: 980px;
+        height: 1400px;
+        float: left;
+        margin-top: 30px;
+        
     }
     .book_list_box{
         border: 1px solid black;
-        width: 950px;
-        height: 270px;
+        width: 940px;
+        height: 230px;
+        position: relative;
         margin-bottom: 20px;
-        overflow: hidden;
-        text-overflow: ellipsis;
-        white-space: nowrap;
     }
     .book_list_box_img{
-        float: left;
+        width: 230px;
+        position: absolute;
     }
     .book_list_box_table{
-        margin: 5px;
+        position: absolute;
+        left: 240px;
+        line-height: 2em;
     }
     .table1{
-        line-height: 40px;
-        margin-left: 20px;
-        font-size: 13pt;
-        font-weight: 700;
-    }
-    .table2{
-        
-
-    }
-    .table3{
-        
+        font-weight: 900;
     }
     
-    .container_inner img{
+    img{
         width: 230px;
-        height: 268px;
-        border: 1px solid black;
-    }
-    .write{
-        position: absolute;
-        bottom: 150px;
-        right: 40px;
-        
-    }
-    button{
-        width: 100px;
-        height: 30px;
-    }
-    .page{
-        position: absolute;
-        bottom: 50px;
-        left: 430px;
-    }
+        height: 230px;
     
+    }
+   
+    .footer{
+        clear: both;
+    }
 </style>
 <body>
     <div class="wrap">
@@ -90,11 +100,11 @@
                         <li><a href="./mypage.php">마이페이지</a></li>
                     </ul>
                 </div>
-                <div class="login_menu" id="logouted">
+                 <div class="login_menu" id="logouted">
                     <button type="button" onClick="location.href='./login.html'">로그인</button>
                     <button type="button" onClick="location.href='./register.html'">회원가입</button>
                 </div>
-	            <div class="login_menu" id="logined">
+           		 <div class="login_menu" id="logined">
                     <?php
 		            echo $_SESSION['user_name']."님 환영합니다.";
 	                ?>
@@ -106,97 +116,95 @@
                 </div>
             </div>
         </div>
-        <div class="container">
-            <div class="container_inner">
-                <div class="book_index">
-                    <h2>문학>소설</h2>
-                </div>
-                <div class="book_list_box">
-                    <div class="book_list_box_img">
-                        <img src="../html/캡처.PNG" alt="책 사진">
-                    </div>
-                    <div class="book_list_box_table">
-                        <li><span class="table1">책 제목</span><span class="table2"> : 책 제목 넣을 곳</span></li>
-                        <li><span class="table1">책 저자</span><span class="table2"> : 책 저자 넣을 곳</span></li>
-                        <li><span class="table1">책 가격</span><span class="table2"> : 책 가격 넣을 곳</span></li>
-                        <li><span class="table1">책 출판사</span><span class="table2"> : 책 출판사 넣을 곳</span></li>
-                        <li><span class="table1">책 분류</span><span class="table2"> : 책 분류 넣을 곳</span></li>
-                        <li><span class="table1">책 소개</span><span class="table2"> : 책 소개 넣을 곳책 소개 넣을 곳
-                            책 소개 넣을 곳책 소개 넣을 곳책 소개 넣을 곳책 소개 넣을 곳책 소개 넣을 곳책 소개 넣을 곳책 소개 넣을 곳
-                        </span></li>
-                    </div>
-                </div>
-                
+        <div class="container_list">
+            <div class="aside">
+                <a href="#"><h3>문학</h3></a>
+                <a href="#"><p>시</p></a>
+                <a href="#"><p>소설</p></a>
+                <a href="#"><h3>취미</h3></a>
+                <a href="#"><p>여행</p></a>
+                <a href="#"><p>건강</p></a>
+                <a href="#"><p>요리</p></a>
+                <a href="#"><h3>인문</h3></a>
+                <a href="#"><p>문학</p></a>
+                <a href="#"><p>심리</p></a>
+                <a href="#"><p>철학</p></a>  
+            </div>
 
-                <div class="book_list_box">
-                    <div class="book_list_box_img">
-                        <img src="../html/캡처.PNG" alt="책 사진">
-                    </div>
-                    <div class="book_list_box_table">
-                        <li><span class="table1">책 제목</span><span class="table2"> : 책 제목 넣을 곳</span></li>
-                        <li><span class="table1">책 저자</span><span class="table2"> : 책 저자 넣을 곳</span></li>
-                        <li><span class="table1">책 가격</span><span class="table2"> : 책 가격 넣을 곳</span></li>
-                        <li><span class="table1">책 출판사</span><span class="table2"> : 책 출판사 넣을 곳</span></li>
-                        <li><span class="table1">책 분류</span><span class="table2"> : 책 분류 넣을 곳</span></li>
-                        <li><span class="table1">책 소개</span><span class="table2"> : 책 소개 넣을 곳책 소개 넣을 곳
-                            책 소개 넣을 곳책 소개 넣을 곳책 소개 넣을 곳책 소개 넣을 곳책 소개 넣을 곳책 소개 넣을 곳책 소개 넣을 곳
-                        </span></li>
-                    </div>
+            <div class="book_index">
+                <h2>문학>소설</h2>
+            </div> 
+            
+            <div class="book_container">
+            <div class="book_list_box">
+                <div class="book_list_box_img">
+                    <img src="../News_Webpage/Book_Web_Site/img/2360248.png" alt="책 사진">
                 </div>
-
-                <div class="book_list_box">
-                    <img src="#" alt="책 사진">
-                    <ul>
-                        <li><span class="table1">책 제목</span><span class="table2"> : 책 제목 넣을 곳</span></li>
-                        <li><span class="table1">책 저자</span><span class="table2"> : 책 저자 넣을 곳</span></li>
-                        <li><span class="table1">책 가격</span><span class="table2"> : 책 가격 넣을 곳</span></li>
-                        <li><span class="table1">책 출판사</span><span class="table2"> : 책 출판사 넣을 곳</span></li>
-                        <li><span class="table1">책 분류</span><span class="table2"> : 책 분류 넣을 곳</span></li>
-                        <li><span class="table1">책 소개</span><span class="table2"> : 책 소개 넣을 곳책 소개 넣을 곳
-                            책 소개 넣을 곳책 소개 넣을 곳책 소개 넣을 곳책 소개 넣을 곳책 소개 넣을 곳책 소개 넣을 곳책 소개 넣을 곳
-                        </span></li>
-                    </ul>
+                <div class="book_list_box_table">
+                    <li><span class="table1">책 제목</span><span class="table2"> : 책 제목 넣을 곳</span></li>
+                    <li><span class="table1">책 저자</span><span class="table2"> : 책 저자 넣을 곳</span></li>
+                    <li><span class="table1">책 가격</span><span class="table2"> : 책 가격 넣을 곳</span></li>
+                    <li><span class="table1">책 출판사</span><span class="table2"> : 책 출판사 넣을 곳</span></li>
+                    <li><span class="table1">책 분류</span><span class="table2"> : 책 분류 넣을 곳</span></li>
+                    <li><span class="table1">책 소개</span><span class="table2"> : 책 소개 넣을 곳책 소개 넣을 곳 책 소개 넣을 곳책 소개 넣을 곳책 소개 넣을 곳책 소개 넣을 곳책 소개 넣을 곳책 소개 넣을 곳책 소개 넣을 곳</span></li>
+                </div> 
+            </div>
+            <div class="book_list_box">
+                <div class="book_list_box_img">
+                    <img src="../News_Webpage/Book_Web_Site/img/2360248.png" alt="책 사진">
                 </div>
-
-                <div class="book_list_box">
-                    <img src="#" alt="책 사진">
-                    <ul>
-                        <li><span class="table1">책 제목</span><span class="table2"> : 책 제목 넣을 곳</span></li>
-                        <li><span class="table1">책 저자</span><span class="table2"> : 책 저자 넣을 곳</span></li>
-                        <li><span class="table1">책 가격</span><span class="table2"> : 책 가격 넣을 곳</span></li>
-                        <li><span class="table1">책 출판사</span><span class="table2"> : 책 출판사 넣을 곳</span></li>
-                        <li><span class="table1">책 분류</span><span class="table2"> : 책 분류 넣을 곳</span></li>
-                        <li><span class="table1">책 소개</span><span class="table2"> : 책 소개 넣을 곳책 소개 넣을 곳
-                            책 소개 넣을 곳책 소개 넣을 곳책 소개 넣을 곳책 소개 넣을 곳책 소개 넣을 곳책 소개 넣을 곳책 소개 넣을 곳
-                        </span></li>
-                    </ul>
+                <div class="book_list_box_table">
+                    <li><span class="table1">책 제목</span><span class="table2"> : 책 제목 넣을 곳</span></li>
+                    <li><span class="table1">책 저자</span><span class="table2"> : 책 저자 넣을 곳</span></li>
+                    <li><span class="table1">책 가격</span><span class="table2"> : 책 가격 넣을 곳</span></li>
+                    <li><span class="table1">책 출판사</span><span class="table2"> : 책 출판사 넣을 곳</span></li>
+                    <li><span class="table1">책 분류</span><span class="table2"> : 책 분류 넣을 곳</span></li>
+                    <li><span class="table1">책 소개</span><span class="table2"> : 책 소개 넣을 곳책 소개 넣을 곳 책 소개 넣을 곳책 소개 넣을 곳책 소개 넣을 곳책 소개 넣을 곳책 소개 넣을 곳책 소개 넣을 곳책 소개 넣을 곳</span></li>
+                </div> 
+            </div>
+            <div class="book_list_box">
+                <div class="book_list_box_img">
+                    <img src="../News_Webpage/Book_Web_Site/img/2360248.png" alt="책 사진">
                 </div>
-
-                <div class="write">
-                    <button>새 책 작성하기</button>
+                <div class="book_list_box_table">
+                    <li><span class="table1">책 제목</span><span class="table2"> : 책 제목 넣을 곳</span></li>
+                    <li><span class="table1">책 저자</span><span class="table2"> : 책 저자 넣을 곳</span></li>
+                    <li><span class="table1">책 가격</span><span class="table2"> : 책 가격 넣을 곳</span></li>
+                    <li><span class="table1">책 출판사</span><span class="table2"> : 책 출판사 넣을 곳</span></li>
+                    <li><span class="table1">책 분류</span><span class="table2"> : 책 분류 넣을 곳</span></li>
+                    <li><span class="table1">책 소개</span><span class="table2"> : 책 소개 넣을 곳책 소개 넣을 곳 책 소개 넣을 곳책 소개 넣을 곳책 소개 넣을 곳책 소개 넣을 곳책 소개 넣을 곳책 소개 넣을 곳책 소개 넣을 곳</span></li>
+                </div> 
+            </div>
+            <div class="book_list_box">
+                <div class="book_list_box_img">
+                    <img src="../News_Webpage/Book_Web_Site/img/2360248.png" alt="책 사진">
                 </div>
-                <div class="page">
-                    <p>번호 넣기</p>
+                <div class="book_list_box_table">
+                    <li><span class="table1">책 제목</span><span class="table2"> : 책 제목 넣을 곳</span></li>
+                    <li><span class="table1">책 저자</span><span class="table2"> : 책 저자 넣을 곳</span></li>
+                    <li><span class="table1">책 가격</span><span class="table2"> : 책 가격 넣을 곳</span></li>
+                    <li><span class="table1">책 출판사</span><span class="table2"> : 책 출판사 넣을 곳</span></li>
+                    <li><span class="table1">책 분류</span><span class="table2"> : 책 분류 넣을 곳</span></li>
+                    <li><span class="table1">책 소개</span><span class="table2"> : 책 소개 넣을 곳책 소개 넣을 곳 책 소개 넣을 곳책 소개 넣을 곳책 소개 넣을 곳책 소개 넣을 곳책 소개 넣을 곳책 소개 넣을 곳책 소개 넣을 곳</span></li>
+                </div> 
+            </div>
+            <div class="book_list_box">
+                <div class="book_list_box_img">
+                    <img src="../News_Webpage/Book_Web_Site/img/2360248.png" alt="책 사진">
                 </div>
+                <div class="book_list_box_table">
+                    <li><span class="table1">책 제목</span><span class="table2"> : 책 제목 넣을 곳</span></li>
+                    <li><span class="table1">책 저자</span><span class="table2"> : 책 저자 넣을 곳</span></li>
+                    <li><span class="table1">책 가격</span><span class="table2"> : 책 가격 넣을 곳</span></li>
+                    <li><span class="table1">책 출판사</span><span class="table2"> : 책 출판사 넣을 곳</span></li>
+                    <li><span class="table1">책 분류</span><span class="table2"> : 책 분류 넣을 곳</span></li>
+                    <li><span class="table1">책 소개</span><span class="table2"> : 책 소개 넣을 곳책 소개 넣을 곳 책 소개 넣을 곳책 소개 넣을 곳책 소개 넣을 곳책 소개 넣을 곳책 
+                        소개 넣을 곳책 소개 넣을 곳책 소개 넣을 곳</span></li>
+                </div> 
             </div>
         </div>
-
-        <!-- aside 공유할부분 ↓-->
-        <div class="aside">
-            <a href="#"><h3>문학</h3></a>
-            <a href="#"><p>시</p></a>
-            <a href="#"><p>소설</p></a>
-            <a href="#"><h3>취미</h3></a>
-            <a href="#"><p>여행</p></a>
-            <a href="#"><p>건강</p></a>
-            <a href="#"><h3>요리</h3></a>
-            <a href="#"><p>인문</p></a>
-            <a href="#"><p>문학</p></a>
-            <a href="#"><p>심리</p></a>
-            <a href="#"><p>철학</p></a>  
         </div>
-        <!-- aside 공유할부분 ↑-->
-        
+    
         <div class="footer">
             <div class="footer_inner">
                 <p>푸터입니다.</p>
