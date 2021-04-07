@@ -7,6 +7,17 @@
     <link rel="stylesheet" href="../css/aside.css?after"> <!-- 서버에서 캐시문제로 css적용안되어 임의의 문자열 추가시켜서 적용 -->
     <title>Document</title>
 </head>
+
+<?php
+  if( isset( $_SESSION[ 'user_id' ] ) ) {
+    echo "<style>#logined{display:inline-block;}</style>";
+    echo "<style>#logouted{display:none;}</style>";
+  }else{
+    echo "<style>#logined{display:none;}</style>";
+    echo "<style>#logouted{display:inline-block;}</style>";
+  }
+?>
+
 <style>
     .book_index{
         margin-top: 20px;
@@ -73,14 +84,20 @@
                 <div class="header_nav">
                     <ul>
                         <li><a href="./introduction/introduction.html">소개페이지</a></li>
-                        <li><a href="">책분야</a></li>
+                        <li><a href="./book_list.php">책분야</a></li>
                         <li><a href="">로드맵</a></li>
                         <li><a href="./mypage.php">마이페이지</a></li>
                     </ul>
                 </div>
-                <div class="login_menu">
-                    <button type="button">로그인</button>
-                    <button type="button">회원가입</button>
+                <div class="login_menu" id="logouted">
+                    <button type="button" onClick="location.href='./login.html'">로그인</button>
+                    <button type="button" onClick="location.href='./register.html'">회원가입</button>
+                </div>
+	            <div class="login_menu" id="logined">
+                    <?php
+		            echo $_SESSION['user_name']."님 환영합니다.";
+	                ?>
+                    <button type="button" onClick="location.href='./logout.php'">로그아웃</button>
                 </div>
                 <div class="search">
                     <input type="text">
