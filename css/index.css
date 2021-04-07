@@ -49,6 +49,9 @@
 
     ////////////////////*/
 .container{
+    width: 1400px;
+    height: 1400px;
+    margin: 0 auto;
     position: relative;
 }
 .container_inner{
@@ -56,6 +59,7 @@
     height: 1400px;
     margin: 0px auto;
     width: 980px;
+    
 }
 
 .moving{
@@ -100,4 +104,5 @@
     width: 980px;
     height: 100px;
     margin: 0px auto;
+    
 }
