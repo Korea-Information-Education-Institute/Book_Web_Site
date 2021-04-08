@@ -3,7 +3,6 @@
 <?php session_start(); ?>
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="../css/book.css">
     <link rel="stylesheet" href="../css/basic.css">
     <link rel="stylesheet" href="../css/index.css">
     <title>책분야</title>
@@ -93,7 +92,7 @@
                 </div>
                 <div class="header_nav">
                     <ul>
-                        <li><a href="./introduction/introduction.php">소개페이지</a></li>
+                        <li><a href="./introduction/introduction.html">소개페이지</a></li>
                         <li><a href="./book_list.php">책분야</a></li>
                         <li><a href="">로드맵</a></li>
                         <li><a href="./mypage.php">마이페이지</a></li>
