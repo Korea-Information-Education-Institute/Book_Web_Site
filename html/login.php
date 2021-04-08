@@ -26,8 +26,8 @@
 
 <body>
     <div class="wrap">
-        <?php
-            include "./header.php";
+        <?php 
+            include "../header.php";
         ?>
         <div class="container">
             <div class="container_inner">
@@ -38,12 +38,12 @@
                 </form>
             </div>
         </div>
-        <?php
-            include "./footer.php";
+        <?php 
+                include "../footer.php";
         ?>
     </div>
-    <?php
-            include "./javascript.php";
+    <?php 
+        include "../javascript.php";
     ?>
 </body>
 </html>
