@@ -1,4 +1,14 @@
 
+<?php session_start(); ?>
+<?php
+  if( isset( $_SESSION[ 'user_id' ] ) ) {
+    echo "<style>#logined{display:inline-block;}</style>";
+    echo "<style>#logouted{display:none;}</style>";
+  }else{
+    echo "<style>#logined{display:none;}</style>";
+    echo "<style>#logouted{display:inline-block;}</style>";
+  }
+?>
 <div class="header">
     <div class="header_inner">
         <div class="header_logo">
@@ -13,12 +23,12 @@
             </ul>
         </div>
         <div class="login_menu" id="logouted">
-            <button type="button" onClick="location.href='./login.html'">로그인</button>
-            <button type="button" onClick="location.href='./register.html'">회원가입</button>
+            <button type="button" onClick="location.href='./login.php'">로그인</button>
+            <button type="button" onClick="location.href='./register.php'">회원가입</button>
         </div>
         <div class="login_menu" id="logined">
             <?php
-            echo $_SESSION['user_name']."님 환영합니다.";
+                echo $_SESSION['user_name']."님 환영합니다.";
             ?>
             <button type="button" onClick="location.href='./logout.php'">로그아웃</button>
         </div>
