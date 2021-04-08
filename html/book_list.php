@@ -59,6 +59,10 @@
         height: 230px;
         position: relative;
         margin-bottom: 20px;
+        overflow : hidden;
+        text-overflow : ellipsis;
+        white-space : nowrap;
+        display : inline-block;
     }
     .book_list_box_img{
         width: 230px;
@@ -92,7 +96,7 @@
                 </div>
                 <div class="header_nav">
                     <ul>
-                        <li><a href="./introduction/introduction.html">소개페이지</a></li>
+                        <li><a href="./introduction/introduction.php">소개페이지</a></li>
                         <li><a href="./book_list.php">책분야</a></li>
                         <li><a href="">로드맵</a></li>
                         <li><a href="./mypage.php">마이페이지</a></li>
