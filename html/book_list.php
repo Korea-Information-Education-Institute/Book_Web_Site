@@ -1,23 +1,11 @@
 <!DOCTYPE html>
 <html lang="ko">
-<?php session_start(); ?>
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="../css/basic.css">
     <link rel="stylesheet" href="../css/index.css">
     <title>책분야</title>
 </head>
-
-<?php
-  if( isset( $_SESSION[ 'user_id' ] ) ) {
-    echo "<style>#logined{display:inline-block;}</style>";
-    echo "<style>#logouted{display:none;}</style>";
-  }else{
-    echo "<style>#logined{display:none;}</style>";
-    echo "<style>#logouted{display:inline-block;}</style>";
-  }
-?>
-
 <style>
     .container_list{
         width: 1400px;
