@@ -65,7 +65,7 @@
         <div class="header">
             <div class="header_inner">
                 <div class="header_logo">
-                <a href=""><img src="#" alt="로고"></a>
+                <a href="../index.php"><img src="#" alt="로고"></a>
                 </div>
                 <div class="header_nav">
                     <ul>
@@ -117,9 +117,12 @@
              <p>내용</p>
          </div>
          </div>
-         <div class="footer">
-             <p>footer</p>
-         </div>
+         <?php 
+            include "../footer.php";
+        ?>
     </div>
+    <?php 
+        include "../javascript.php";
+    ?>
 </body>
 </html>
