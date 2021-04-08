@@ -44,8 +44,9 @@
                     <button type="button" onClick="location.href='./logout.php'">로그아웃</button>
                 </div>
                 <div class="search">
-                    <input type="text">
-                    <button type="submit">검색</button>
+                    <?php 
+                        include './search.php';
+                    ?>
                 </div>
             </div>
         </div>
@@ -85,6 +86,7 @@
             </div>
         </div>
     </div>
+    <script type="text/javascript" src="../javascript/search.js"></script>
 </body>
 
 </html>
