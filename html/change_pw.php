@@ -45,35 +45,9 @@
 
 <body>
     <div class="wrap">
-        <div class="header">
-            <div class="header_inner">
-                <div class="header_logo">
-                <a href="./index.php"><img src="#" alt="로고"></a>
-                </div>
-                <div class="header_nav">
-                    <ul>
-                        <li><a href="./introduction/introduction.php">소개페이지</a></li>
-                        <li><a href="./book_list.php">책분야</a></li>
-                        <li><a href="">로드맵</a></li>
-                        <li><a href="./mypage.php">마이페이지</a></li>
-                    </ul>
-                </div>
-                <div class="login_menu" id="logouted">
-                    <button type="button" onClick="location.href='./login.html'">로그인</button>
-                    <button type="button" onClick="location.href='./register.html'">회원가입</button>
-                </div>
-	            <div class="login_menu" id="logined">
-                    <?php
-		                echo $_SESSION['user_name']."님 환영합니다.";
-	                ?>
-                    <button type="button" onClick="location.href='./logout.php'">로그아웃</button>
-                </div>
-                <div class="search">
-                    <input type="text">
-                    <button type="submit">검색</button>
-                </div>
-            </div>
-        </div>
+        <?php
+            include "./header.php";
+        ?>    
         <div class="container">
             <div class="container_inner">
                 <form method="POST" name="change_pw" action="./change_pw_check.php" onsubmit="return input_check()">
@@ -84,12 +58,13 @@
                 </form>
             </div>
         </div>
-        <div class="footer">
-            <div class="footer_inner">
-                <p>푸터입니다.</p>
-            </div>
-        </div>
+        <?php
+            include "./footer.php";
+        ?>
     </div>
+    <?php
+        include "./javascript.php";
+    ?>
 </body>
 
 </html>
