@@ -12,14 +12,16 @@
 <div class="header">
     <div class="header_inner">
         <div class="header_logo">
-        <a href="./index.php"><img src="#" alt="로고"></a>
+        <a href="http://khsung0.dothome.co.kr/html/index.php"><img src="#" alt="로고"></a>
         </div>
         <div class="header_nav">
+
+	<!-- introduction폴더에도 적용하기 위해 절대경로 설정 -->
             <ul>
                 <li><a href="./introduction/introduction.php">소개페이지</a></li>
-                <li><a href="./book_list.php">책분야</a></li>
+                <li><a href="http://khsung0.dothome.co.kr/html/book_list.php">책분야</a></li>
                 <li><a href="">로드맵</a></li>
-                <li><a href="./mypage.php">마이페이지</a></li>
+                <li><a href="http://khsung0.dothome.co.kr/html/mypage.php">마이페이지</a></li>
             </ul>
         </div>
         <div class="login_menu" id="logouted">
