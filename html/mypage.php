@@ -18,7 +18,7 @@
     echo "<style>#logined{display:none;}</style>";
     echo "<style>#logouted{display:inline-block;}</style>";
     echo "<script>alert('로그인을 하십시오.')</script>";
-    echo "<script>location.href='./login.html';</script>";
+    echo "<script>location.href='./login.php';</script>";
   }
 ?>
 
