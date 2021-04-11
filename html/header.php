@@ -25,17 +25,17 @@
             </ul>
         </div>
         <div class="login_menu" id="logouted">
-            <button type="button" onClick="location.href='./login.php'">로그인</button>
-            <button type="button" onClick="location.href='./register.php'">회원가입</button>
+            <button type="button" onClick="location.href='http://khsung0.dothome.co.kr/html/login.php'">로그인</button>
+            <button type="button" onClick="location.href='http://khsung0.dothome.co.kr/html/register.php'">회원가입</button>
         </div>
         <div class="login_menu" id="logined">
             <?php
                 echo $_SESSION['user_name']."님 환영합니다.";
             ?>
-            <button type="button" onClick="location.href='./logout.php'">로그아웃</button>
+            <button type="button" onClick="location.href='http://khsung0.dothome.co.kr/html/logout.php'">로그아웃</button>
         </div>
         <div class="search">
-            <form name="search" method="post" action="./search.php" onsubmit="return search_check()">
+            <form name="search" method="post" action="http://khsung0.dothome.co.kr/html/search.php" onsubmit="return search_check()">
                 <input type="text" name="search_var">
                 <button type="submit">검색</button>
             </form>
