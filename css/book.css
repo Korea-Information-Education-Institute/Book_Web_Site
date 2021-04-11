@@ -4,12 +4,14 @@
         navbar 부분
 
     ////////////////////*/
-.navbar {
+   .navbar {
   width: 980px;
   height: 50px;
   position: relative;
   margin: 0px auto;
-  background-color: coral; }
+  background-color: coral; 
+  }
+
   .navbar__brand {
     text-align: center;
     line-height: 50px;
@@ -17,94 +19,126 @@
     top: 0px;
     left: 0px;
     width: 60px;
-    height: 50px; }
+    height: 50px; 
+  }
+
   .navbar__nav {
     position: absolute;
     top: 0px;
     left: 80px;
     width: 200px;
-    height: 50px; }
-    .navbar__nav .link {
+    height: 50px; 
+  }
+  
+  .navbar__nav .link {
       display: inline-block;
       width: 50px;
       height: 50px;
       text-align: center;
-      line-height: 50px; }
+      line-height: 50px; 
+  }
+
   .navbar__form {
     width: 250px;
     height: 50px;
     position: absolute;
     top: 0px;
-    right: 0px; }
+    right: 0px; 
+  }
+
     .navbar__form .searchbox {
       width: 171px;
-      height: 46px; }
+      height: 46px; 
+  }
+
     .navbar__form .btn {
       border-collapse: collapse;
       width: 75px;
-      height: 50px; }
+      height: 50px; 
+  }
 
 /*///////////////////
 
         article 부분
 
     ////////////////////*/
-.book {
+  .book {
   width: 980px;
   height: auto;
   margin: 0px auto;
-  position: relative; }
+  position: relative; 
+  }
+  
   .book .intro {
     width: 980px;
-    height: 700px; }
-    .book .intro .toc {
+    height: 700px; 
+  }
+
+  .book .intro .toc {
       background-color: brown;
       width: 200px;
       height: 600px;
       position: absolute;
       top: 20px;
-      left: 20px; }
-      .book .intro .toc__title {
-        text-align: center; }
-      .book .intro .toc__indent {
-        padding-left: 20px; }
-    .book .intro .info-table {
+      left: 20px; 
+  }
+  .book .intro .toc__title {
+        text-align: center; 
+  }
+
+  .book .intro .toc__indent {
+        padding-left: 20px; 
+  }
+
+  .book .intro .info-table {
       background-color: darksalmon;
       width: 400px;
       height: 400px;
       position: absolute;
       top: 80px;
-      right: 20px; }
-      .book .intro .info-table .book-img {
+      right: 20px; 
+  }
+
+  .book .intro .info-table .book-img {
         display: block;
         width: 280px;
         height: 160px;
-        margin: 0px auto; }
-      .book .intro .info-table .td {
+        margin: 0px auto; 
+  }
+
+  .book .intro .info-table .td {
         text-align: center;
-        line-height: 100px; }
-    .book .intro .btn-group {
+        line-height: 100px;
+  }
+    
+  .book .intro .btn-group {
       width: 200px;
       height: 40px;
       position: absolute;
       top: 20px;
-      right: 20px; }
-      .book .intro .btn-group .btn {
+      right: 20px; 
+  }
+    
+  .book .intro .btn-group .btn {
         border-collapse: collapse;
         width: 66.6666666667px;
-        height: 40px; }
+        height: 40px; 
+  }
+  
   .book .heading {
-    border-bottom: solid 1px; }
+    border-bottom: solid 1px; 
+  }
 
 /*///////////////////
 
         footer 부분
 
     ////////////////////*/
-.footer {
+  .footer {
   width: 980px;
   height: 200px;
   margin: 0px auto;
-  background-color: coral; }
+  background-color: coral; 
+  }
 
 /*# sourceMappingURL=book.css.map */
