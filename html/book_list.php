@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ko">
+<?php session_start(); ?>
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="../css/basic.css">
@@ -75,6 +76,22 @@
         
     }
 </style>
+
+<script>
+    // function book_genre(index){
+    //     if(index!=0){
+    //     location.href="http://khsung0.dothome.co.kr/html/book_list_"+index+".php";
+    //     }else{
+    //         location.href="http://khsung0.dothome.co.kr/html/book_list.php";
+    //     }
+    // }
+    function book_genre(genre,genre_detail){
+        url="http://khsung0.dothome.co.kr/html/change_book_list.php?"+genre+"/"+genre_detail;
+        url=encodeURI(url)
+        location.href=url;
+    }
+</script>
+
 <body>
     <div class="wrap">
         <?php
@@ -82,90 +99,66 @@
         ?>
         <div class="container_list">
             <div class="aside">
-                <a href="#"><h3>문학</h3></a>
-                <a href="#"><p>시</p></a>
-                <a href="#"><p>소설</p></a>
-                <a href="#"><h3>취미</h3></a>
-                <a href="#"><p>여행</p></a>
-                <a href="#"><p>건강</p></a>
-                <a href="#"><p>요리</p></a>
-                <a href="#"><h3>인문</h3></a>
-                <a href="#"><p>문학</p></a>
-                <a href="#"><p>심리</p></a>
-                <a href="#"><p>철학</p></a>  
+                <!-- <h3>문학</h3>
+                <a href="javascript:book_genre(0);"><p>시</p></a>
+                <a href="javascript:book_genre(1);"><p>에세이</p></a>
+                <h3>인문</h3>
+                <a href="javascript:book_genre(2);"><p>문화</p></a>
+                <a href="javascript:book_genre(3);"><p>심리</p></a>
+                <a href="javascript:book_genre(4);"><p>철학</p></a>  
+                <a href="javascript:book_genre(5);"><p>경제</p></a>  
+                <a href="javascript:book_genre(6);"><p>교양</p></a>  
+                <a href="javascript:book_genre(7);"><h3>미분류</h3></a>   -->
+                <h3>문학</h3>
+                <a href="javascript:book_genre('문학','시');"><p>시</p></a>
+                <a href="javascript:book_genre('문학','에세이');"><p>에세이</p></a>
+                <h3>인문</h3>
+                <a href="javascript:book_genre('인문','문화');"><p>문화</p></a>
+                <a href="javascript:book_genre('인문','심리');"><p>심리</p></a>
+                <a href="javascript:book_genre('인문','철학');"><p>철학</p></a>  
+                <a href="javascript:book_genre('인문','경제');"><p>경제</p></a>  
+                <a href="javascript:book_genre('인문','교양');"><p>교양</p></a>  
+                <a href="javascript:book_genre('미분류','미분류');"><h3>미분류</h3></a>  
             </div>
 
             <div class="book_index">
-                <h2>문학>소설</h2>
+                <h2><?php 
+                    $genre=explode('/',$_SESSION['book_genre']);
+                    echo $genre[0].">".$genre[1];
+                ?></h2>
             </div> 
             
             <div class="book_container">
-                <div class="book_list_box">
-                    <div class="book_list_box_img">
-                        <img src="../News_Webpage/Book_Web_Site/img/2360248.png" alt="책 사진">
-                    </div>
-                    <div class="book_list_box_table">
-                        <li><span class="table1">책 제목</span><span class="table2"> : 책 제목 넣을 곳</span></li>
-                        <li><span class="table1">책 저자</span><span class="table2"> : 책 저자 넣을 곳</span></li>
-                        <li><span class="table1">책 가격</span><span class="table2"> : 책 가격 넣을 곳</span></li>
-                        <li><span class="table1">책 출판사</span><span class="table2"> : 책 출판사 넣을 곳</span></li>
-                        <li><span class="table1">책 분류</span><span class="table2"> : 책 분류 넣을 곳</span></li>
-                        <li><span class="table1">책 소개</span><span class="table2"> : 책 소개 넣을 곳책 소개 넣을 곳 책 소개 넣을 곳책 소개 넣을 곳책 소개 넣을 곳책 소개 넣을 곳책 소개 넣을 곳책 소개 넣을 곳책 소개 넣을 곳</span></li>
-                    </div> 
-                </div>
-                <div class="book_list_box">
-                    <div class="book_list_box_img">
-                        <img src="../News_Webpage/Book_Web_Site/img/2360248.png" alt="책 사진">
-                    </div>
-                    <div class="book_list_box_table">
-                        <li><span class="table1">책 제목</span><span class="table2"> : 책 제목 넣을 곳</span></li>
-                        <li><span class="table1">책 저자</span><span class="table2"> : 책 저자 넣을 곳</span></li>
-                        <li><span class="table1">책 가격</span><span class="table2"> : 책 가격 넣을 곳</span></li>
-                        <li><span class="table1">책 출판사</span><span class="table2"> : 책 출판사 넣을 곳</span></li>
-                        <li><span class="table1">책 분류</span><span class="table2"> : 책 분류 넣을 곳</span></li>
-                        <li><span class="table1">책 소개</span><span class="table2"> : 책 소개 넣을 곳책 소개 넣을 곳 책 소개 넣을 곳책 소개 넣을 곳책 소개 넣을 곳책 소개 넣을 곳책 소개 넣을 곳책 소개 넣을 곳책 소개 넣을 곳</span></li>
-                    </div> 
-                </div>
-                <div class="book_list_box">
-                    <div class="book_list_box_img">
-                        <img src="../News_Webpage/Book_Web_Site/img/2360248.png" alt="책 사진">
-                    </div>
-                    <div class="book_list_box_table">
-                        <li><span class="table1">책 제목</span><span class="table2"> : 책 제목 넣을 곳</span></li>
-                        <li><span class="table1">책 저자</span><span class="table2"> : 책 저자 넣을 곳</span></li>
-                        <li><span class="table1">책 가격</span><span class="table2"> : 책 가격 넣을 곳</span></li>
-                        <li><span class="table1">책 출판사</span><span class="table2"> : 책 출판사 넣을 곳</span></li>
-                        <li><span class="table1">책 분류</span><span class="table2"> : 책 분류 넣을 곳</span></li>
-                        <li><span class="table1">책 소개</span><span class="table2"> : 책 소개 넣을 곳책 소개 넣을 곳 책 소개 넣을 곳책 소개 넣을 곳책 소개 넣을 곳책 소개 넣을 곳책 소개 넣을 곳책 소개 넣을 곳책 소개 넣을 곳</span></li>
-                    </div> 
-                </div>
-                <div class="book_list_box">
-                    <div class="book_list_box_img">
-                        <img src="../News_Webpage/Book_Web_Site/img/2360248.png" alt="책 사진">
-                    </div>
-                    <div class="book_list_box_table">
-                        <li><span class="table1">책 제목</span><span class="table2"> : 책 제목 넣을 곳</span></li>
-                        <li><span class="table1">책 저자</span><span class="table2"> : 책 저자 넣을 곳</span></li>
-                        <li><span class="table1">책 가격</span><span class="table2"> : 책 가격 넣을 곳</span></li>
-                        <li><span class="table1">책 출판사</span><span class="table2"> : 책 출판사 넣을 곳</span></li>
-                        <li><span class="table1">책 분류</span><span class="table2"> : 책 분류 넣을 곳</span></li>
-                        <li><span class="table1">책 소개</span><span class="table2"> : 책 소개 넣을 곳책 소개 넣을 곳 책 소개 넣을 곳책 소개 넣을 곳책 소개 넣을 곳책 소개 넣을 곳책 소개 넣을 곳책 소개 넣을 곳책 소개 넣을 곳</span></li>
-                    </div> 
-                </div>
-                <div class="book_list_box">
-                    <div class="book_list_box_img">
-                        <img src="../News_Webpage/Book_Web_Site/img/2360248.png" alt="책 사진">
-                    </div>
-                    <div class="book_list_box_table">
-                        <li><span class="table1">책 제목</span><span class="table2"> : 책 제목 넣을 곳</span></li>
-                        <li><span class="table1">책 저자</span><span class="table2"> : 책 저자 넣을 곳</span></li>
-                        <li><span class="table1">책 가격</span><span class="table2"> : 책 가격 넣을 곳</span></li>
-                        <li><span class="table1">책 출판사</span><span class="table2"> : 책 출판사 넣을 곳</span></li>
-                        <li><span class="table1">책 분류</span><span class="table2"> : 책 분류 넣을 곳</span></li>
-                        <li><span class="table1">책 소개</span><span class="table2"> : 책 소개 넣을 곳책 소개 넣을 곳 책 소개 넣을 곳책 소개 넣을 곳책 소개 넣을 곳책 소개 넣을 곳책 
-                            소개 넣을 곳책 소개 넣을 곳책 소개 넣을 곳</span></li>
-                    </div> 
-                </div>
+            <?php
+                if(include('./dbconnect.php')){
+                    if($genre[1]!='미분류'){
+                    $sql = "SELECT * FROM `book` WHERE `book_genre` LIKE '%$genre[1]%'";
+                    }else{
+                        $sql = "SELECT * FROM `book` WHERE `book_genre` NOT LIKE '%시%' AND `book_genre` NOT LIKE '%에세이%' AND `book_genre` NOT LIKE '%문화%' AND `book_genre` NOT LIKE '%심리%' AND `book_genre` NOT LIKE '%철학%' AND `book_genre` NOT LIKE '%경제%' AND `book_genre` NOT LIKE '%교양%' ";
+                    }
+                    $result = mysqli_query($conn, $sql);
+                    $count = mysqli_num_rows($result);    //row 개수
+                    $i=0;
+                    while($row = mysqli_fetch_array($result)){
+                        if($i>=0 &&$i<=4){
+                            //a태그로 클릭시 url에 책 제목으로 넘기기 추가
+                            echo "<div class='book_list_box'>
+                                    <div class='book_list_box_img'>
+                                    <img src=$row[book_img_address] alt='책 사진'>
+                                </div>
+                                <div class='book_list_box_table'>
+                                    <li><span class='table1'><b>제목</b></span><span class='table2'> <b>: $row[book_title]</span></b></li>
+                                    <li><span class='table1'>저자</span><span class='table2'> : $row[book_writer]</span></li>
+                                    <li><span class='table1'>가격</span><span class='table2'> : $row[book_price]</span></li>
+                                    <li><span class='table1'>분류</span><span class='table2'> : $row[book_genre]</span></li>
+                                    <li><span class='table1'>소개</span><span class='table2'> : $row[book_introduce]</span></li>
+                                </div> 
+                            </div>";
+                        }
+                        $i+=1;
+                    }
+                }
+                ?> 
             </div>
         </div>
     

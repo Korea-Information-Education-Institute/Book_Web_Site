@@ -9,6 +9,18 @@
     echo "<style>#logouted{display:inline-block;}</style>";
   }
 ?>
+
+<script>
+    function book_list(){
+        <?php
+        if(!isset($_SESSION['book_genre'])){
+            $_SESSION['book_genre']="문학/시";
+        }
+        ?>
+        location.href="http://khsung0.dothome.co.kr/html/book_list.php";
+    }
+</script>
+
 <div class="header">
     <div class="header_inner">
         <div class="header_logo">
@@ -18,8 +30,8 @@
 
 	<!-- introduction폴더에도 적용하기 위해 절대경로 설정 -->
             <ul>
-                <li><a href="./introduction/introduction.php">소개페이지</a></li>
-                <li><a href="http://khsung0.dothome.co.kr/html/book_list.php">책분야</a></li>
+                <li><a href="http://khsung0.dothome.co.kr/html/introduction/introduction.php">소개페이지</a></li>
+                <li><a href="javascript:book_list();" >책분야</a></li>
                 <li><a href="">로드맵</a></li>
                 <li><a href="http://khsung0.dothome.co.kr/html/mypage.php">마이페이지</a></li>
             </ul>
