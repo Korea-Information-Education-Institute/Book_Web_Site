@@ -78,13 +78,6 @@
 </style>
 
 <script>
-    // function book_genre(index){
-    //     if(index!=0){
-    //     location.href="http://khsung0.dothome.co.kr/html/book_list_"+index+".php";
-    //     }else{
-    //         location.href="http://khsung0.dothome.co.kr/html/book_list.php";
-    //     }
-    // }
     function book_genre(genre,genre_detail){
         url="http://khsung0.dothome.co.kr/html/change_book_list.php?"+genre+"/"+genre_detail;
         url=encodeURI(url)
@@ -99,16 +92,6 @@
         ?>
         <div class="container_list">
             <div class="aside">
-                <!-- <h3>문학</h3>
-                <a href="javascript:book_genre(0);"><p>시</p></a>
-                <a href="javascript:book_genre(1);"><p>에세이</p></a>
-                <h3>인문</h3>
-                <a href="javascript:book_genre(2);"><p>문화</p></a>
-                <a href="javascript:book_genre(3);"><p>심리</p></a>
-                <a href="javascript:book_genre(4);"><p>철학</p></a>  
-                <a href="javascript:book_genre(5);"><p>경제</p></a>  
-                <a href="javascript:book_genre(6);"><p>교양</p></a>  
-                <a href="javascript:book_genre(7);"><h3>미분류</h3></a>   -->
                 <h3>문학</h3>
                 <a href="javascript:book_genre('문학','시');"><p>시</p></a>
                 <a href="javascript:book_genre('문학','에세이');"><p>에세이</p></a>
@@ -141,8 +124,10 @@
                     $i=0;
                     while($row = mysqli_fetch_array($result)){
                         if($i>=0 &&$i<=4){
-                            //a태그로 클릭시 url에 책 제목으로 넘기기 추가
-                            echo "<div class='book_list_box'>
+                            //공백 존재시 url에 추가되지 않음.
+                            //따라서 Under bar로 치환후 목적지에서 다시 공백으로 치환.
+                            $urlstring="./book.html?".str_replace(" ","_",$row['book_title']);
+                            echo "<a href=$urlstring><div class='book_list_box'>
                                     <div class='book_list_box_img'>
                                     <img src=$row[book_img_address] alt='책 사진'>
                                 </div>
@@ -152,7 +137,7 @@
                                     <li><span class='table1'>가격</span><span class='table2'> : $row[book_price]</span></li>
                                     <li><span class='table1'>분류</span><span class='table2'> : $row[book_genre]</span></li>
                                     <li><span class='table1'>소개</span><span class='table2'> : $row[book_introduce]</span></li>
-                                </div> 
+                                </div></a>
                             </div>";
                         }
                         $i+=1;
