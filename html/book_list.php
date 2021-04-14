@@ -120,13 +120,16 @@
                         $sql = "SELECT * FROM `book` WHERE `book_genre` NOT LIKE '%시%' AND `book_genre` NOT LIKE '%에세이%' AND `book_genre` NOT LIKE '%문화%' AND `book_genre` NOT LIKE '%심리%' AND `book_genre` NOT LIKE '%철학%' AND `book_genre` NOT LIKE '%경제%' AND `book_genre` NOT LIKE '%교양%' ";
                     }
                     $result = mysqli_query($conn, $sql);
-                    $count = mysqli_num_rows($result);    //row 개수
+                    $count = mysqli_num_rows($result);      //row 개수
+                    $list_num=5;                            //한 페이지 리스트 개수
+                    $total_page_num=ceil($count/$list_num); //총 페이지 개수
                     $i=0;
+                    //echo "<script>alert($total_page_num)</script>";
                     while($row = mysqli_fetch_array($result)){
                         if($i>=0 &&$i<=4){
                             //공백 존재시 url에 추가되지 않음.
                             //따라서 Under bar로 치환후 목적지에서 다시 공백으로 치환.
-                            $urlstring="./book.html?".str_replace(" ","_",$row['book_title']);
+                            $urlstring="./book.php?".str_replace(" ","_",$row['book_title']);
                             echo "<a href=$urlstring><div class='book_list_box'>
                                     <div class='book_list_box_img'>
                                     <img src=$row[book_img_address] alt='책 사진'>

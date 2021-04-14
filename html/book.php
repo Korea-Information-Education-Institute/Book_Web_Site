@@ -7,7 +7,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Document</title>
 </head>
+
 <body>
+    <?php
+        header('Content-Type: text/html; charset=utf-8');
+        //출력할 책의 제목 추출
+        $temp_title=str_replace("_"," ",URLDecode($_SERVER['QUERY_STRING']));
+        //echo $temp_title;
+        if(include('./dbconnect.php')){
+            $sql = "SELECT * FROM `book` WHERE `book_title` LIKE '%$temp_title%'";
+            $result = mysqli_query($conn, $sql);
+            $count = mysqli_num_rows($result);
+            while($row = mysqli_fetch_array($result)){
+                echo $row['book_title'].'<br>';
+                echo $row['book_writer'].'<br>';
+                echo $row['book_price'];
+                echo "<pre style='white-space: pre-wrap;'>$row[book_introduce]</pre>";
+            }
+        }
+    ?>
     <div class="wrap">
         <nav class="navbar">
             <a class="navbar__brand" href="#">BRAND</a>
