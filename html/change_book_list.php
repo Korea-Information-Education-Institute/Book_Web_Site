@@ -5,6 +5,5 @@
     $temp = URLDecode($_SERVER['QUERY_STRING']);
     unset($_SESSION['book_genre']);
     $_SESSION['book_genre']=$temp;
-    echo "<script>window.location=document.referrer</script>";
-    
+    echo "<script>location.href='./book_list.php';</script>";
 ?>
