@@ -1,6 +1,5 @@
-
-<?php session_start(); ?>
 <?php
+    session_start();
   if( isset( $_SESSION[ 'user_id' ] ) ) {
     echo "<style>#logined{display:inline-block;}</style>";
     echo "<style>#logouted{display:none;}</style>";
