@@ -15,6 +15,7 @@
         if(edit_btn.value=='edit'){
             edit_btn.innerText = '확인';
             edit_btn.value='confirm';
+            //intro.setAttribute(contenteditable,true);
             intro.contentEditable=true;
         }else{
             edit_btn.innerText = '편집하기';
