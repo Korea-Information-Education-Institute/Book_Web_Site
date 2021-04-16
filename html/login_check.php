@@ -24,7 +24,7 @@
 		//로그인 실패 코드
 		}else{	
    			echo "<script>window.alert('회원정보가 일치하지 않습니다.');</script>";
-   			echo "<script>location.href='./login.html';</script>";
+   			echo "<script>location.href='./login.php';</script>";
 		}
 	}
 ?>
