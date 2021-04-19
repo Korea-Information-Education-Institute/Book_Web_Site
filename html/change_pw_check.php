@@ -20,7 +20,6 @@
 				echo "<script>location.href='./change_pw.php'</script>";
 			}
 		}else{
-			echo "<script>alert({$row['user_pw']})</script>";
 			echo "<script>alert('현재 비밀번호를 잘못 입력하였습니다.')</script>";
 			echo "<script>location.href='./change_pw.php'</script>";
 		}

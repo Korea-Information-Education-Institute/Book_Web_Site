@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ko">
+<?php session_start();header('Content-Type: text/html; charset=utf-8');?>
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="../css/book.css">
@@ -13,7 +14,6 @@
 
 <body>
     <?php
-        header('Content-Type: text/html; charset=utf-8');
         //출력할 책의 제목 추출
         $temp_title=str_replace("_"," ",URLDecode($_SERVER['QUERY_STRING']));
 
@@ -26,38 +26,50 @@
         }
     ?>
 
-<script>
-    function update_intro(){
-        var edit_btn=document.getElementById('edit_btn');
-        var intro=document.getElementById('intro');
-        var intro_text=document.getElementById('intro').innerText;
-        if(edit_btn.value=='edit'){
-            edit_btn.innerText = '확인';
-            edit_btn.value='confirm';
-            intro.contentEditable=true;
+    <script>
+    <?php 
+        //$SESSION_id=(isset($_SESSION[ 'user_id' ]))?'1':'123456789';
+        if( isset( $_SESSION[ 'user_id' ] ) ) {
+            $SESSION_id=true;
         }else{
-            edit_btn.innerText = '편집하기';
-            edit_btn.value='edit';
-            intro.contentEditable=false;
-
-            $.ajax({
-				url				: './update_intro.php',
-				data			: {
-				intro		    : intro_text,
-                title		    : "<?php echo $temp_title;?>"},
-				type			: 'POST',
-				dataType		: 'json',
-				success		: function(result) {
-					if(result.success == false) {
-						alert(result.msg);
-						return;
-					}
-					alert(result.success_msg);
-				}
-			});
+            $SESSION_id=false;
         }
-    }
-</script>
+        $test=1;
+    ?>
+
+        function update_intro(){
+            var edit_btn=document.getElementById('edit_btn');
+            var intro=document.getElementById('intro');
+            var intro_text=document.getElementById('intro').innerText;
+            
+            if(edit_btn.value=='edit'){
+                edit_btn.innerText = '확인';
+                edit_btn.value='confirm';
+                intro.contentEditable=true;
+            }else{
+                edit_btn.innerText = '편집하기';
+                edit_btn.value='edit';
+                intro.contentEditable=false;
+
+                $.ajax({
+                    url				: './update_intro.php',
+                    data			: {
+                    intro		    : intro_text,
+                    title		    : "<?php echo $temp_title;?>"},
+                    type			: 'POST',
+                    dataType		: 'json',
+                    success		: function(result) {
+                        if(result.success == false) {
+                            alert(result.msg);
+                            return;
+                        }
+                        alert(result.success_msg);
+                    }
+                });
+            }
+    
+        }
+    </script>
 
     <div class="wrap">
         <?php 
@@ -127,5 +139,4 @@
         ?>
     </div>
 </body>
-
 </html>
