@@ -94,7 +94,6 @@
                         alert(result.msg);
                         return;
                     }
-                    alert(result.success_msg);
                 }
             });
             window.location.reload();
@@ -117,6 +116,10 @@
                         echo "<style>#scrap{display:none;}</style>";
                         echo "<style>#scraped{display:inline-block;}</style>";
                     }
+                }else{
+                    echo "<style>#scrap{display:inline-block;}</style>";
+                    echo "<style>#scraped{display:none;}</style>";
+                    echo "<script>document.getElementById('scrap').disabled=false;</script>";
                 }
             }
         ?>
