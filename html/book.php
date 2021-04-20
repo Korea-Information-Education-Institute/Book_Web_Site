@@ -4,8 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="../css/book.css">
-    <link rel="stylesheet" href="../css/basic.css">
-    <link rel="stylesheet" href="../css/index.css?after">
+    <?php include "./head.php"; ?>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Document</title>
     <script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
