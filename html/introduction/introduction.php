@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>소개페이지</title>
-    <link rel="stylesheet" href="../../css/basic.css">
+    <link rel="stylesheet" href="../../css/header.css">
     <link rel="stylesheet" href="../../css/index.css">
 
     <style>
