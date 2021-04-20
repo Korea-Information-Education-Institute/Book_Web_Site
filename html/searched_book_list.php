@@ -3,8 +3,7 @@
 <?php session_start(); ?>
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="../css/basic.css">
-    <link rel="stylesheet" href="../css/index.css">
+    <?php include "./head.php"; ?>
     <title>책분야</title>
 </head>
 <style>
@@ -112,7 +111,7 @@
             </div> 
             <div class="book_container">
             <?php
-                if(include('./dbconnect.php')){
+                if(include ('./dbconnect.php')){
                     $sql = "SELECT * FROM `book` WHERE `book_title` LIKE '%$book_title%'";
                     $result = mysqli_query($conn, $sql);
                     $count = mysqli_num_rows($result);      //row 개수
