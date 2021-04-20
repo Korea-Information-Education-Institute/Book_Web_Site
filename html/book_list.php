@@ -3,8 +3,7 @@
 <?php session_start(); ?>
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="../css/basic.css">
-    <link rel="stylesheet" href="../css/index.css">
+    <?php include "./head.php"; ?>
     <title>책분야</title>
 </head>
 <style>
