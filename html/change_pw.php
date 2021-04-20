@@ -3,8 +3,7 @@
 <?php session_start(); ?>
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="../css/basic.css">
-    <link rel="stylesheet" href="../css/index.css?after"> <!--  캐시문제로 서버에서 외부스타일시트 변경사항이 적용안되어 임의의 문자열삽입 -->
+    <?php include "./head.php"; ?>
     <title>Document</title>
 </head>
 
