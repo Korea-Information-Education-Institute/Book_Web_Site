@@ -20,36 +20,52 @@
     }
 </script>
 
-<div class="header">
-    <div class="header_inner">
-        <div class="header_logo">
-        <a href="http://khsung0.dothome.co.kr/html/index.php"><img src="#" alt="로고"></a>
+<header class="header">
+        <div class="header__logo">
+            <div class="logo">
+                <a class="logo__link" href="http://khsung0.dothome.co.kr/html/index.php"><span class="logo__text">SOPILER</span></a>
+            </div>
         </div>
-        <div class="header_nav">
+            
+        <div class="header__navbar">
 
-	<!-- introduction폴더에도 적용하기 위해 절대경로 설정 -->
-            <ul>
-                <li><a href="http://khsung0.dothome.co.kr/html/introduction/introduction.php">소개페이지</a></li>
-                <li><a href="javascript:book_list();" >책분야</a></li>
-                <li><a href="">로드맵</a></li>
-                <li><a href="http://khsung0.dothome.co.kr/html/mypage.php">마이페이지</a></li>
+    <!-- introduction폴더에도 적용하기 위해 절대경로 설정 -->
+            <ul class="navbar">
+                <li class="navbar__list"><a class=" navbar__link" href="http://khsung0.dothome.co.kr/html/introduction/introduction.php"><span class="navbar__text">소개페이지</span></a></li><!--
+                --><li class="navbar__list"><a class=" navbar__link" href="javascript:book_list();" ><span class="navbar__text">책분야</span></a></li><!--
+                --><li class="navbar__list"><a class=" navbar__link" href=""><span class="navbar__text">로드맵</span></a></li><!--
+                --><li class="navbar__list"><a class=" navbar__link" href="http://khsung0.dothome.co.kr/html/mypage.php"><span class="navbar__text">마이페이지</span></a></li><!--
+                -->
             </ul>
         </div>
-        <div class="login_menu" id="logouted">
-            <button type="button" id="login_btn" onClick="location.href='http://khsung0.dothome.co.kr/html/login.php'">로그인</button>
-            <button type="button" id="register_btn" onClick="location.href='http://khsung0.dothome.co.kr/html/register.php'">회원가입</button>
+        <div class="header__buttons" id="logouted">
+            <span class="header__btn">
+                <button class="btn" type="button" onClick="location.href='http://khsung0.dothome.co.kr/html/login.php'">
+                <span class="btn__text">로그인</span>
+            </button>
+            </span><!--
+            --><span class="header__btn">
+                <button class="btn" type="button" onClick="location.href='http://khsung0.dothome.co.kr/html/register.php'"><span class="btn__text">회원가입</span>
+            </button>
+            </span>
         </div>
-        <div class="login_menu" id="logined">
+        <div class="header__buttons" id="logined" style="display : none">
             <?php
                 echo $_SESSION['user_name']."님 환영합니다.";
             ?>
-            <button type="button" onClick="location.href='http://khsung0.dothome.co.kr/html/logout.php'">로그아웃</button>
+            <span class="header__btn">
+                <button class="btn" type="button" onClick="location.href='http://khsung0.dothome.co.kr/html/logout.php'"><span class="btn__text">로그아웃</span>
+                </button>
+            </span>
         </div>
-        <div class="search">
-            <form name="search" method="post" action="http://khsung0.dothome.co.kr/html/search.php" onsubmit="return search_check()">
-                <input type="text" name="search_var">
-                <button type="submit">검색</button>
+        <div class="header__search">
+            <form class="search" name="search" method="post" action="http://khsung0.dothome.co.kr/html/search.php" onsubmit="return search_check()">
+                <input class="search__bar" type="text" name="search_var">
+                <span class="search__btn">
+                    <button class="btn-search" type="submit"><img class="btn__icon" src="#" alt="icon"></button>
+                </span>
             </form>
         </div>
-    </div>
-</div>
+    </header>
+
+
