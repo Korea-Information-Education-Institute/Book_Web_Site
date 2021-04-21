@@ -14,9 +14,6 @@
         ?>
         <div class="container">
             <div class="container_inner">
-            
-   
-    </div>
                 <div class="box">
                    <ul class="section">
                        <li>책1</li>
