@@ -38,7 +38,7 @@
         width: 980px;
         height: 1400px;
         float: left;
-        margin-top: 30px;
+        
         
     }
     .book_list_box{
@@ -57,6 +57,7 @@
         position: absolute;
     }
     .book_list_box_table{
+        list-style: none;
         position: absolute;
         left: 240px;
         line-height: 2em;
@@ -68,12 +69,9 @@
     img{
         width: 230px;
         height: 230px;
-    
+        border: 1px solid black;
     }
-   
-    .footer{
-        
-    }
+  
 </style>
 
 <script>
