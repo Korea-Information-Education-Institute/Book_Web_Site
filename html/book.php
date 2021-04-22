@@ -55,19 +55,36 @@
             var intro_text=document.getElementById('intro').innerText;
             
             if(edit_btn.value=='edit'){
-                edit_btn.innerText = '확인';
-                edit_btn.value='confirm';
-                intro.contentEditable=true;
-            }else{
-                edit_btn.innerText = '편집하기';
-                edit_btn.value='edit';
-                intro.contentEditable=false;
-
                 $.ajax({
                     url				: './update_intro.php',
                     data			: {
                     intro		    : intro_text,
-                    title		    : "<?php echo $temp_title;?>"},
+                    title		    : "<?php echo $temp_title;?>",
+                    type		    : "edit",
+                    user_id		    : "<?php echo $_SESSION['user_id'];?>"},
+                    type			: 'POST',
+                    dataType		: 'json',
+                    success		: function(result) {
+                        if(result.success == false) {
+                            alert(result.msg);
+                        }else{
+                            edit_btn.innerText = '확인';
+                            edit_btn.value='confirm';
+                            intro.contentEditable=true;
+                        }
+                    }
+                });
+            }else{
+                edit_btn.innerText = '편집하기';
+                edit_btn.value='edit';
+                intro.contentEditable=false;
+                $.ajax({
+                    url				: './update_intro.php',
+                    data			: {
+                    intro		    : intro_text,
+                    title		    : "<?php echo $temp_title;?>",
+                    type		    : "confirm",
+                    user_id		    : "<?php echo $_SESSION['user_id'];?>"},
                     type			: 'POST',
                     dataType		: 'json',
                     success		: function(result) {
