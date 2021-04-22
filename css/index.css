@@ -7,7 +7,40 @@
         header 부분
 
     ////////////////////*/
-
+.header{
+    
+    background-color: aqua; /*임시 배경*/
+}
+    .header_inner{
+        position: relative;
+        width: 980px;
+        height: 150px;
+        margin: 0px auto;
+    }
+    .header_logo{
+        position: absolute;
+        left: 0;
+        top: 0;
+    }
+    .header_nav{
+        position: absolute;
+        right: 0px;
+        bottom: 0px;
+    }
+    .header_nav > ul > li{
+        float: left;
+        margin: 20px;
+    }
+    .login_menu{
+        position: absolute;
+        right: 0px;
+        top: 0px;
+    }
+    .search{
+        position: absolute;
+        left: 150px;
+        top: 40px;
+    }
 
 
 /*///////////////////
