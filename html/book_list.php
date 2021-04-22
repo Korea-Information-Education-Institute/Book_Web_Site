@@ -57,6 +57,7 @@
         position: absolute;
     }
     .book_list_box_table{
+        list-style: none;
         position: absolute;
         left: 240px;
         line-height: 2em;
