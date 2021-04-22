@@ -31,7 +31,11 @@
     tr:nth-child(even){
         background-color:#B9E2FA;
     }
-    
+    .footer{
+        width:100%;
+        height:100px;
+}
+
 </style>
 <body>
     <?php
