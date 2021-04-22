@@ -49,7 +49,7 @@
             </button>
             </span>
         </div>
-        <div class="header__buttons" id="logined">
+        <div class="header__buttons" id="logined" style="display : none">
             <?php
                 echo $_SESSION['user_name']."님 환영합니다.";
             ?>
