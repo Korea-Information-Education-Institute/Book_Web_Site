@@ -40,12 +40,12 @@
         </div>
         <div class="header__buttons" id="logouted">
             <span class="header__btn">
-                <button class="btn btn-login" type="button" onClick="location.href='http://khsung0.dothome.co.kr/html/login.php'">
+                <button class="btn" type="button" onClick="location.href='http://khsung0.dothome.co.kr/html/login.php'">
                 <span class="btn__text">로그인</span>
             </button>
             </span><!--
             --><span class="header__btn">
-                <button class="btn btn-signup" type="button" onClick="location.href='http://khsung0.dothome.co.kr/html/register.php'"><span class="btn__text">회원가입</span>
+                <button class="btn" type="button" onClick="location.href='http://khsung0.dothome.co.kr/html/register.php'"><span class="btn__text">회원가입</span>
             </button>
             </span>
         </div>
@@ -54,7 +54,7 @@
                 echo $_SESSION['user_name']."님 환영합니다.";
             ?>
             <span class="header__btn">
-                <button class="btn btn-logout" type="button" onClick="location.href='http://khsung0.dothome.co.kr/html/logout.php'"><span class="btn__text">로그아웃</span>
+                <button class="btn" type="button" onClick="location.href='http://khsung0.dothome.co.kr/html/logout.php'"><span class="btn__text">로그아웃</span>
                 </button>
             </span>
         </div>
@@ -62,12 +62,10 @@
             <form class="search" name="search" method="post" action="http://khsung0.dothome.co.kr/html/search.php" onsubmit="return search_check()">
                 <input class="search__bar" type="text" name="search_var">
                 <span class="search__btn">
-                    <button class="btn btn-search" type="submit"><img class="btn__icon" src="../img/search_icon.png" alt="icon"></button>
+                    <button class="btn-search" type="submit"><img class="btn__icon" src="#" alt="icon"></button>
                 </span>
             </form>
         </div>
     </header>
-    
-
 
 
