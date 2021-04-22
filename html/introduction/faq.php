@@ -86,29 +86,10 @@
 
 <body>
     <div class="wrap">
-        <div class="header">
-            <div class="header_inner">
-                <div class="header_logo">
-                    <a href=""><img src="#" alt="로고"></a>
-                </div>
-                <div class="header_nav">
-                    <ul>
-                        <li><a href="./introduction.php">소개페이지</a></li>
-                        <li><a href="">책분야</a></li>
-                        <li><a href="">로드맵</a></li>
-                        <li><a href="../mypage.php">마이페이지</a></li>
-                    </ul>
-                </div>
-                <div class="login_menu">
-                    <button type="button">로그인</button>
-                    <button type="button">회원가입</button>
-                </div>
-                <div class="search">
-                    <input type="text">
-                    <button type="submit">검색</button>
-                </div>
-            </div>
-        </div>
+    <?php 
+            include '../header.php';
+        ?>
+        
         <div class="container">
             <div class="introduction">
                 <img src="../../img/2360248.png" alt="말풍선">
@@ -123,8 +104,8 @@
                  <li><a href="./introduction.php">사이트 소개</a></li>
                  <li><a href="./method.php">사이트 이용방법</a></li>
                  <li><a href="./directionality.php">사이트의 방향성</a></li>
-                 <li><a href="./faq.html">자주하는 질문</a></li>
-                 <li><a href="./notice.html">공지사항</a></li>
+                 <li><a href="./faq.php">자주하는 질문</a></li>
+                 <li><a href="./notice.php">공지사항</a></li>
                 </ul>
             </div>
 

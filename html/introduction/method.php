@@ -91,9 +91,9 @@
              </ul>
          </div>
          </div>
-         <div class="footer">
-             <p>footer</p>
-         </div>
+         <?php 
+            include "../footer.php";
+        ?>
     </div>
 </body>
 </html>
