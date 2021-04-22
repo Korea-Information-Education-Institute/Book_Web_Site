@@ -18,6 +18,15 @@
         ?>
         location.href="http://khsung1.dothome.co.kr/html/book_list.php";
     }
+    function search_check(){
+        if(document.search.search_var.value==""){
+            alert("검색어를 입력해주세요.");
+            return false;
+        }
+        else{
+            return true;
+        }
+    }
 </script>
 
 <div class="header">

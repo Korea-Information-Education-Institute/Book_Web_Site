@@ -83,7 +83,7 @@
 
 <script>
     function book_genre(genre,genre_detail){
-        url="http://khsung0.dothome.co.kr/html/change_book_list.php?"+genre+"/"+genre_detail;
+        url="http://khsung1.dothome.co.kr/html/change_book_list.php?"+genre+"/"+genre_detail;
         url=encodeURI(url)
         location.href=url;
     }
