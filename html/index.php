@@ -3,7 +3,8 @@
 
 <head>
     <meta charset="UTF-8">
-    <?php include "./head.php"; ?>
+    <link rel="stylesheet" href="../css/basic.css">
+    <link rel="stylesheet" href="../css/index.css?after"> <!--  캐시문제로 서버에서 외부스타일시트 변경사항이 적용안되어 임의의 문자열삽입 -->
     <title>Document</title>
 </head>
 <body>
