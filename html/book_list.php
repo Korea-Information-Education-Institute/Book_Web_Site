@@ -69,7 +69,7 @@
     img{
         width: 230px;
         height: 230px;
-        border: 1px solid black;
+        
     }
   
 </style>
