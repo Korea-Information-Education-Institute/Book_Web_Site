@@ -2,9 +2,12 @@
 <html lang="ko">
 <head>
     <meta charset="UTF-8">
-    <?php include "./head.php"; ?>
+    <link rel="stylesheet" href="../css/basic.css">
+    <link rel="stylesheet" href="../css/index.css">
     <title>Document</title>
-    <style>
+</head>
+
+<style>
     .container_inner{
         
     }
@@ -26,8 +29,7 @@
     #register_btn{
         
     }
-    </style>
-</head>
+</style>
 
 <script language="javascript">
     function input_check(){
@@ -42,8 +44,6 @@
             return true;
         }
     }
-    
-    
 </script>
 
 <body>
@@ -54,7 +54,7 @@
         <div class="container">
             <div class="container_inner">
                 <form method="POST" name="login" action="./login_check.php" onsubmit="return input_check()">
-                    아이디&nbsp;&nbsp;&nbsp;  <input type="text" name="user_id" id="user_id">
+                아이디&nbsp;&nbsp;&nbsp;  <input type="text" name="user_id" id="user_id">
                 비밀번호  <input type="password"  name="user_pw" id="user_pw">
                 <input type="submit" id="login_btn" value="로그인">
                 <button type="button" id="register_btn" onClick="location.href='http://khsung0.dothome.co.kr/html/register.php'">회원가입</button>
