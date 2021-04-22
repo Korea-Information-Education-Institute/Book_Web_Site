@@ -16,7 +16,7 @@
 
         /* Slider Panel */
         .slider_panel { width:3000px; position:relative; }
-        .slider_image { float:left; width:800px; height:300px; }
+        .slider_image { float:left; width:600px; height:400px; }
 
         /* Slider Text Panel */
         .slider_text_panel { position:absolute; top:200px; left:50px; }
