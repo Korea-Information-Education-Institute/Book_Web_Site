@@ -65,11 +65,13 @@
 
     ////////////////////*/
 .footer{
-    background-color: antiquewhite;/*임시 배경*/
+    background-color:dimgrey;
 }
 .footer_inner{
     width: 980px;
-    height: 100px;
+    height: 150px;
     margin: 0px auto;
-    
+    line-height: 3rem;
+    text-align: center;
 }
+
