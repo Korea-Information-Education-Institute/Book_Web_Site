@@ -48,7 +48,6 @@
             margin: 20px;
         }
     </style>
-    
 </head>
 <body>
         <div class="wrap">
