@@ -2,6 +2,7 @@
 <html lang="ko">
 <head>
     <meta charset="UTF-8">
+    <?php include "../head.php"; ?>
     <title>소개페이지</title>
     <link rel="stylesheet" href="../../css/basic.css">
     <link rel="stylesheet" href="../../css/index.css">
@@ -53,6 +54,7 @@
             list-style-type: disc;
         }
     </style>
+    
 </head>
 <body>
         <div class="wrap">
