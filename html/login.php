@@ -28,6 +28,7 @@
         /* background-color:#51909E; */
         /* background-image: linear-gradient( 135deg, #FEB692 10%, #EA5455 100%); */
         color:white;
+        transition-duration: 0.6s;
     }
     #login_btn{
         width:80px;
