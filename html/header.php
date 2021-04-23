@@ -10,7 +10,7 @@
 ?>
 
 <style>
-    #header_login_btn,#header_register_btn,#search_btn,#header_logout_btn{
+    #login_btn,#register_btn{
         cursor:pointer;
     }
 </style>
@@ -58,12 +58,12 @@
             <?php
                 echo $_SESSION['user_name']."님 환영합니다.";
             ?>
-            <button type="button" id="header_logout_btn" onClick="location.href='http://khsung1.dothome.co.kr/html/logout.php'">로그아웃</button>
+            <button type="button" onClick="location.href='http://khsung1.dothome.co.kr/html/logout.php'">로그아웃</button>
         </div>
         <div class="search">
             <form name="search" method="post" action="http://khsung1.dothome.co.kr/html/search.php" onsubmit="return search_check()">
                 <input type="text" name="search_var">
-                <button id="search_btn" type="submit">검색</button>
+                <button type="submit">검색</button>
             </form>
         </div>
     </div>
