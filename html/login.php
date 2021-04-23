@@ -24,8 +24,9 @@
         cursor:pointer;
         display: inline-block;
         border-radius:10px;
-        border:none;
-        background-image: linear-gradient( 135deg, #FEB692 10%, #EA5455 100%);
+        border:1px solid #51909E;
+        /* background-color:#51909E; */
+        /* background-image: linear-gradient( 135deg, #FEB692 10%, #EA5455 100%); */
         color:white;
     }
     #login_btn{
@@ -35,11 +36,23 @@
         top:261px;
         left:630px;
         font-size:18px;
+        background-color:white;
+        color:#51909E;
     }
     #register_btn{
         margin-top:20px;
         width:120px;
         height:30px;
+        background-color:#51909E;
+        color:white;
+    }
+    #login_btn:hover{
+        background-color:#51909E;
+        color:white;
+    }
+    #register_btn:hover{
+        background-color:white;
+        color:#51909E;
     }
     </style>
 </head>
