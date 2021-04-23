@@ -51,8 +51,8 @@
             </ul>
         </div>
         <div class="login_menu" id="logouted">
-            <button type="button" id="login_btn" onClick="location.href='http://khsung1.dothome.co.kr/html/login.php'">로그인</button>
-            <button type="button" id="register_btn" onClick="location.href='http://khsung1.dothome.co.kr/html/register.php'">회원가입</button>
+            <button type="button" id="header_login_btn" onClick="location.href='http://khsung1.dothome.co.kr/html/login.php'">로그인</button>
+            <button type="button" id="header_register_btn" onClick="location.href='http://khsung1.dothome.co.kr/html/register.php'">회원가입</button>
         </div>
         <div class="login_menu" id="logined">
             <?php
