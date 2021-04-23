@@ -2,7 +2,6 @@
 <html lang="ko">
 <head>
     <meta charset="UTF-8">
-    <?php include "../head.php"; ?>
     <title>소개페이지</title>
     <link rel="stylesheet" href="../../css/basic.css">
     <link rel="stylesheet" href="../../css/index.css">
@@ -54,7 +53,6 @@
             list-style-type: disc;
         }
     </style>
-    
 </head>
 <body>
         <div class="wrap">
@@ -75,8 +73,8 @@
                  <li><a href="./introduction.php">사이트 소개</a></li>
                  <li><a href="./method.php">사이트 이용방법</a></li>
                  <li><a href="./directionality.php">사이트의 방향성</a></li>
-                 <li><a href="./faq.html">자주하는 질문</a></li>
-                 <li><a href="./notice.html">공지사항</a></li>
+                 <li><a href="./faq.php">자주하는 질문</a></li>
+                 <li><a href="./notice.php">공지사항</a></li>
              </ul>    
          </div>
          
@@ -93,9 +91,9 @@
              </ul>
          </div>
          </div>
-         <div class="footer">
-             <p>footer</p>
-         </div>
+         <?php 
+            include "../footer.php";
+        ?>
     </div>
 </body>
 </html>
