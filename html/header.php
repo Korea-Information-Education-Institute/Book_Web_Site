@@ -10,7 +10,7 @@
 ?>
 
 <style>
-    .btn-login,.btn-signup,.btn-logout{
+    .btn-login,.btn-signup,.btn-logout,#search_btn{
         cursor:pointer;
     }
 </style>
@@ -68,7 +68,7 @@
             <form class="search" name="search" method="post" action="http://khsung0.dothome.co.kr/html/search.php" onsubmit="return search_check()">
                 <input class="search__bar" type="text" name="search_var">
                 <span class="search__btn">
-                    <button class="btn btn-search" type="submit"><img class="btn__icon" width="26px" src="../img/search_icon.png" alt="icon"></button>
+                    <button class="btn btn-search" id="search_btn" type="submit"><img class="btn__icon" width="26px" src="../img/search_icon.png" alt="icon"></button>
                 </span>
             </form>
         </div>
