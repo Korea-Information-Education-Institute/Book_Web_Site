@@ -9,6 +9,12 @@
   }
 ?>
 
+<style>
+    #login_btn,#register_btn{
+        cursor:pointer;
+    }
+</style>
+
 <script>
     function book_list(){
         <?php
