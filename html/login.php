@@ -30,6 +30,7 @@
         border:none;
         background-image: linear-gradient( 135deg, #FEB692 10%, #EA5455 100%);
         color:white;
+        transition-duration: 0.6s;
     }
     #login_btn{
         width:80px;
@@ -38,6 +39,14 @@
         top:261px;
         left:630px;
         font-size:18px;
+    }
+    #login_btn:hover{
+        transition-duration: 0.6s;
+        background-image: linear-gradient( 135deg, #EA5455 10%, #FEB692 100%);
+    }
+    #register_btn:hover{
+        transition-duration: 0.6s;
+        background-image: linear-gradient( 135deg, #EA5455 10%, #FEB692 100%);
     }
     #register_btn{
         margin-top:20px;
