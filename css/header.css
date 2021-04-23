@@ -89,18 +89,6 @@ a {
     width: inherit;
     height: inherit; }
 
-.search {
-  border: 2px solid #000;
-  width: 296px;
-  height: 31px; }
-  .search__bar {
-    width: 225px;
-    height: 27px;
-    border: none;
-    outline: none;
-    margin: 2px 4px;
-    padding: 0px; }
-
 .btn {
   width: 75px;
   height: 30px;

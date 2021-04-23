@@ -57,6 +57,7 @@
         position: absolute;
     }
     .book_list_box_table{
+        list-style: none;
         position: absolute;
         left: 240px;
         line-height: 2em;
@@ -65,10 +66,9 @@
         font-weight: 500;
     }
     
-    img{
+    #book_img{
         width: 230px;
         height: 230px;
-    
     }
    
     .footer{
@@ -128,7 +128,7 @@
                                 $urlstring="./book.php?".str_replace(" ","_",$row['book_title']);
                                 echo "<a href=$urlstring><div class='book_list_box'>
                                         <div class='book_list_box_img'>
-                                        <img src=$row[book_img_address] alt='책 사진'>
+                                        <img id='book_img' src=$row[book_img_address] alt='책 사진'>
                                     </div>
                                     <div class='book_list_box_table'>
                                         <li><span class='table1'><b>제목</b></span><span class='table2'> <b>: $row[book_title]</span></b></li>
