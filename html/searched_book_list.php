@@ -107,7 +107,7 @@
                 <a href="javascript:book_genre('미분류','미분류');"><h3>미분류</h3></a>  
             </div>
             <div class="book_index">
-                <h2>검색 내용</h2>
+                <br><h2>검색 내용</h2>
             </div> 
             <div class="book_container">
             <?php
