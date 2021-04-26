@@ -8,6 +8,15 @@
     <link rel="stylesheet" href="../../css/index.css">
     
     <style>
+         .btn-search{
+            width:60px;
+        }
+        .search {
+            border: 2px solid #519D9E;
+            height:30px;
+            width: 300px;
+        }
+        
         .container{
             width: 980px;
             margin: 0 auto;
