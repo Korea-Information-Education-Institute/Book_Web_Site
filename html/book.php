@@ -3,7 +3,7 @@
 <?php session_start();header('Content-Type: text/html; charset=utf-8');?>
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="../css/book.css">
+    
     <?php include "./head.php"; ?>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Document</title>

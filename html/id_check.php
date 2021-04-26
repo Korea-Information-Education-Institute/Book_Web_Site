@@ -14,6 +14,7 @@
 			echo "<script>window.close();</script>";
 
 		}else{
+			echo "<script>opener.document.getElementById('check_id').disabled=true;</script>";
 			echo "<script>opener.document.getElementById('checked_id').value=1;</script>";
 			echo "<script>opener.document.getElementById('user_id').disabled=true;</script>";
 			echo "<script>alert('사용 가능한 ID입니다.');</script>";

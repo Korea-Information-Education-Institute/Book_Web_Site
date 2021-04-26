@@ -7,7 +7,7 @@
     <style>
     .container_inner{
         text-align:center;
-        padding-top:200px;
+        padding-top:183px;
     }
     #user_id,#user_pw{
         width:250px;
@@ -28,6 +28,7 @@
         /* background-color:#51909E; */
         /* background-image: linear-gradient( 135deg, #FEB692 10%, #EA5455 100%); */
         color:white;
+        transition-duration:0.6s;
     }
     #login_btn{
         width:80px;
@@ -79,7 +80,7 @@
         ?>
         <div class="container">
             <div class="container_inner">
-                <p style='font-size:30px; font-weight:550;'>Member Login</p><br><br>
+                <p style='font-size:30px; font-weight:550;'>Member Login</p><br><br><br>
                 <form method="POST" name="login" action="./login_check.php" onsubmit="return input_check()">
                 
                 <ul>

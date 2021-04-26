@@ -6,6 +6,51 @@
     <title>Document</title>
 </head>
 
+<style>
+    .container_inner{
+        text-align:center;
+        padding-top:183px;
+    }
+    #user_id,#user_pw,#user_pw_check,#user_nickname,#user_name{
+        width:250px;
+        height:30px;
+        font-size:18px;
+        border:1px solid rgba(199, 199, 199, 0.856);
+        border-radius:5px;
+        padding:0px 0px 0px 5px;
+        position:relative;
+        margin-right:10px;
+    }
+    #check_id{
+        width:80px;
+        height:30px;
+        position:absolute;
+        top:262px;
+        left:640px;
+        font-size:15px;
+        background-color:white;
+        color:#51909E;
+        border-radius:10px;
+        border:1px solid #51909E;
+        cursor:pointer;
+        transition-duration:0.6s;
+    }
+    #submit,#reset{
+        width:80px;
+        height:25px;
+        background-color:white;
+        color:#51909E;
+        border-radius:10px;
+        border:1px solid #51909E;
+        cursor:pointer;
+        transition-duration:0.6s;
+    }
+    #submit:hover,#reset:hover{
+        background-color:#51909E;
+        color:white;
+    }
+</style>
+
 <script language="javascript">
     function input_check(){
         var login_form=document.register;
@@ -52,19 +97,20 @@
         ?>
         <div class="container">
             <div class="container_inner">
+                <p style='font-size:30px; font-weight:550;'>Member Register</p><br><br><br>
                 <form method="POST" name="register" action="register_check.php" onsubmit="return input_check()">
-                    <p>아이디 : <input type="text" id="user_id" name="user_id"><input type="button" value="중복체크" name="check_id" onclick="duplicated_check()"></p>
+                    <input type="text" id="user_id" name="user_id" placeholder='ID' required><input type="button" value="중복체크" id="check_id" name="check_id" onclick="duplicated_check()"><br><br>
                     <input type=hidden id="checked_id" name="checked_id" value=0> <!-- 중복체크 버튼 클릭 유무 -->
-                    <p>비밀번호 : <input type="password"  name="user_pw"></p>
-                    <p>비밀번호 확인 : <input type="password"  name="user_pw_check"></p>
-                    <p>닉네임 : <input type="text"  name="user_nickname"></p>
-                    <p>이름 : <input type="text"  name="user_name"></p>
-                    <p>생일 : <input type="date"  name="user_birth" required></p>
-                    <p>
+                    <input type="password" id="user_pw" name="user_pw" placeholder='PW' required minlength="4"><br><br>
+                    <input type="password" id="user_pw_check" name="user_pw_check" placeholder='PW_Check' required><br><br>
+                    <input type="text" id="user_nickname" name="user_nickname" placeholder='Nick_Name' required><br><br>
+                    <input type="text" id="user_name" name="user_name" placeholder='Name' required><br><br>
+                    Birth day &nbsp;&nbsp;<input type="date" id="user_birth" name="user_birth" required><br><br>
+                    
                         <input type="radio" name="user_gender" value="m" required>남성
-                        <input type="radio" name="user_gender" value="w">여성
-                    </p>
-                    <p><input type="submit" value="회원가입">&nbsp;&nbsp;&nbsp;&nbsp;<input type="reset" value="초기화"></p>
+                        <input type="radio" name="user_gender" value="w">여성<br><br>
+                    
+                    <p><input type="submit" id="submit" value="회원가입">&nbsp;&nbsp;&nbsp;&nbsp;<input type="reset" id="reset" value="초기화"></p>
                 </form>
             </div>
         </div>
