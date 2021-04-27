@@ -38,7 +38,7 @@
 <header class="header">
         <div class="header__logo">
             <div class="logo">
-                <a class="logo__link" href="http://khsung0.dothome.co.kr/html/index.php"><span class="logo__text">SOPILER</span></a>
+                <a class="logo__link" href="http://khsung0.dothome.co.kr/html/index.php"><span class="logo__text">SPOILER</span></a>
             </div>
         </div>
             
