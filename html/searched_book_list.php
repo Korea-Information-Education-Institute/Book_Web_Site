@@ -95,10 +95,10 @@
         ?>
         <div class="container_list">
         <div class="aside">
-                <h3>문학</h3>
+                <h3>문학</h3><br>
                 <a href="javascript:book_genre('문학','시');"><p>시</p></a>
                 <a href="javascript:book_genre('문학','에세이');"><p>에세이</p></a>
-                <h3>인문</h3>
+                <h3>인문</h3><br>
                 <a href="javascript:book_genre('인문','문화');"><p>문화</p></a>
                 <a href="javascript:book_genre('인문','심리');"><p>심리</p></a>
                 <a href="javascript:book_genre('인문','철학');"><p>철학</p></a>  

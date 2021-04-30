@@ -11,6 +11,14 @@
     <script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
 </head>
 <style>
+    #scrap,#scraped,#homepage{
+        cursor:pointer;
+        background-color:white;
+        height:30px;
+        border:0;
+        box-shadow:1px 1px 1px 1px gray;
+        border-radius:2px;
+    }
     #table{
         border-radius:20px;
     }
@@ -20,6 +28,15 @@
         margin-left:auto;
         margin-right:auto;
         width:500px;
+
+    }
+    table tr:first-child{
+        border-top-right-radius: 10px;
+        border-top-left-radius: 10px;
+    }
+    table tr:last-child {
+        border-bottom-right-radius: 10px;
+        border-bottom-left-radius: 10px;
     }
     th, td{
         border:1px solid white;
@@ -54,19 +71,36 @@
             var intro_text=document.getElementById('intro').innerText;
             
             if(edit_btn.value=='edit'){
-                edit_btn.innerText = '확인';
-                edit_btn.value='confirm';
-                intro.contentEditable=true;
-            }else{
-                edit_btn.innerText = '편집하기';
-                edit_btn.value='edit';
-                intro.contentEditable=false;
-
                 $.ajax({
                     url				: './update_intro.php',
                     data			: {
                     intro		    : intro_text,
-                    title		    : "<?php echo $temp_title;?>"},
+                    title		    : "<?php echo $temp_title;?>",
+                    type		    : "edit",
+                    user_id		    : "<?php echo $_SESSION['user_id'];?>"},
+                    type			: 'POST',
+                    dataType		: 'json',
+                    success		: function(result) {
+                        if(result.success == false) {
+                            alert(result.msg);
+                        }else{
+                            edit_btn.innerText = '확인';
+                            edit_btn.value='confirm';
+                            intro.contentEditable=true;
+                        }
+                    }
+                });
+            }else{
+                edit_btn.innerText = '편집하기';
+                edit_btn.value='edit';
+                intro.contentEditable=false;
+                $.ajax({
+                    url				: './update_intro.php',
+                    data			: {
+                    intro		    : intro_text,
+                    title		    : "<?php echo $temp_title;?>",
+                    type		    : "confirm",
+                    user_id		    : "<?php echo $_SESSION['user_id'];?>"},
                     type			: 'POST',
                     dataType		: 'json',
                     success		: function(result) {
@@ -127,9 +161,9 @@
                 <br><br>
                 <img src=<?php echo $row['book_img_address']?> alt="이미지" width="300" height="400">
                 <br><br>
-                <button id="scrap" onclick="update_scrap('insert')">&#x2661;좋아요</button>
-                <button id="scraped" onclick="update_scrap('delete')">&#x1f493;좋아요 취소</button>&nbsp&nbsp&nbsp
-                <button onClick="location.href='<?php echo $row['book_web_address'];?>'">홈페이지 가기</button>
+                <button id="scrap" onclick="update_scrap('insert')">&#x2661;&nbsp;좋아요</button>
+                <button id="scraped" onclick="update_scrap('delete')">&#x1f493;&nbsp;좋아요 취소</button>&nbsp&nbsp&nbsp
+                <button id="homepage" onClick="location.href='<?php echo $row['book_web_address'];?>'">홈페이지 가기</button>
                 <br><br><br>
                 <div id="table">
                 <table>
@@ -157,11 +191,11 @@
                 </div>
                 <br><hr><br>
                 <div>
-                    <h1 style="text-align:left;">개요<button style="position:right;" value="edit" id='edit_btn' onclick="update_intro()">편집하기</button></h1>
+                    <h1 style="text-align:left;font-size:20px;margin-left:10px;">개요<button style="position:absolute;left:895px;top:686px;height:35px;cursor:pointer;" value="edit" id='edit_btn' onclick="update_intro()">편집하기</button></h1>
                 </div>
                 <br><hr><br>
                 <div style="overflow-y:auto; overflow-x:hidden; width:1000px; height:520px;">                    
-                    <?php echo "<pre id='intro' contenteditable='false' style='white-space: pre-wrap;'>$row[book_introduce]</pre>";?>            
+                    <?php echo "<pre id='intro' contenteditable='false' style='white-space: pre-wrap;padding:10px;'>$row[book_introduce]</pre>";?>            
                 </div>
                 <br><hr>
             </div>

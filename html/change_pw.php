@@ -7,6 +7,40 @@
     <title>Document</title>
 </head>
 
+<style>
+    .container_inner{
+        text-align:center;
+        padding-top:183px;
+    }
+    #user_pw,#change_user_pw1,#change_user_pw{
+        width:250px;
+        height:30px;
+        font-size:18px;
+        border:1px solid rgba(199, 199, 199, 0.856);
+        border-radius:5px;
+        padding:0px 0px 0px 5px;
+        position:relative;
+        margin-right:10px;
+    }
+    #submit_btn, #reset_btn{
+        cursor:pointer;
+        display: inline-block;
+        border-radius:10px;
+        border:1px solid #51909E;
+        color:#51909E;
+        transition-duration:0.6s;
+        margin-top:20px;
+        width:120px;
+        height:30px;
+        background-color:white;
+        color:#51909E;
+    }
+    #submit_btn:hover, #reset_btn:hover{
+        background-color:#51909E;
+        color:white;
+    }
+</style>
+
 <?php
 //세션에 user_id 변수가 있을 경우 로그인 상태로 판단
   if( isset( $_SESSION[ 'user_id' ] ) ) {
@@ -49,11 +83,12 @@
         ?>    
         <div class="container">
             <div class="container_inner">
+            <p style='font-size:30px; font-weight:550;'>Change PW</p><br><br><br>
                 <form method="POST" name="change_pw" action="./change_pw_check.php" onsubmit="return input_check()">
-                    <p>현재 비밀번호 : <input type="password" name="user_pw"></p>
-                    <p>변경 비밀번호 : <input type="password"  name="change_user_pw"></p>
-                    <p>변경 비밀번호 확인 : <input type="password"  name="change_user_pw1"></p>
-                    <p><input type="submit" value="변경하기">&nbsp;&nbsp;&nbsp;&nbsp;<input type="reset" value="초기화"></p>
+                    <p>현재 비밀번호&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="password" id="user_pw" name="user_pw"></p><br>
+                    <p>변경 비밀번호&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="password" id="change_user_pw"  name="change_user_pw"></p><br>
+                    <p>변경 비밀번호 확인 <input type="password" id="change_user_pw1" name="change_user_pw1"></p><br><br>
+                    <p><input type="submit" id="submit_btn" value="변경하기">&nbsp;&nbsp;&nbsp;&nbsp;<input type="reset" id="reset_btn" value="초기화"></p>
                 </form>
             </div>
         </div>

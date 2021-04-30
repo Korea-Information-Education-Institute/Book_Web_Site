@@ -7,6 +7,9 @@
     <title>책분야</title>
 </head>
 <style>
+    p{
+        margin-top:10px;
+    }
     .container_list{
         width: 1400px;
         height: 1400px;
@@ -87,11 +90,23 @@
             include "./header.php";
         ?>
         <div class="container_list">
-            <div class="aside">
-                <h3>문학</h3>
+            <div class="aside" style="position:fixed;height:450px;width:150px;">
+                <h3>문학</h3><br>
+                <a href="javascript:book_genre('문학','시');"><p>시</p></a>
+                <a href="javascript:book_genre('문학','에세이');"><p>에세이</p></a><br>
+                <h3>인문</h3><br>
+                <a href="javascript:book_genre('인문','문화');"><p>문화</p></a>
+                <a href="javascript:book_genre('인문','심리');"><p>심리</p></a>
+                <a href="javascript:book_genre('인문','철학');"><p>철학</p></a>  
+                <a href="javascript:book_genre('인문','경제');"><p>경제</p></a>  
+                <a href="javascript:book_genre('인문','교양');"><p>교양</p></a><br>
+                <a href="javascript:book_genre('미분류','미분류');"><h3>미분류</h3></a>  
+            </div>
+            <div class="aside" style="visibility:hidden;">
+                <h3>문학</h3><br>
                 <a href="javascript:book_genre('문학','시');"><p>시</p></a>
                 <a href="javascript:book_genre('문학','에세이');"><p>에세이</p></a>
-                <h3>인문</h3>
+                <h3>인문</h3><br>
                 <a href="javascript:book_genre('인문','문화');"><p>문화</p></a>
                 <a href="javascript:book_genre('인문','심리');"><p>심리</p></a>
                 <a href="javascript:book_genre('인문','철학');"><p>철학</p></a>  

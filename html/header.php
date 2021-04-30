@@ -13,6 +13,12 @@
     .btn-login,.btn-signup,.btn-logout,#search_btn{
         cursor:pointer;
     }
+    h2{
+        font-size:25px;
+    }
+    h3{
+        font-size:20px;
+    }
 </style>
 
 <script>
