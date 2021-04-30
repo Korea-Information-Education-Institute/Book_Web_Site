@@ -11,13 +11,16 @@
     <script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
 </head>
 <style>
+    h2{
+        margin:0;
+    }
     #scrap,#scraped,#homepage{
         cursor:pointer;
         background-color:white;
         height:30px;
         border:0;
         box-shadow:1px 1px 1px 1px gray;
-        border-radius:2px;
+        border-radius:5px;
     }
     #table{
         border-radius:20px;
@@ -191,7 +194,7 @@
                 </div>
                 <br><hr><br>
                 <div>
-                    <h1 style="text-align:left;font-size:20px;margin-left:10px;">개요<button style="position:absolute;left:895px;top:686px;height:35px;cursor:pointer;" value="edit" id='edit_btn' onclick="update_intro()">편집하기</button></h1>
+                    <h2 style="text-align:left;margin-left:10px;">개요<button style="position:absolute;left:895px;top:693px;height:35px;cursor:pointer;" value="edit" id='edit_btn' onclick="update_intro()">편집하기</button></h2>
                 </div>
                 <br><hr><br>
                 <div style="overflow-y:auto; overflow-x:hidden; width:1000px; height:520px;">                    

@@ -29,36 +29,6 @@
     
 }
 
-.moving{
-    position: absolute;
-    top: 50px;
-    left: 50px;
-    line-height:5px solid black;
-    background-color: beige; /*임시 배경*/
-    width: 880px;
-    height: 300px;
-    
-}
-
-.moving li{
-    float: left;
-}
-
-.box{
-    position: absolute;
-    top: 400px;
-    left: 105px;
-}
-
-.box > ul > li{
-    width: 230px;
-    height: 300px;
-    margin: 10px;
-    background-color: beige; /*임시 배경*/
-    float: left;
-}
-
-
 /*///////////////////
 
         footer 부분

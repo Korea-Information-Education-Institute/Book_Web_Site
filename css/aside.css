@@ -1,6 +1,6 @@
 .aside{
     padding: 10px;
-    background-color: aliceblue; /*임시색상*/
+    /* background-color: aliceblue; 임시색상 */
     width: 200px;
     height: 580px;
     border: 1px solid black;

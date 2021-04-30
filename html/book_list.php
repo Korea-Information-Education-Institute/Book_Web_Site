@@ -41,8 +41,6 @@
         width: 980px;
         height: 1400px;
         float: left;
-        
-        
     }
     .book_list_box{
         border: 1px solid black;
@@ -73,7 +71,15 @@
         width: 230px;
         height: 230px;      
     }
-  
+    #test{
+        text-align:center; 
+        display:inline-block;
+        background-color:blue;
+        width:100%;
+    }
+    .paging{
+        text-align:center;
+    }
 </style>
 
 <script>
@@ -91,19 +97,19 @@
         ?>
         <div class="container_list">
             <div class="aside" style="position:fixed;height:450px;width:150px;">
-                <h3>문학</h3><br>
+                <h3>문학</h3>
                 <a href="javascript:book_genre('문학','시');"><p>시</p></a>
                 <a href="javascript:book_genre('문학','에세이');"><p>에세이</p></a><br>
-                <h3>인문</h3><br>
+                <h3>인문</h3>
                 <a href="javascript:book_genre('인문','문화');"><p>문화</p></a>
                 <a href="javascript:book_genre('인문','심리');"><p>심리</p></a>
                 <a href="javascript:book_genre('인문','철학');"><p>철학</p></a>  
                 <a href="javascript:book_genre('인문','경제');"><p>경제</p></a>  
-                <a href="javascript:book_genre('인문','교양');"><p>교양</p></a><br>
+                <a href="javascript:book_genre('인문','교양');"><p>교양</p></a>
                 <a href="javascript:book_genre('미분류','미분류');"><h3>미분류</h3></a>  
             </div>
             <div class="aside" style="visibility:hidden;">
-                <h3>문학</h3><br>
+                <h3>문학</h3>
                 <a href="javascript:book_genre('문학','시');"><p>시</p></a>
                 <a href="javascript:book_genre('문학','에세이');"><p>에세이</p></a>
                 <h3>인문</h3><br>
@@ -123,51 +129,56 @@
             </div> 
             
             <div class="book_container">
-            <?php
-                if(include('./dbconnect.php')){
-                    if($genre[1]!='미분류'){
-                    $sql = "SELECT * FROM `book` WHERE `book_genre` LIKE '%$genre[1]%'";
-                    }else{
-                        $sql = "SELECT * FROM `book` WHERE `book_genre` NOT LIKE '%시%' AND `book_genre` NOT LIKE '%에세이%' AND `book_genre` NOT LIKE '%문화%' AND `book_genre` NOT LIKE '%심리%' AND `book_genre` NOT LIKE '%철학%' AND `book_genre` NOT LIKE '%경제%' AND `book_genre` NOT LIKE '%교양%' ";
-                    }
-                    $result = mysqli_query($conn, $sql);
-                    $count = mysqli_num_rows($result);      //row 개수
-                    $list_num=5;                            //한 페이지 리스트 개수
-                    $total_page_num=ceil($count/$list_num); //총 페이지 개수
-                    $i=0;
-                    //echo "<script>alert($total_page_num)</script>";
-                    while($row = mysqli_fetch_array($result)){
-                        if($i>=0 &&$i<=4){
-                            //공백 존재시 url에 추가되지 않음.
-                            //따라서 Under bar로 치환후 목적지에서 다시 공백으로 치환.
-                            $urlstring="./book.php?".str_replace(" ","_",$row['book_title']);
-                            echo "<a href=$urlstring><div class='book_list_box'>
-                                    <div class='book_list_box_img'>
-                                    <img id='book_img' src=$row[book_img_address] alt='책 사진'>
-                                </div>
-                                <div class='book_list_box_table'>
-                                    <li><span class='table1'><b>제목</b></span><span class='table2'> <b>: $row[book_title]</span></b></li>
-                                    <li><span class='table1'>저자</span><span class='table2'> : $row[book_writer]</span></li>
-                                    <li><span class='table1'>가격</span><span class='table2'> : $row[book_price]</span></li>
-                                    <li><span class='table1'>분류</span><span class='table2'> : $row[book_genre]</span></li>
-                                    <li><span class='table1'>소개</span><span class='table2'> : $row[book_introduce]</span></li>
-                                </div></a>
-                            </div>";
+                <?php
+                    if(include('./dbconnect.php')){
+                        if($genre[1]!='미분류'){
+                        $sql = "SELECT * FROM `book` WHERE `book_genre` LIKE '%$genre[1]%'";
+                        }else{
+                            $sql = "SELECT * FROM `book` WHERE `book_genre` NOT LIKE '%시%' AND `book_genre` NOT LIKE '%에세이%' AND `book_genre` NOT LIKE '%문화%' AND `book_genre` NOT LIKE '%심리%' AND `book_genre` NOT LIKE '%철학%' AND `book_genre` NOT LIKE '%경제%' AND `book_genre` NOT LIKE '%교양%' ";
                         }
-                        $i+=1;
+                        $result = mysqli_query($conn, $sql);
+                        $count = mysqli_num_rows($result);      //row 개수
+                        $list_num=5;                            //한 페이지 리스트 개수
+                        $total_page_num=ceil($count/$list_num); //총 페이지 개수
+                        $i=0;
+                        //echo "<script>alert($total_page_num)</script>";
+                        while($row = mysqli_fetch_array($result)){
+                            if($i>=0 &&$i<=4){
+                                //공백 존재시 url에 추가되지 않음.
+                                //따라서 Under bar로 치환후 목적지에서 다시 공백으로 치환.
+                                $urlstring="./book.php?".str_replace(" ","_",$row['book_title']);
+                                echo "<a href=$urlstring><div class='book_list_box'>
+                                        <div class='book_list_box_img'>
+                                        <img id='book_img' src=$row[book_img_address] alt='책 사진'>
+                                    </div>
+                                    <div class='book_list_box_table'>
+                                        <li><span class='table1'><b>제목</b></span><span class='table2'> <b>: $row[book_title]</span></b></li>
+                                        <li><span class='table1'>저자</span><span class='table2'> : $row[book_writer]</span></li>
+                                        <li><span class='table1'>가격</span><span class='table2'> : $row[book_price]</span></li>
+                                        <li><span class='table1'>분류</span><span class='table2'> : $row[book_genre]</span></li>
+                                        <li><span class='table1'>소개</span><span class='table2'> : $row[book_introduce]</span></li>
+                                    </div></a>
+                                </div>";
+                            }
+                            $i+=1;
+                        }
                     }
-                }
-                ?> 
+                ?>
+                <div class="paging">
+                    <br><br><br>paging
+                </div>
             </div>
         </div>
-    
+        <div id="test">
+            
+        </div>
         <?php
             include "./footer.php";
         ?>
     </div>
-    <?php
-        include "./javascript.php";
-    ?>
+        <?php
+            include "./javascript.php";
+        ?>
 </body>
 </html>
 

@@ -57,10 +57,10 @@
 
     ////////////////////*/
   .book {
-  width: 980px;
-  height: auto;
-  margin: 0px auto;
-  position: relative; 
+    width: 980px;
+    height: auto;
+    margin: 0px auto;
+    position: relative; 
   }
   
   .book .intro {
