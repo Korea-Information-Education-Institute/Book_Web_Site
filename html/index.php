@@ -161,6 +161,12 @@ p{
     h2{
         margin:5px;
     }
+    #book_img{
+        transition: all 0.3s ease-out;
+    }
+    #book_img:hover{
+        transform: scale(1.1, 1.1);
+    }
 </style>
 
 
@@ -231,11 +237,56 @@ p{
                                 while($row1 = mysqli_fetch_array($result1)){
                                     array_push($book_index_array,$row1['book_index']);
                                 }
+                                $sql2 = "SELECT * FROM `book` WHERE `book_index` IN ($book_index_array[0],$book_index_array[1],$book_index_array[2],$book_index_array[3],$book_index_array[4])";
+                                $result2 = mysqli_query($conn, $sql2);
+                                $count = mysqli_num_rows($result2);  //결과 row 수
+                                $temp_string="";
+
+
+
+                                // for($i=1;$i<=$count;$i++){
+                                //     if($i==1){
+                                //         $temp_string="inline-block";
+                                //     }else{
+                                //         $temp_string="none";
+                                //     }
+                                //     $row2[$i]=mysqli_fetch_array($result2);
+                                //     echo "<div class='mySlides fade'>
+                                //     <div class='numbertext'>$i / $count</div>
+                                //     <img id='slide_img' src='$row2[$i][book_img_address]' style='width:200px;display:$temp_string;'>
+                                //     <div class='slide_contents'> asdasdasdasadads</div>
+                                //     <div class='text'>Caption One</div>
+                                //     </div>";
+                                // }
+
+
+
+
+                                while($row2 = mysqli_fetch_array($result2)){
+                                    $i++;
+                                    if($i==1){
+                                        $temp_string="inline-block";
+                                    }else{
+                                        $temp_string="none";
+                                    }
+                                    echo "<div class='mySlides fade'>
+                                    <div class='numbertext'>$i / $count</div>
+                                    <img id='slide_img' src='$row2[book_img_address]' style='width:200px;display:$temp_string;'>
+                                    <div class='slide_contents'> asdasdasdasadads</div>
+                                    <div class='text'>Caption One</div>
+                                    </div>";
+                                }
+
+                                    
+                                
+
+
+
                             }
                         ?>
 
 
-                        <div class="mySlides fade">
+                        <!-- <div class="mySlides fade">
                         <div class="numbertext">1 / 5</div>
                         <img id="slide_img" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSv7VkHK7D6s7kvSco4Ir9DfjqpNNlbm-8EJzJUueI5SlDsFwJW_0kVRib0Cbw&usqp=CAc" style="width:200px;display:inline-block;">
                         <div class="slide_contents"> asdasdasdasadads</div>
@@ -262,7 +313,7 @@ p{
                         <div class="numbertext">5 / 5</div>
                         <img id="slide_img" src="http://placehold.it/300x100" style="width:100%">
                         <div class="text">Caption Five</div>
-                        </div>
+                        </div> -->
 
 
 
