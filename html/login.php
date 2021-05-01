@@ -5,10 +5,18 @@
     <?php include "./head.php"; ?>
     <title>Document</title>
     <style>
+    p{
+        margin:0;
+    }
+    .container{
+        height:1000px;
+    }
     .container_inner{
         text-align:center;
         padding-top:183px;
+        height:880px;
     }
+
     #user_id,#user_pw{
         width:250px;
         height:30px;
@@ -34,8 +42,8 @@
         width:80px;
         height:80px;
         position:absolute;
-        top:261px;
-        left:630px;
+        top:277px;
+        left:670px;
         font-size:18px;
         background-color:white;
         color:#51909E;
@@ -80,7 +88,7 @@
         ?>
         <div class="container">
             <div class="container_inner">
-                <p style='font-size:30px; font-weight:550;'>Member Login</p><br><br><br>
+                <p style='font-size:30px; font-weight:550;'>&nbsp;&nbsp;Member Login</p><br><br><br>
                 <form method="POST" name="login" action="./login_check.php" onsubmit="return input_check()">
                 
                 <ul>

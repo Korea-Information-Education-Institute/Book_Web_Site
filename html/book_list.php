@@ -7,8 +7,16 @@
     <title>책분야</title>
 </head>
 <style>
-    p{
-        margin-top:10px;
+    .footer_inner>p{
+        margin:0;
+    }
+    .container{
+        height:1000px;
+    }
+    .container_inner{
+        text-align:center;
+        padding-top:183px;
+        height:880px;
     }
     .container_list{
         width: 1400px;
@@ -99,7 +107,7 @@
             <div class="aside" style="position:fixed;height:450px;width:150px;">
                 <h3>문학</h3>
                 <a href="javascript:book_genre('문학','시');"><p>시</p></a>
-                <a href="javascript:book_genre('문학','에세이');"><p>에세이</p></a><br>
+                <a href="javascript:book_genre('문학','에세이');"><p>에세이</p></a>
                 <h3>인문</h3>
                 <a href="javascript:book_genre('인문','문화');"><p>문화</p></a>
                 <a href="javascript:book_genre('인문','심리');"><p>심리</p></a>

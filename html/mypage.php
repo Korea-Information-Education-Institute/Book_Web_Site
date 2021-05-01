@@ -8,13 +8,16 @@
 </head>
 
 <style>
+    p{
+        margin:0;
+    }
     .container{
-        height:850px;
+        height:1000px;
     }
     .container_inner{
         text-align:center;
         padding-top:183px;
-        height:850px;
+        height:880px;
     }
     #login_btn{
         cursor:pointer;

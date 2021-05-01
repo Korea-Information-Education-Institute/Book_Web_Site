@@ -7,6 +7,17 @@
     <title>책분야</title>
 </head>
 <style>
+    .footer_inner>p{
+        margin:0;
+    }
+    .container{
+        height:1000px;
+    }
+    .container_inner{
+        text-align:center;
+        padding-top:183px;
+        height:880px;
+    }
     .container_list{
         width: 1400px;
         height: 1400px;
@@ -72,7 +83,12 @@
     }
    
     .footer{
-        
+        position:absolute;
+        top:1700px;
+        width:100%;
+    }
+    .paging{
+        text-align:center;
     }
 </style>
 <?php
@@ -94,8 +110,20 @@
             include "./header.php";
         ?>
         <div class="container_list">
-        <div class="aside">
-                <h3>문학</h3><br>
+        <div class="aside" style="position:fixed;height:450px;width:150px;">
+                <h3>문학</h3>
+                <a href="javascript:book_genre('문학','시');"><p>시</p></a>
+                <a href="javascript:book_genre('문학','에세이');"><p>에세이</p></a>
+                <h3>인문</h3>
+                <a href="javascript:book_genre('인문','문화');"><p>문화</p></a>
+                <a href="javascript:book_genre('인문','심리');"><p>심리</p></a>
+                <a href="javascript:book_genre('인문','철학');"><p>철학</p></a>  
+                <a href="javascript:book_genre('인문','경제');"><p>경제</p></a>  
+                <a href="javascript:book_genre('인문','교양');"><p>교양</p></a>
+                <a href="javascript:book_genre('미분류','미분류');"><h3>미분류</h3></a>  
+            </div>
+            <div class="aside" style="visibility:hidden;">
+                <h3>문학</h3>
                 <a href="javascript:book_genre('문학','시');"><p>시</p></a>
                 <a href="javascript:book_genre('문학','에세이');"><p>에세이</p></a>
                 <h3>인문</h3><br>
@@ -144,6 +172,9 @@
                     }
                 }
             ?> 
+            <div class="paging">
+                    <br><br><br>paging
+                </div>
             </div>
         </div>
     
