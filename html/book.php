@@ -11,6 +11,17 @@
     <script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
 </head>
 <style>
+    p{
+        margin:0;
+    }
+    .container{
+        height:1400px;
+    }
+    .container_inner{
+        text-align:center;
+        padding-top:40px;
+        height:880px;
+    }
     h2{
         margin:0;
     }
@@ -194,10 +205,10 @@
                 </div>
                 <br><hr><br>
                 <div>
-                    <h2 style="text-align:left;margin-left:10px;">개요<button style="position:absolute;left:895px;top:693px;height:35px;cursor:pointer;" value="edit" id='edit_btn' onclick="update_intro()">편집하기</button></h2>
+                    <h2 style="text-align:left;margin-left:10px;">개요<button style="position:absolute;left:895px;top:733px;height:35px;cursor:pointer;" value="edit" id='edit_btn' onclick="update_intro()">편집하기</button></h2>
                 </div>
                 <br><hr><br>
-                <div style="overflow-y:auto; overflow-x:hidden; width:1000px; height:520px;">                    
+                <div style="overflow-y:auto; overflow-x:hidden; width:1000px; height:540px;">                    
                     <?php echo "<pre id='intro' contenteditable='false' style='white-space: pre-wrap;padding:10px;'>$row[book_introduce]</pre>";?>            
                 </div>
                 <br><hr>

@@ -9,120 +9,98 @@
 
 <style>
 
+    .slideshow-container {
+    max-width: 1000px;
+    position: relative;
+    margin: auto;
+    background-color:#b7e8e9;
+    height:265px;
+    }
+    /* Next & previous buttons */
+    .prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 16px;
+    margin-top: -22px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    }
+    /* Position the "next button" to the right */
+    .next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+    }
+    /* On hover, add a black background color with a little bit see-through */
+    .prev:hover, .next:hover {
+    background-color: rgba(0,0,0,0.8);
+    }
+    /* Number text (1/3 etc) */
+    .numbertext {
+    /* color: #f2f2f2; */
+    font-size: 13px;
+    padding: 8px 12px;
+    position: absolute;
+    top: 0;
+    }
+    /* The dots/bullets/indicators */
+    .dot {
+    cursor: pointer;
+    height: 15px;
+    width: 15px;
+    margin: 0 2px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+    }
+    .active, .dot:hover {
+    background-color: #717171;
+    }
+    /* Fading animation */
+    .fade {
+    -webkit-animation-name: fade;
+    -webkit-animation-duration: 1.5s;
+    animation-name: fade;
+    animation-duration: 1.5s;
+    }
+    @-webkit-keyframes fade {
+    from {opacity: .4} 
+    to {opacity: 1}
+    }
+    @keyframes fade {
+    from {opacity: .4} 
+    to {opacity: 1}
+    }
+    /* On smaller screens, decrease text size */
+    @media only screen and (max-width: 300px) {
+    .prev, .next,.text {font-size: 11px}
+    }
 
+    .slide_contents{
+        position:absolute;
 
-
-
-.slideshow-container {
-  max-width: 1000px;
-  position: relative;
-  margin: auto;
-  background-color:#b7e8e9;
-  height:240px;
-}
-/* Next & previous buttons */
-.prev, .next {
-  cursor: pointer;
-  position: absolute;
-  top: 50%;
-  width: auto;
-  padding: 16px;
-  margin-top: -22px;
-  color: white;
-  font-weight: bold;
-  font-size: 18px;
-  transition: 0.6s ease;
-  border-radius: 0 3px 3px 0;
-}
-/* Position the "next button" to the right */
-.next {
-  right: 0;
-  border-radius: 3px 0 0 3px;
-}
-/* On hover, add a black background color with a little bit see-through */
-.prev:hover, .next:hover {
-  background-color: rgba(0,0,0,0.8);
-}
-/* Number text (1/3 etc) */
-.numbertext {
-  /* color: #f2f2f2; */
-  font-size: 13px;
-  padding: 8px 12px;
-  position: absolute;
-  top: 0;
-}
-/* The dots/bullets/indicators */
-.dot {
-  cursor: pointer;
-  height: 15px;
-  width: 15px;
-  margin: 0 2px;
-  background-color: #bbb;
-  border-radius: 50%;
-  display: inline-block;
-  transition: background-color 0.6s ease;
-}
-.active, .dot:hover {
-  background-color: #717171;
-}
-/* Fading animation */
-.fade {
-  -webkit-animation-name: fade;
-  -webkit-animation-duration: 1.5s;
-  animation-name: fade;
-  animation-duration: 1.5s;
-}
-@-webkit-keyframes fade {
-  from {opacity: .4} 
-  to {opacity: 1}
-}
-@keyframes fade {
-  from {opacity: .4} 
-  to {opacity: 1}
-}
-/* On smaller screens, decrease text size */
-@media only screen and (max-width: 300px) {
-  .prev, .next,.text {font-size: 11px}
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-.slide_contents{
-    position:absolute;
-
-}
-p{
+    }
+    p{
         margin:0;
     }
     .container{
-        height:1350px;
+        height:1450px;
     }
     .container_inner{
         height:880px;
     }
-.navbar{
-    text-align:right;
-    width: 560px;
-    height: 50px;
-    padding:0;
-    margin:0;
-}
+    .navbar{
+        text-align:right;
+        width: 560px;
+        height: 50px;
+        padding:0;
+        margin:0;
+    }
     .slide{
         height:300px;
         margin-bottom:30px;
@@ -142,7 +120,7 @@ p{
     }
     #slide_img {
         width: 200px;
-        height: 240px;
+        height: 265px;
         margin-left:200px;
     }
     .slide_contents{
@@ -161,11 +139,7 @@ p{
     }
 </style>
 
-
-
-
 <script>
-// window.onload=showSlides(2);
     var slideIndex = 1;
     showSlides(slideIndex);
     //setTimeout(function(){plusSlides(1);}), 2000);
@@ -197,14 +171,6 @@ p{
 </script>
 
 
-
-
-
-
-
-
-
-
 <body>
     <div class="wrap">
         <?php 
@@ -214,12 +180,6 @@ p{
             <div class="container_inner">
                 <div class="slide">
                     <br><h2>인기 도서 TOP 5</h2><br>
-
-
-
-
-
-
                     <div class="slideshow-container">
 
                         <?php
@@ -245,7 +205,7 @@ p{
                                         <div class='numbertext'>$i / 5</div>
                                         <a href=$urlstring>
                                         <img id='slide_img' src='$row2[book_img_address]'>
-                                        <div class='slide_contents'> $row2[book_title]<br><br>
+                                        <div class='slide_contents'> <br>$row2[book_title]<br><br>
                                         $row2[book_writer]<br><br>
                                         $row2[book_genre]<br><br>
                                         발간일 : $row2[book_publication_date]<br><br>
@@ -270,26 +230,18 @@ p{
                         <span class="dot" onclick="currentSlide(5)"></span> 
                     </div>
 
-
-
-
-
-
-
-
-
-
                 </div>
                 <div class="box">
+                <br><br><br>
                     <h2>최신 도서</h2>
                    <ul class="section">
                    
                    <?php
-                        $urlstring="./book.php?".str_replace(" ","_",$row['book_title']);
                         if(include('./dbconnect.php')){
                             $sql = "SELECT * FROM `book` ORDER BY 'book_index' DESC LIMIT 9";
                             $result = mysqli_query($conn, $sql);
                             while($row = mysqli_fetch_array($result)){
+                                $urlstring="./book.php?".str_replace(" ","_",$row['book_title']);
                                 echo "<li><a href=$urlstring><img id='book_img' style='width:200px;height:300px;' src=$row[book_img_address] alt='책 사진'></a></li>";
                             }
                         }

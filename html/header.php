@@ -10,7 +10,13 @@
 ?>
 
 <style>
-
+.navbar{
+        text-align:right;
+        width: 560px;
+        height: 50px;
+        padding:0;
+        margin:0;
+    }
     .btn-login,.btn-signup,.btn-logout,#search_btn{
         cursor:pointer;
     }
