@@ -161,8 +161,9 @@
                                     <div class='book_list_box_table'>
                                         <li><span class='table1'><b>제목</b></span><span class='table2'> <b>: $row[book_title]</span></b></li>
                                         <li><span class='table1'>저자</span><span class='table2'> : $row[book_writer]</span></li>
+                                        <li><span class='table1'>장르</span><span class='table2'> : $row[book_genre]</span></li>
+                                        <li><span class='table1'>발간일</span><span class='table2'> : $row[book_publication_date]</span></li>
                                         <li><span class='table1'>가격</span><span class='table2'> : $row[book_price]</span></li>
-                                        <li><span class='table1'>분류</span><span class='table2'> : $row[book_genre]</span></li>
                                         <li><span class='table1'>소개</span><span class='table2'> : $row[book_introduce]</span></li>
                                     </div></a>
                                 </div>";

@@ -10,6 +10,7 @@
 ?>
 
 <style>
+
     .btn-login,.btn-signup,.btn-logout,#search_btn{
         cursor:pointer;
     }
@@ -54,7 +55,7 @@
             <ul class="navbar">
                 <li class="navbar__list"><a class=" navbar__link" href="http://khsung0.dothome.co.kr/html/introduction/introduction.php"><span class="navbar__text">소개페이지</span></a></li><!--
                 --><li class="navbar__list"><a class=" navbar__link" href="javascript:book_list();" ><span class="navbar__text">책분야</span></a></li><!--
-                --><li class="navbar__list"><a class=" navbar__link" href=""><span class="navbar__text">로드맵</span></a></li><!--
+                --><li class="navbar__list"><a class=" navbar__link" href="http://khsung0.dothome.co.kr/html/road_map.php"><span class="navbar__text">로드맵</span></a></li><!--
                 --><li class="navbar__list"><a class=" navbar__link" href="http://khsung0.dothome.co.kr/html/mypage.php"><span class="navbar__text">마이페이지</span></a></li><!--
                 -->
             </ul>

@@ -18,6 +18,7 @@
   position: relative;
   margin: auto;
   background-color:#b7e8e9;
+  height:240px;
 }
 /* Next & previous buttons */
 .prev, .next {
@@ -42,20 +43,10 @@
 .prev:hover, .next:hover {
   background-color: rgba(0,0,0,0.8);
 }
-/* Caption text */
-.text {
-  color: #f2f2f2;
-  font-size: 15px;
-  padding: 8px 12px;
-  position: absolute;
-  bottom: 8px;
-  width: 100%;
-  text-align: center;
-}
 /* Number text (1/3 etc) */
 .numbertext {
   /* color: #f2f2f2; */
-  font-size: 12px;
+  font-size: 13px;
   padding: 8px 12px;
   position: absolute;
   top: 0;
@@ -134,10 +125,11 @@ p{
 }
     .slide{
         height:300px;
-        /* margin-top:20px; */
+        margin-bottom:30px;
         padding:5px;
     }
     .box{
+        
         padding-left:70px;
     }
     li{
@@ -149,8 +141,8 @@ p{
         float: left;
     }
     #slide_img {
-        width: 100px;
-        height: 200px;
+        width: 200px;
+        height: 240px;
         margin-left:200px;
     }
     .slide_contents{
@@ -176,7 +168,7 @@ p{
 // window.onload=showSlides(2);
     var slideIndex = 1;
     showSlides(slideIndex);
-    // setInterval(function(){plusSlides(1);}), 2000);
+    //setTimeout(function(){plusSlides(1);}), 2000);
     function plusSlides(n) {
     showSlides(slideIndex += n);
     }
@@ -198,7 +190,8 @@ p{
         }
         slides[slideIndex-1].style.display = "block";  
         dots[slideIndex-1].className += " active";
-        //setInterval(function(){plusSlides(1);}), 2000);
+        // setInterval(function(){showSlides(3);}), 2000);
+        //setTimeout(function(){plusSlides(1);}), 2000);
     }
 
 </script>
@@ -237,88 +230,32 @@ p{
                                 while($row1 = mysqli_fetch_array($result1)){
                                     array_push($book_index_array,$row1['book_index']);
                                 }
-                                $sql2 = "SELECT * FROM `book` WHERE `book_index` IN ($book_index_array[0],$book_index_array[1],$book_index_array[2],$book_index_array[3],$book_index_array[4])";
-                                $result2 = mysqli_query($conn, $sql2);
-                                $count = mysqli_num_rows($result2);  //결과 row 수
-                                $temp_string="";
-
-
-
-                                // for($i=1;$i<=$count;$i++){
-                                //     if($i==1){
-                                //         $temp_string="inline-block";
-                                //     }else{
-                                //         $temp_string="none";
-                                //     }
-                                //     $row2[$i]=mysqli_fetch_array($result2);
-                                //     echo "<div class='mySlides fade'>
-                                //     <div class='numbertext'>$i / $count</div>
-                                //     <img id='slide_img' src='$row2[$i][book_img_address]' style='width:200px;display:$temp_string;'>
-                                //     <div class='slide_contents'> asdasdasdasadads</div>
-                                //     <div class='text'>Caption One</div>
-                                //     </div>";
-                                // }
-
-
-
-
-                                while($row2 = mysqli_fetch_array($result2)){
-                                    $i++;
-                                    if($i==1){
-                                        $temp_string="inline-block";
-                                    }else{
-                                        $temp_string="none";
+                                for($i=0;$i<5;$i++){
+                                    $sql2 = "SELECT * FROM `book` WHERE `book_index`=$book_index_array[$i]";
+                                    $result2 = mysqli_query($conn, $sql2);
+                                    while($row2 = mysqli_fetch_array($result2)){
+                                        if($i==0){
+                                            $temp_string="";
+                                        }else{
+                                            $temp_string="style='display:none;'";
+                                        }
+                                        $i++;
+                                        $urlstring="./book.php?".str_replace(" ","_",$row2['book_title']);
+                                        echo "<div class='mySlides fade'$temp_string>
+                                        <div class='numbertext'>$i / 5</div>
+                                        <a href=$urlstring>
+                                        <img id='slide_img' src='$row2[book_img_address]'>
+                                        <div class='slide_contents'> $row2[book_title]<br><br>
+                                        $row2[book_writer]<br><br>
+                                        $row2[book_genre]<br><br>
+                                        발간일 : $row2[book_publication_date]<br><br>
+                                        가격 : $row2[book_price]</div></a>
+                                        </div>";
+                                        $i--;
                                     }
-                                    echo "<div class='mySlides fade'>
-                                    <div class='numbertext'>$i / $count</div>
-                                    <img id='slide_img' src='$row2[book_img_address]' style='width:200px;display:$temp_string;'>
-                                    <div class='slide_contents'> asdasdasdasadads</div>
-                                    <div class='text'>Caption One</div>
-                                    </div>";
                                 }
-
-                                    
-                                
-
-
-
                             }
                         ?>
-
-
-                        <!-- <div class="mySlides fade">
-                        <div class="numbertext">1 / 5</div>
-                        <img id="slide_img" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSv7VkHK7D6s7kvSco4Ir9DfjqpNNlbm-8EJzJUueI5SlDsFwJW_0kVRib0Cbw&usqp=CAc" style="width:200px;display:inline-block;">
-                        <div class="slide_contents"> asdasdasdasadads</div>
-                        <div class="text">Caption One</div>
-                        </div>
-
-                        <div class="mySlides fade" style="display:none;">
-                        <div class="numbertext">2 / 5</div>
-                        <img id="slide_img" src="http://placehold.it/300x100" style="width:100%">
-                        <div class="text">Caption Two</div>
-                        </div>
-
-                        <div class="mySlides fade" style="display:none;">
-                        <div class="numbertext">3 / 5</div>
-                        <img id="slide_img" src="http://placehold.it/300x100" style="width:100%">
-                        <div class="text">Caption Three</div>
-                        </div>
-                        <div class="mySlides fade" style="display:none;">
-                        <div class="numbertext">4 / 5</div>
-                        <img id="slide_img" src="http://placehold.it/300x100" style="width:100%">
-                        <div class="text">Caption Four</div>
-                        </div>
-                        <div class="mySlides fade" style="display:none;">
-                        <div class="numbertext">5 / 5</div>
-                        <img id="slide_img" src="http://placehold.it/300x100" style="width:100%">
-                        <div class="text">Caption Five</div>
-                        </div> -->
-
-
-
-
-
                         <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
                         <a class="next" onclick="plusSlides(1)">&#10095;</a>
 

@@ -54,11 +54,11 @@
 
                             //결과는 1행밖에 없기 때문에 while문은 한번만 반복
                             while($row=mysqli_fetch_array($result)){
-                                echo "<p style='font-size:30px; font-weight:550;'>My Info</p><br><br><br>";
-                                echo "<p>아이디 : {$row['user_id']}</p><br>";
-                                echo "<p>닉네임 : {$row['user_nickname']}</p><br>";
-                                echo "<p>이름 : {$row['user_name']}</p><br>";
-                                echo "<p>생일 : {$row['user_birth']}</p><br>";
+                                echo "<p style='font-size:30px; font-weight:550;'>My Info</p><br><br><br><br>";
+                                echo "<p>아이디 : {$row['user_id']}</p><br><br>";
+                                echo "<p>닉네임 : {$row['user_nickname']}</p><br><br>";
+                                echo "<p>이름 : {$row['user_name']}</p><br><br>";
+                                echo "<p>생일 : {$row['user_birth']}</p><br><br>";
                                 if ($row['user_gender']=="m"){
                                     echo "<p>성별 : 남성</p>";
                                 }else{
