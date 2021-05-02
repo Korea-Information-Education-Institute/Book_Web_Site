@@ -28,6 +28,7 @@
         ?>
         <div class="container">
             <div class="container_inner">
+            <button onclick="location.href='./add_road_map.php'">글쓰기</button >
             </div>
         </div>
         <?php
