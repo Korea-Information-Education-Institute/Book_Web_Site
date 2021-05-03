@@ -8,6 +8,9 @@
 </head>
 
 <script type="text/javascript">
+    function cancel(){
+        window.close();
+    }
     function add_book(){
         var  url_parse=window.location.href.split('?');
         if(url_parse[1]=='book1'){
@@ -37,6 +40,7 @@
 
 
     ?>
+    <button onclick="cancel()">취소하기</button>
     <button onclick="add_book()">추가하기</button>
 </body>
 </html>
