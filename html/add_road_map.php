@@ -24,12 +24,12 @@
     ol>li{
         margin-bottom:10px;
     }
-    #square>img{
+    #square_book1>img,#square_book2>img,#square_book3>img{
         width:141px;
         height:188px;
         border:1px solid black;
     }
-    #square>img:hover{
+    #square_book1>img:hover,#square_book2>img:hover,#square_book3>img:hover{
         box-shadow:2px 2px 2px 2px gray;
     }
 </style>
@@ -55,12 +55,12 @@
                     <hr><br>
                     최대 3개의 책을 추가할 수 있습니다<br><br><br>
                     <div style="display:flex;display:center;">
-                        <a id="square" href="#" style="margin-right:200px;display:block;"><img src="../img/plus.PNG" alt="이미지가 없습니다."></a>
-                        <input type="hidden" id="book1" name="book1" value="0">
-                        <a id="square" href="#" style="margin-right:200px;display:none;"><img src="../img/plus.PNG" alt="이미지가 없습니다."></a>
-                        <input type="hidden" id="book2" name="book2" value="0">
-                        <a id="square" href="#" style="margin-right:200px;display:none;"><img src="../img/plus.PNG" alt="이미지가 없습니다."></a>
-                        <input type="hidden" id="book3" name="book3" value="0">
+                        <a id="square_book1" href="./add_book_to_roadmap.php?book1" onclick="window.open(this.href, '_blank', 'width=800, height=600'); return false;" style="margin-right:200px;display:block;"><img id="book1" src="../img/plus.PNG" alt="이미지가 없습니다."></a>
+                        <input type="hidden" id="book1_data" name="book1_data" value="0">
+                        <a id="square_book2" href="./add_book_to_roadmap.php?book2" onclick="window.open(this.href, '_blank', 'width=800, height=600'); return false;" style="margin-right:200px;display:none;"><img id="book2" src="../img/plus.PNG" alt="이미지가 없습니다."></a>
+                        <input type="hidden" id="book2_data" name="book2_data" value="0">
+                        <a id="square_book3" href="./add_book_to_roadmap.php?book3" onclick="window.open(this.href, '_blank', 'width=800, height=600'); return false;" style="margin-right:200px;display:none;"><img id="book3" src="../img/plus.PNG" alt="이미지가 없습니다."></a>
+                        <input type="hidden" id="book3_data" name="book3_data" value="0">
                     </div>
                     <br><br><hr><br><br>
                     추천하는 사유를 자유롭게 작성해주세요. (최대 5000자)<br><br>
