@@ -148,6 +148,14 @@
                         $count = mysqli_num_rows($result);      //row 개수
                         $list_num=5;                            //한 페이지 리스트 개수
                         $total_page_num=ceil($count/$list_num); //총 페이지 개수
+
+                        if(isset($_GET['page'])){
+                            $page=$_GET['page'];
+                        }else{
+                            $page=1;        //현재 페이지 숫자
+                        }
+                        $start_page=1;
+
                         $i=0;
                         //echo "<script>alert($total_page_num)</script>";
                         while($row = mysqli_fetch_array($result)){
