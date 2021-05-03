@@ -55,11 +55,11 @@
                     <hr><br>
                     최대 3개의 책을 추가할 수 있습니다<br><br><br>
                     <div style="display:flex;display:center;">
-                        <a id="square_book1" href="./add_book_to_roadmap.php?book1" onclick="window.open(this.href, '_blank', 'width=800, height=600'); return false;" style="margin-right:200px;display:block;"><img id="book1" src="../img/plus.PNG" alt="이미지가 없습니다."></a>
+                        <a id="square_book1" href="./add_book_to_roadmap.php?book1" onclick="window.open(this.href, '_blank', 'width=800, height=600,left=500,top=200'); return false;" style="margin-right:200px;display:block;"><img id="book1" src="../img/plus.PNG" alt="이미지가 없습니다."></a>
                         <input type="hidden" id="book1_data" name="book1_data" value="0">
-                        <a id="square_book2" href="./add_book_to_roadmap.php?book2" onclick="window.open(this.href, '_blank', 'width=800, height=600'); return false;" style="margin-right:200px;display:none;"><img id="book2" src="../img/plus.PNG" alt="이미지가 없습니다."></a>
+                        <a id="square_book2" href="./add_book_to_roadmap.php?book2" onclick="window.open(this.href, '_blank', 'width=800, height=600,left=500,top=200'); return false;" style="margin-right:200px;display:none;"><img id="book2" src="../img/plus.PNG" alt="이미지가 없습니다."></a>
                         <input type="hidden" id="book2_data" name="book2_data" value="0">
-                        <a id="square_book3" href="./add_book_to_roadmap.php?book3" onclick="window.open(this.href, '_blank', 'width=800, height=600'); return false;" style="margin-right:200px;display:none;"><img id="book3" src="../img/plus.PNG" alt="이미지가 없습니다."></a>
+                        <a id="square_book3" href="./add_book_to_roadmap.php?book3" onclick="window.open(this.href, '_blank', 'width=800, height=600,left=500,top=200'); return false;" style="margin-right:200px;display:none;"><img id="book3" src="../img/plus.PNG" alt="이미지가 없습니다."></a>
                         <input type="hidden" id="book3_data" name="book3_data" value="0">
                     </div>
                     <br><br><hr><br><br>
