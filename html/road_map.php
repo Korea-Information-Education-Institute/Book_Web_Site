@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ko">
+<?php session_start();?>
 <head>
     <meta charset="UTF-8">
     <?php include "./head.php"; ?>
@@ -20,6 +21,17 @@
     }
 </style>
 
+<script>
+    function login_check(){
+        <?php
+            if(isset( $_SESSION[ 'user_id' ] )){
+                echo "location.href='./add_road_map.php'";
+            }else{
+                echo "alert('로그인이 필요합니다.')";
+            }
+        ?>
+    }
+</script>
 
 <body>
 <div class="wrap">
@@ -28,7 +40,7 @@
         ?>
         <div class="container">
             <div class="container_inner">
-            <button onclick="location.href='./add_road_map.php'">글쓰기</button >
+            <button onclick="login_check()">글쓰기</button >
             </div>
         </div>
         <?php
