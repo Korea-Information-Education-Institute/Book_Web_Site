@@ -5,6 +5,8 @@
     <meta charset="UTF-8">
     <?php include "./head.php"; ?>
     <title>Document</title>
+        <script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
+    <script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
 </head>
 
 <style type="text/css">
@@ -70,8 +72,24 @@
 </style>
 
 <script>
-    function delete_user(a){
-        alert(a);
+    function delete_user(user_id){
+        $.ajax({
+                url				: './delete_user.php',
+                data			: {
+                user_id       : user_id},
+                type			: 'POST',
+                dataType		: 'json',
+                success		: function(result) {
+                    if(result.success == false) {
+                        alert(result.msg);
+                        return;
+                    }else{
+                        alert(result.success_msg);
+                        return;
+                    }
+                }
+            });
+            window.location.reload();
     }
 </script>
 
@@ -94,7 +112,7 @@
                                 
 
                                 echo "<p style='font-size:30px; font-weight:550;'>User Info</p><br><br><br>";
-                                echo "<table align = 'center' border=1 width='650px'>
+                                echo "<table align = 'center' border=1 width='750px'>
                                 <thead>
                                 <tr><th id='table_title' colspan='6'>User table</th></tr>
                                   <tr>
@@ -112,7 +130,10 @@
                                 }else{
                                     $page=1;        //현재 페이지 숫자
                                 }
-                                $start_page=1;
+                                if($page>1 && ($page-1)*$list_num>=$count){
+                                    $pre=$page-1;
+                                    echo "<meta http-equiv='refresh' content='0; url=./mypage.php?page=$pre'>";
+                                }
         
                                 $i=0;
                                 while($row=mysqli_fetch_array($result)){
@@ -128,8 +149,7 @@
                                         }else{
                                             echo "<td>여성</td>";
                                         }
-                                        echo "<td><button type='button' id='delete_btn' onClick=delete_user($row[user_id])>계정 삭제</button></td>";
-                                        
+                                        echo "<td><button type='button' id='delete_btn' name=$row[user_id] onClick=delete_user(this.name)>계정 삭제</button></td>";
                                         echo "</tr>";
                                     }
                                 }
