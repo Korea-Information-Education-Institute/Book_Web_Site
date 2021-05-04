@@ -83,6 +83,7 @@
             alert("이름을 입력하세요.");
             return false;
         }else{
+            login_form.user_id.disabled=false;
             return true;
         }
     }

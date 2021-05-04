@@ -8,7 +8,6 @@
 </head>
 
 <style>
-
     .slideshow-container {
     max-width: 1000px;
     position: relative;
@@ -110,7 +109,7 @@
         
         padding-left:70px;
     }
-    li{
+    #book_list{
         background-color:white;
         text-align:center;
         width: 230px;
@@ -242,7 +241,7 @@
                             $result = mysqli_query($conn, $sql);
                             while($row = mysqli_fetch_array($result)){
                                 $urlstring="./book.php?".str_replace(" ","_",$row['book_title']);
-                                echo "<li><a href=$urlstring><img id='book_img' style='width:200px;height:300px;' src=$row[book_img_address] alt='책 사진'></a></li>";
+                                echo "<li id='book_list'><a href=$urlstring><img id='book_img' style='width:200px;height:300px;' src=$row[book_img_address] alt='책 사진'></a></li>";
                             }
                         }
                    ?>

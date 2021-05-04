@@ -159,7 +159,7 @@
                         //echo "<script>alert($total_page_num)</script>";
                         while($row = mysqli_fetch_array($result)){
                             $i++;
-                            if($i>=5*$page-4 && $i<=5*$page){
+                            if($i>=$list_num*$page-($list_num-1) && $i<=$list_num*$page){
                                 //공백 존재시 url에 추가되지 않음.
                                 //따라서 Under bar로 치환후 목적지에서 다시 공백으로 치환.
                                 $urlstring="./book.php?".str_replace(" ","_",$row['book_title']);
@@ -194,9 +194,9 @@
                         if($total_page_num<=5){
                             for($i=1;$i<=$total_page_num;$i++){
                                 if($page==$i){
-                                    echo "<b>$i</b>";
+                                    echo "<b>$i </b>";
                                 }else{
-                                    echo "<a href='./book_list.php?page=$i'>$i</a>";
+                                    echo "<a href='./book_list.php?page=$i'>$i </a>";
                                 }
                             }
                         }else{
