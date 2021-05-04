@@ -148,7 +148,6 @@
                         $count = mysqli_num_rows($result);      //row 개수
                         $list_num=5;                            //한 페이지 리스트 개수
                         $total_page_num=ceil($count/$list_num); //총 페이지 개수
-
                         if(isset($_GET['page'])){
                             $page=$_GET['page'];
                         }else{
@@ -159,7 +158,8 @@
                         $i=0;
                         //echo "<script>alert($total_page_num)</script>";
                         while($row = mysqli_fetch_array($result)){
-                            if($i>=0 &&$i<=4){
+                            $i++;
+                            if($i>=5*$page-4 && $i<=5*$page){
                                 //공백 존재시 url에 추가되지 않음.
                                 //따라서 Under bar로 치환후 목적지에서 다시 공백으로 치환.
                                 $urlstring="./book.php?".str_replace(" ","_",$row['book_title']);
@@ -177,12 +177,59 @@
                                     </div></a>
                                 </div>";
                             }
-                            $i+=1;
                         }
                     }
                 ?>
                 <div class="paging">
-                    <br><br><br>paging
+                    <br><br><br>
+                    <?php
+                        if($page<=1){
+
+                        }else{
+                            echo "<a href='./book_list.php?page=1'>&#171; </a>";
+                            $pre=$page-1;
+                            echo "&#183;&#183;&#183;";
+                            echo "<a href='./book_list.php?page=$pre'> &#60; </a>";
+                        }
+                        if($total_page_num<=5){
+                            for($i=1;$i<=$total_page_num;$i++){
+                                if($page==$i){
+                                    echo "<b>$i</b>";
+                                }else{
+                                    echo "<a href='./book_list.php?page=$i'>$i</a>";
+                                }
+                            }
+                        }else{
+                            if($page<=3){
+                                $block_start=1;
+                            }else if($page>$total_page_num-2){
+                                $block_start=$total_page_num-4;
+                            }
+                            else{
+                                $block_start=$page-2;
+                            }
+                            if($block_start+4>$total_page_num){
+                                $block_end=$total_page_num;
+                            }else{
+                                $block_end=$block_start+4;
+                            }
+                            for($i=$block_start;$i<=$block_end;$i++){
+                                if($page==$i){
+                                    echo "<b>$i </b>";
+                                }else{
+                                    echo "<a href='./book_list.php?page=$i'>$i </a>";
+                                }
+                            }
+                        }
+                        if($page>=$total_page_num){
+                        }else{
+                            $next=$page+1;
+                            echo "<a href='./book_list.php?page=$next'>&#62; </a>";
+                            echo "&#183;&#183;&#183;";
+                            echo "<a href='./book_list.php?page=$total_page_num'> &#187;</a>";
+                        }
+
+                    ?>
                 </div>
             </div>
         </div>
