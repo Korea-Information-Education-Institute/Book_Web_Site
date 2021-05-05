@@ -200,6 +200,14 @@
                                     echo "<a href='./mypage.php?page=$total_page_num'> &#187;</a>";
                                 }
                             }else{
+                                echo "<style>.container{
+                                    height:700px;
+                                    }
+                                    .container_inner{
+                                        text-align:center;
+                                        padding-top:83px;
+                                        height:700px;
+                                    }</style>";
                                 $user_id=$_SESSION[ 'user_id' ];
                                 $sql="SELECT * FROM user WHERE user_id='$user_id'";
                                 $result=mysqli_query($conn, $sql);

@@ -9,12 +9,12 @@
         margin:0;
     }
     .container{
-        height:1000px;
+        height:750px;
     }
     .container_inner{
         text-align:center;
         padding-top:183px;
-        height:880px;
+        height:700px;
     }
 
     #user_id,#user_pw{
