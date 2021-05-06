@@ -174,7 +174,7 @@
                 }
             ?> 
             <div class="paging">
-                    <br><br><br>paging
+                    <br><br><br>
                 </div>
             </div>
         </div>

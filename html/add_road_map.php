@@ -49,7 +49,7 @@
                     <li>최대 3개까지 묶을 수 있습니다.</li>
                 </ol>
                 <br><hr>
-                <form method="POST" id="road_map_form" name="road_map_form" action="register_road_map.php" onsubmit="return input_check()">
+                <form method="POST" id="road_map_form" name="road_map_form" action="./register_road_map.php" onsubmit="return input_check()">
                 <br>Road Map 제목<br><br>
                     <input type="text" id="road_map_title" name="road_map_title" required><br><br>
                     <hr><br>

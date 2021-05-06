@@ -9,10 +9,16 @@
 <style>
     .book_list{
         width:970px;
-        height:527px;
+        height:545px;
     }
     .book_list_item{
-        margin-bottom:5px;
+        margin-bottom:15px;
+        border-bottom:solid 1px black;
+        border-right:solid 1px black;
+    }
+    .book_list_item:hover{
+        box-shadow: 2px 2px 2px 2px gray;
+        cursor:pointer;
     }
     .book_list_item_info{
         display:inline-block;
@@ -41,7 +47,7 @@
     window.onload=function(){
         window.focus();
         window.moveTo(500,100);
-        window.resizeTo(1000,800);
+        window.resizeTo(1000,840);
     }
 
     function cancel(){
@@ -89,9 +95,6 @@
                 window.close();
                 }
             }
-            // var temp=opener.document.getElementById("book1");
-            // temp.src="http://image.dongascience.com/Photo/2020/03/5bddba7b6574b95d37b6079c199d7101.jpg";
-            //book1_data
         }else{
             alert("선택된 책이 없습니다.");
         }
@@ -103,25 +106,29 @@
     <div class="book_list">
     <?php
         $conn = mysqli_connect("localhost", "khsung0", "gmltjd1!" , "khsung0");
-        $sql = "SELECT * FROM book";
+        if($_GET['search_title']){
+            $sql = "SELECT * FROM book WHERE book_title LIKE '%$_GET[search_title]%'";
+        }else{
+            $sql = "SELECT * FROM book";
+        }
         $result = mysqli_query($conn, $sql);
         $i=0;
         while($row = mysqli_fetch_array($result)){
             if($i<=5){
                 $replaced_book_title = str_replace(" ", "_", $row['book_title']);
-                echo"<div class='book_list_item'>
-                        <label><input type='radio' id='radio_btn' name='radio_btn' value=$replaced_book_title&&&$row[book_img_address]>
+                echo"<label><div class='book_list_item'>
+                        <input type='radio' id='radio_btn' name='radio_btn' value=$replaced_book_title&&&$row[book_img_address]>
                         <img src=$row[book_img_address] alt='이미지가 없습니다.' width='50px'>
                         <div class='book_list_item_info'> $row[book_title]</div>
                         <div class='book_list_item_info'> $row[book_writer]</div>
-                        <div class='book_list_item_info1'> $row[book_genre]</div></label>
-                    </div>";
+                        <div class='book_list_item_info1'> $row[book_genre]</div>
+                    </div></label>";
             }
             $i++;
         }
     ?>
     </div>
-    <br><br><br>
+    <br><br><br><br>
     <button onclick="cancel()">취소하기</button>
     <button onclick="add_book()">추가하기</button>
 </body>

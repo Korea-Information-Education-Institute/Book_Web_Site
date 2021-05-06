@@ -1,7 +1,7 @@
 <meta charset="utf-8"/>
 <?php
     if(include('./dbconnect.php')){
-		$sql = "INSERT INTO roadmap ('user_id','roadmap_title','roadmap_text','book_index_1') VALUE('') ";
+		$sql = "INSERT INTO roadmap ('user_id','roadmap_title','roadmap_text','book_1','book_2','book_3') VALUE('1','1','1','1','1','1') ";
     	$result = mysqli_query($conn, $sql);	
 
 

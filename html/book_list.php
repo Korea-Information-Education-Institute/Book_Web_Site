@@ -156,7 +156,6 @@
                         $start_page=1;
 
                         $i=0;
-                        //echo "<script>alert($total_page_num)</script>";
                         while($row = mysqli_fetch_array($result)){
                             $i++;
                             if($i>=$list_num*$page-($list_num-1) && $i<=$list_num*$page){
@@ -184,7 +183,6 @@
                     <br><br><br>
                     <?php
                         if($page<=1){
-
                         }else{
                             echo "<a href='./book_list.php?page=1'>&#171; </a>";
                             $pre=$page-1;
@@ -228,13 +226,9 @@
                             echo "&#183;&#183;&#183;";
                             echo "<a href='./book_list.php?page=$total_page_num'> &#187;</a>";
                         }
-
                     ?>
                 </div>
             </div>
-        </div>
-        <div id="test">
-            
         </div>
         <?php
             include "./footer.php";
