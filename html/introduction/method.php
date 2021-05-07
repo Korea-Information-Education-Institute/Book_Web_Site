@@ -87,7 +87,6 @@
                  <li><a href="./introduction.php">사이트 소개</a></li>
                  <li><a href="./method.php">사이트 이용방법</a></li>
                  <li><a href="./faq.php">자주하는 질문</a></li>
-                 <li><a href="./notice.php">공지사항</a></li>
              </ul>    
          </div>
          
