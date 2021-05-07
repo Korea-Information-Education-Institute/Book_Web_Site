@@ -3,12 +3,16 @@
 <html lang="ko">
 <head>
     <meta charset="UTF-8">
+    <?php include "../head.php"; ?>
     <title>소개페이지</title>
     <link rel="stylesheet" href="../../css/main.css">
     <link rel="stylesheet" href="../../css/basic.css">
     <link rel="stylesheet" href="../../css/index.css">
 
     <style>
+        .wrap{
+            padding-top:7px;
+        }
          .btn-search{
             width:60px;
         }
@@ -21,28 +25,26 @@
         .container {
             width: 980px;
             margin: 0 auto;
+            height:900px;
         }
-
         .introduction {
             width: 980px;
-            height: 150px;
+            height: 120px;
             margin: 20px;
-
+            padding-top:20px;
         }
-
         .introduction img {
-            width: 150px;
-            height: 150px;
+            width: 100px;
+            height: 100px;
             float: left;
         }
-
         h1 {
             float: left;
             padding: 20px;
-            line-height: 120px;
-            font-size: 50px;
+            margin-left:30px;
+            line-height: 60px;
+            font-size: 45px;
         }
-
         .containerNav ul li {
             margin: 20px;
             padding: 13px;
@@ -50,28 +52,22 @@
             font-size: 20px;
             border: 1px solid black;
         }
-
         hr {
             margin: 20px;
         }
-
         .contents {
             margin: 20px;
         }
-
         .answer {
             display: none;
             padding-bottom: 30px;
         }
-
         #faq-title {
             font-size: 25px;
         }
-
         .faq-content {
             border-bottom: 1px solid #e0e0e0;
         }
-
         .question {
             font-size: 19px;
             padding: 30px 0;
@@ -82,11 +78,9 @@
             width: 100%;
             text-align: left;
         }
-
         .question:hover {
             color: #2962ff;
         }
-
         [id$="-toggle"] {
             margin-right: 15px;
         }
@@ -101,18 +95,15 @@
         ?>
         <div class="container">
             <div class="introduction">
-                <img src="../../img/2360248.png" alt="말풍선">
-                <h1>소개페이지</h1>
+                <img src="../../img/introduction.png" alt="말풍선">
+                <h1>Introduction</h1>
             </div>
-
-            <br>
             <hr>
 
             <div class="containerNav">
                 <ul>
                  <li><a href="./introduction.php">사이트 소개</a></li>
                  <li><a href="./method.php">사이트 이용방법</a></li>
-                 <li><a href="./directionality.php">사이트의 방향성</a></li>
                  <li><a href="./faq.php">자주하는 질문</a></li>
                  <li><a href="./notice.php">공지사항</a></li>
                 </ul>
@@ -120,8 +111,9 @@
 
             <div class="contents">
 
-                <br>
+                <br><br>
                 <h2 id="faq-title">자주 묻는 질문(FAQ)</h2>
+                <br><br><br>
                 <div class="faq-content">
                     <button class="question" id="que-1"><span id="que-1-toggle">+</span><span>신고는 어떻게 하나요?</span></button>
                     <div class="answer" id="ans-1">근로조건의 기준은 인간의 존엄성을 보장하도록 법률로 정한다. 행정각부의 장은 국무위원 중에서 국무총리의 제청으로 대통령이 임명한다. 행정권은 대통령을 수반으로 하는 정부에 속한다.</div>

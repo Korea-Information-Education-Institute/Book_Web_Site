@@ -2,12 +2,16 @@
 <html lang="ko">
 <head>
     <meta charset="UTF-8">
+    <?php include "../head.php"; ?>
     <title>소개페이지</title>
     <link rel="stylesheet" href="../../css/main.css">
     <link rel="stylesheet" href="../../css/basic.css">
     <link rel="stylesheet" href="../../css/index.css">
 
     <style>
+        .wrap{
+            padding-top:7px;
+        }
          .btn-search{
             width:60px;
         }
@@ -20,26 +24,29 @@
         .container{
             width: 980px;
             margin: 0 auto;
+            height:800px;
         }
         
         .introduction {
             width: 980px;
-            height: 150px;
+            height: 120px;
             margin: 20px;
+            padding-top:20px;
             
         }
         
         .introduction img{
-            width: 150px;
-            height: 150px;
+            width: 100px;
+            height: 100px;
             float: left;
         }
         
         h1{
             float: left;
             padding: 20px;
-            line-height: 120px;
-            font-size: 50px;
+            margin-left:30px;
+            line-height: 60px;
+            font-size: 45px;
         }
         
         .containerNav ul li{
@@ -67,28 +74,29 @@
         ?>
          <div class="container">
          <div class="introduction">
-             <img src="../../img/2360248.png" alt="말풍선">
-             <h1>소개페이지</h1>
+            <img src="../../img/introduction.png" alt="말풍선">
+            <h1>Introduction</h1>
          </div>
-         
-         <br>
          <hr>
          
          <div class="containerNav">
              <ul>
                  <li><a href="./introduction.php">사이트 소개</a></li>
                  <li><a href="./method.php">사이트 이용방법</a></li>
-                 <li><a href="./directionality.php">사이트의 방향성</a></li>
                  <li><a href="./faq.php">자주하는 질문</a></li>
                  <li><a href="./notice.php">공지사항</a></li>
              </ul>    
          </div>
          
          <div class="contents">
-            
+         <br><br>
              <h2>사이트 소개</h2>
-             <br>
-             <p>내용</p>
+             <br><br><br>
+             <p>웹페이지의 제목은 "SPOILER", 부 제목은 "도서 소개 및 만담의 장"입니다.</p><br>
+             <p>불특정 다수의 협업을 통해 직접 내용과 구조를 수정하여 정보를 알려주는 위키백과에 영감을 받았으며 프로젝트의 크기와 인력, 시간을 고려하여 주제를 도서로 제한하였습니다.</p><br>
+             <p>다만 도서의 특성상 도서제목, 작가, 발간일 등의 정보는 변경사항이 없는 내용이므로 출력만 하고 사람에 따라 자유롭게 해석이 가능한 책 소개부분만 수정이 가능하게 작성하였습니다.</p><br>
+             <p>따라서 잘못된 정보의 전달을 어느 정도 방지하기 위한 수단으로 부분적 수정을 적용하였습니다.</p><br>
+             <p>또한 무분별한 수정의 방지책으로 회원가입을 통해서만 수정, 작성이 가능하게 구현하였습니다.</p><br>
          </div>
          </div>
          <?php 
