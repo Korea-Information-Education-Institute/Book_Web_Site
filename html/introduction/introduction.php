@@ -17,21 +17,17 @@
             margin: 0 auto;
             height:800px;
         }
-        
         .introduction {
             width: 980px;
             height: 120px;
             margin: 20px;
             padding-top:20px;
-            
         }
-        
         .introduction img{
             width: 100px;
             height: 100px;
             float: left;
         }
-        
         h1{
             float: left;
             padding: 20px;
@@ -39,7 +35,6 @@
             line-height: 60px;
             font-size: 45px;
         }
-        
         .containerNav ul li{
             margin: 20px;
             padding: 13px;
@@ -47,13 +42,14 @@
             font-size: 20px;
             border: 1px solid black;
         }
-        
         hr{
             margin: 20px;
         }
-        
         .contents{
             margin: 20px;
+        }
+        .contents p{
+            line-height:normal;
         }
     </style>
     

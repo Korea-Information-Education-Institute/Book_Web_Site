@@ -82,7 +82,6 @@
 
     .slide_contents{
         position:absolute;
-
     }
     p{
         margin:0;
@@ -106,7 +105,6 @@
         padding:5px;
     }
     .box{
-        
         padding-left:70px;
     }
     #book_list{
@@ -166,10 +164,7 @@
         // setInterval(function(){showSlides(3);}), 2000);
         //setTimeout(function(){plusSlides(1);}), 2000);
     }
-
 </script>
-
-
 <body>
     <div class="wrap">
         <?php 
@@ -180,7 +175,6 @@
                 <div class="slide">
                     <br><h2>인기 도서 TOP 5</h2><br>
                     <div class="slideshow-container">
-
                         <?php
                             $book_index_array=[];
                             if(include('./dbconnect.php')){

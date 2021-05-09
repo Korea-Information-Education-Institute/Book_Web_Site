@@ -26,6 +26,19 @@
     h3{
         font-size:20px;
     }
+    .navbar__list{
+        border-radius:10px;
+        color:white;
+        transition-duration: 0.4s;
+    }
+    .navbar__list:hover .navbar__text{
+        color:white;
+        transition-duration: 0.4s;
+    }
+    .navbar__list:hover{
+        background-color:black;
+        transition-duration: 0.4s;
+    }
 </style>
 
 <script>
@@ -82,8 +95,7 @@
                 echo $_SESSION['user_name']."님 환영합니다.";
             ?>
             <span class="header__btn">
-                <button class="btn btn-logout" type="button" onClick="location.href='http://khsung0.dothome.co.kr/html/logout.php'"><span class="btn__text">로그아웃</span>
-                </button>
+                <button class="btn btn-logout" type="button" onClick="location.href='http://khsung0.dothome.co.kr/html/logout.php'"><span class="btn__text">로그아웃</span></button>
             </span>
         </div>
         <div class="header__search">
