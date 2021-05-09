@@ -65,9 +65,34 @@
     }
     #table_title{
         color: #ffffff;
-        background-color: #0d47a1;
+        background-color: #0A82FF;
         font-size:20px;
         height:50px;
+    }
+    .paging{
+        text-align:center;
+    }
+    .paging .page_btn{
+        cursor:pointer;
+        width:40px;
+        height:40px;
+        background-color:#f4f4f4;
+        color:black;
+        border-radius:5px;
+        font-size:17px;
+        border:none;
+    }
+    .paging .page_btn:hover{
+        background-color:#c8c8c8;
+    }
+    .paging .cur_page_btn{
+        width:40px;
+        height:40px;
+        background-color:#3498db;
+        color:white;
+        border-radius:5px;
+        font-size:17px;
+        border:none;
     }
 </style>
 
@@ -128,7 +153,7 @@
                                 if(isset($_GET['page'])){
                                     $page=$_GET['page'];
                                 }else{
-                                    $page=1;        //현재 페이지 숫자
+                                    $page=1;
                                 }
                                 if($page>1 && ($page-1)*$list_num>=$count){
                                     $pre=$page-1;
@@ -153,21 +178,20 @@
                                         echo "</tr>";
                                     }
                                 }
-                                echo "</tbody></table><br><br>";
+                                echo "</tbody></table><br><br>
+                                <div class='paging'>";
                                 if($page<=1){
-
                                 }else{
-                                    echo "<a href='./mypage.php?page=1'>&#171; </a>";
+                                    echo "<button class='page_btn' onClick=location.href='./mypage.php?page=1'><<</button>";
                                     $pre=$page-1;
-                                    echo "&#183;&#183;&#183;";
-                                    echo "<a href='./mypage.php?page=$pre'> &#60; </a>";
+                                    echo "<button class='page_btn' onClick=location.href='./mypage.php?page=$pre'>&#60;</button>";
                                 }
                                 if($total_page_num<=5){
                                     for($i=1;$i<=$total_page_num;$i++){
                                         if($page==$i){
-                                            echo "<b>$i </b>";
+                                            echo "<button class='cur_page_btn' disabled>$i</button>";
                                         }else{
-                                            echo "<a href='./mypage.php?page=$i'>$i </a>";
+                                            echo "<button class='page_btn' onClick=location.href='./mypage.php?page=$i'>$i</button>";
                                         }
                                     }
                                 }else{
@@ -186,19 +210,19 @@
                                     }
                                     for($i=$block_start;$i<=$block_end;$i++){
                                         if($page==$i){
-                                            echo "<b>$i </b>";
+                                            echo "<button class='cur_page_btn' disabled>$i</button>";
                                         }else{
-                                            echo "<a href='./mypage.php?page=$i'>$i </a>";
+                                            echo "<button class='page_btn' onClick=location.href='./mypage.php?page=$i'>$i</button>";
                                         }
                                     }
                                 }
                                 if($page>=$total_page_num){
                                 }else{
                                     $next=$page+1;
-                                    echo "<a href='./mypage.php?page=$next'>&#62; </a>";
-                                    echo "&#183;&#183;&#183;";
-                                    echo "<a href='./mypage.php?page=$total_page_num'> &#187;</a>";
+                                    echo "<button class='page_btn' onClick=location.href='./mypage.php?page=$next'>&#62;</button>";
+                                    echo "<button class='page_btn' onClick=location.href='./mypage.php?page=$total_page_num'>>></button>";
                                 }
+                                echo "</div>";
                             }else{
                                 echo "<style>.container{
                                     height:700px;

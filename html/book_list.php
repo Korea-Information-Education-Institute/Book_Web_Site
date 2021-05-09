@@ -82,6 +82,28 @@
     .paging{
         text-align:center;
     }
+    .paging .page_btn{
+        cursor:pointer;
+        width:40px;
+        height:40px;
+        background-color:#f4f4f4;
+        color:black;
+        border-radius:5px;
+        font-size:17px;
+        border:none;
+    }
+    .paging .page_btn:hover{
+        background-color:#c8c8c8;
+    }
+    .paging .cur_page_btn{
+        width:40px;
+        height:40px;
+        background-color:#3498db;
+        color:white;
+        border-radius:5px;
+        font-size:17px;
+        border:none;
+    }
 </style>
 
 <script>
@@ -166,7 +188,6 @@
                                         <li><span class='table1'>장르</span><span class='table2'> : $row[book_genre]</span></li>
                                         <li><span class='table1'>발간일</span><span class='table2'> : $row[book_publication_date]</span></li>
                                         <li><span class='table1'>가격</span><span class='table2'> : $row[book_price]</span></li>
-                                        <li><span class='table1'>소개</span><span class='table2'> : $row[book_introduce]</span></li>
                                     </div></a>
                                 </div>";
                             }
@@ -178,7 +199,7 @@
                     <?php
                         if($page<=1){
                         }else{
-                            echo "<button class='page_btn' onClick=location.href='./book_list.php?page=1'>&#171;</button>";
+                            echo "<button class='page_btn' onClick=location.href='./book_list.php?page=1'><<</button>";
                             $pre=$page-1;
                             echo "<button class='page_btn' onClick=location.href='./book_list.php?page=$pre'>&#60;</button>";
                         }
@@ -215,8 +236,8 @@
                         if($page>=$total_page_num){
                         }else{
                             $next=$page+1;
-                            echo "<button class='page_btn' id='page_btn' onClick=location.href='./book_list.php?page=$next'>&#62;</button>";
-                            echo "<button class='page_btn' id='page_btn' onClick=location.href='./book_list.php?page=$total_page_num'>&#187;</button>";
+                            echo "<button class='page_btn' onClick=location.href='./book_list.php?page=$next'>&#62;</button>";
+                            echo "<button class='page_btn' onClick=location.href='./book_list.php?page=$total_page_num'>>></button>";
                         }
                     ?>
                 </div>
