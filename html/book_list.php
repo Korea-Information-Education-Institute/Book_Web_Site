@@ -70,13 +70,14 @@
         position: absolute;
         left: 240px;
         line-height: 2em;
+        margin-top:10px;
     }
     .table1{
         font-weight: 500;
     }
     
     #book_img{
-        width: 230px;
+        width: 200px;
         height: 230px;      
     }
     .paging{
@@ -103,6 +104,21 @@
         border-radius:5px;
         font-size:17px;
         border:none;
+    }
+    .book_list_title{
+        font-size:24px;
+    }
+    .book_list_writer{
+        font-size:19px;
+    }
+    .book_list_genre{
+        font-size:19px;
+    }
+    .book_list_publication_date{
+        font-size:15px;
+    }
+    .book_list_price{
+        font-size:15px;
     }
 </style>
 
@@ -183,11 +199,11 @@
                                         <img id='book_img' src=$row[book_img_address] alt='책 사진'>
                                     </div>
                                     <div class='book_list_box_table'>
-                                        <li><span class='table1'><b>제목</b></span><span class='table2'> <b>: $row[book_title]</span></b></li>
-                                        <li><span class='table1'>저자</span><span class='table2'> : $row[book_writer]</span></li>
-                                        <li><span class='table1'>장르</span><span class='table2'> : $row[book_genre]</span></li>
-                                        <li><span class='table1'>발간일</span><span class='table2'> : $row[book_publication_date]</span></li>
-                                        <li><span class='table1'>가격</span><span class='table2'> : $row[book_price]</span></li>
+                                        <li><span class='book_list_title'> <b>$row[book_title]</span></b></li><br>
+                                        <li><span class='book_list_writer'>$row[book_writer]</span></li>
+                                        <li><span class='book_list_genre'>$row[book_genre]</span></li>
+                                        <li><span class='book_list_publication_date'>$row[book_publication_date] (발간)</span></li>
+                                        <li><span class='book_list_price'>$row[book_price]원</span></li>
                                     </div></a>
                                 </div>";
                             }

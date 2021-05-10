@@ -8,8 +8,12 @@
     <link rel="stylesheet" href="../../css/main.css">
     <link rel="stylesheet" href="../../css/basic.css">
     <link rel="stylesheet" href="../../css/index.css">
-
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@200;300;400;500&family=Roboto:wght@100;300;500&display=swap" rel="stylesheet">
     <style>
+        *{
+            font-family: 'Roboto','Noto Serif KR', sans-serif;
+        }
         .wrap{
             padding-top:7px;
         }  

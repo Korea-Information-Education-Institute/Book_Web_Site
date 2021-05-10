@@ -34,7 +34,7 @@
         margin-top: 60px;
         
     }
-    .aside h3   {
+    .aside h3{
         padding-top: 15px;
         padding-left: 5px;
     }
@@ -72,13 +72,14 @@
         position: absolute;
         left: 240px;
         line-height: 2em;
+        margin-top:10px;
     }
     .table1{
         font-weight: 500;
     }
     
     #book_img{
-        width: 230px;
+        width: 200px;
         height: 230px;
     }
    
@@ -90,10 +91,48 @@
     .paging{
         text-align:center;
     }
+    .paging .page_btn{
+        cursor:pointer;
+        width:40px;
+        height:40px;
+        background-color:#f4f4f4;
+        color:black;
+        border-radius:5px;
+        font-size:17px;
+        border:none;
+    }
+    .paging .page_btn:hover{
+        background-color:#c8c8c8;
+    }
+    .paging .cur_page_btn{
+        width:40px;
+        height:40px;
+        background-color:#3498db;
+        color:white;
+        border-radius:5px;
+        font-size:17px;
+        border:none;
+    }
+    .book_list_title{
+        font-size:24px;
+    }
+    .book_list_writer{
+        font-size:19px;
+    }
+    .book_list_genre{
+        font-size:19px;
+    }
+    .book_list_publication_date{
+        font-size:15px;
+    }
+    .book_list_price{
+        font-size:15px;
+    }
 </style>
 <?php
     header('Content-Type: text/html; charset=utf-8');
-    $book_title = URLDecode($_SERVER['QUERY_STRING']);
+    $temp_string = URLDecode($_SERVER['QUERY_STRING']);
+    $book_title =explode('&',$temp_string);
 ?>
 
 <script>
@@ -138,43 +177,90 @@
                 <br><h2>검색 내용</h2>
             </div> 
             <div class="book_container">
-            <?php
-                if(include ('./dbconnect.php')){
-                    $sql = "SELECT * FROM `book` WHERE `book_title` LIKE '%$book_title%'";
-                    $result = mysqli_query($conn, $sql);
-                    $count = mysqli_num_rows($result);      //row 개수
-                    if ($count<1){
-                        echo "<h1 style='text-align:center;'>검색된 책이 없습니다.</h1>";
-                    }else{
-                        $list_num=5;                            //한 페이지 리스트 개수
-                        $total_page_num=ceil($count/$list_num); //총 페이지 개수
-                        $i=0;
-                        while($row = mysqli_fetch_array($result)){
-                            if($i>=0 && $i<=4){
-                                //공백 존재시 url에 추가되지 않음.
-                                //따라서 Under bar로 치환후 목적지에서 다시 공백으로 치환.
-                                $urlstring="./book.php?".str_replace(" ","_",$row['book_title']);
-                                echo "<a href=$urlstring><div class='book_list_box'>
-                                        <div class='book_list_box_img'>
-                                        <img id='book_img' src=$row[book_img_address] alt='책 사진'>
-                                    </div>
-                                    <div class='book_list_box_table'>
-                                        <li><span class='table1'><b>제목</b></span><span class='table2'> <b>: $row[book_title]</span></b></li>
-                                        <li><span class='table1'>저자</span><span class='table2'> : $row[book_writer]</span></li>
-                                        <li><span class='table1'>장르</span><span class='table2'> : $row[book_genre]</span></li>
-                                        <li><span class='table1'>발간일</span><span class='table2'> : $row[book_publication_date]</span></li>
-                                        <li><span class='table1'>가격</span><span class='table2'> : $row[book_price]</span></li>
-                                        <li><span class='table1'>소개</span><span class='table2'> : $row[book_introduce]</span></li>
-                                    </div></a>
-                                </div>";
+                <?php
+                    if(include ('./dbconnect.php')){
+                        $sql = "SELECT * FROM `book` WHERE `book_title` LIKE '%$book_title[0]%'";
+                        $result = mysqli_query($conn, $sql);
+                        $count = mysqli_num_rows($result);
+                        if(isset($_GET['page'])){
+                            $page=$_GET['page'];
+                        }else{
+                            $page=1;
+                        }
+                        $start_page=1;
+                        if ($count<1 && $page<=1){
+                            echo "<h1 style='text-align:center;'>검색된 책이 없습니다.</h1>";
+                        }else{
+                            $list_num=5;
+                            $total_page_num=ceil($count/$list_num);
+                            $i=0;
+                            while($row = mysqli_fetch_array($result)){
+                                $i++;
+                                if($i>=$list_num*$page-($list_num-1) && $i<=$list_num*$page){
+                                    $urlstring="./book.php?".str_replace(" ","_",$row['book_title']);
+                                    echo "<a href=$urlstring><div class='book_list_box'>
+                                            <div class='book_list_box_img'>
+                                            <img id='book_img' src=$row[book_img_address] alt='책 사진'>
+                                        </div>
+                                        <div class='book_list_box_table'>
+                                            <li><span class='book_list_title'> <b>$row[book_title]</span></b></li><br>
+                                            <li><span class='book_list_writer'>$row[book_writer]</span></li>
+                                            <li><span class='book_list_genre'>$row[book_genre]</span></li>
+                                            <li><span class='book_list_publication_date'>$row[book_publication_date] (발간)</span></li>
+                                            <li><span class='book_list_price'>$row[book_price]원</span></li>
+                                        </div></a>
+                                    </div>";
+                                }
                             }
-                            $i+=1;
                         }
                     }
-                }
-            ?> 
+                ?> 
             <div class="paging">
                     <br><br><br>
+                    <?php
+                        if($page<=1){
+                        }else{
+                            echo "<button class='page_btn' onClick=location.href='./searched_book_list.php?$book_title[0]&page=1'><<</button>";
+                            $pre=$page-1;
+                            echo "<button class='page_btn' onClick=location.href='./searched_book_list.php?$book_title[0]&page=$pre'>&#60;</button>";
+                        }
+                        if($total_page_num<=5){
+                            for($i=1;$i<=$total_page_num;$i++){
+                                if($page==$i){
+                                    echo "<button class='cur_page_btn' disabled>$i</button>";
+                                }else{
+                                    echo "<button class='page_btn' onClick=location.href='./searched_book_list.php?$book_title[0]&page=$i'>$i</button>";
+                                }
+                            }
+                        }else{
+                            if($page<=3){
+                                $block_start=1;
+                            }else if($page>$total_page_num-2){
+                                $block_start=$total_page_num-4;
+                            }
+                            else{
+                                $block_start=$page-2;
+                            }
+                            if($block_start+4>$total_page_num){
+                                $block_end=$total_page_num;
+                            }else{
+                                $block_end=$block_start+4;
+                            }
+                            for($i=$block_start;$i<=$block_end;$i++){
+                                if($page==$i){
+                                    echo "<button class='cur_page_btn' disabled>$i</button>";
+                                }else{
+                                    echo "<button class='page_btn' onClick=location.href='./searched_book_list.php?$book_title[0]&page=$i'>$i</button>";
+                                }
+                            }
+                        }
+                        if($page>=$total_page_num){
+                        }else{
+                            $next=$page+1;
+                            echo "<button class='page_btn' onClick=location.href='./searched_book_list.php?$book_title[0]&page=$next'>&#62;</button>";
+                            echo "<button class='page_btn' onClick=location.href='./searched_book_list.php?$book_title[0]&page=$total_page_num'>>></button>";
+                        }
+                    ?>
                 </div>
             </div>
         </div>

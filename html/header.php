@@ -8,9 +8,13 @@
     echo "<style>#logouted{display:inline-block;}</style>";
   }
 ?>
-
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@200;300;400;500&family=Roboto:wght@100;300;500&display=swap" rel="stylesheet">
 <style>
-.navbar{
+    *{
+        font-family: 'Roboto','Noto Serif KR', sans-serif;
+    }
+    .navbar{
         text-align:right;
         width: 560px;
         height: 50px;
