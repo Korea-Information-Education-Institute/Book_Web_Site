@@ -1,5 +1,4 @@
 <?php
-    session_start();
   if( isset( $_SESSION[ 'user_id' ] ) ) {
     echo "<style>#logined{display:inline-block;}</style>";
     echo "<style>#logouted{display:none;}</style>";
@@ -43,6 +42,10 @@
         background-color:black;
         transition-duration: 0.4s;
     }
+    .search__bar{
+
+    }
+    .btn-search{}
 </style>
 
 <script>

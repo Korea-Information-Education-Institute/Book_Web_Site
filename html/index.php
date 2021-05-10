@@ -12,7 +12,7 @@
     max-width: 1000px;
     position: relative;
     margin: auto;
-    background-color:#b7e8e9;
+    background-color:#D3F0F4;
     height:265px;
     }
     /* Next & previous buttons */
@@ -134,6 +134,25 @@
     #book_img:hover{
         transform: scale(1.1, 1.1);
     }
+    li{
+        list-style:none;
+        line-height: 2em;
+    }
+    .book_list_title{
+        font-size:24px;
+    }
+    .book_list_writer{
+        font-size:19px;
+    }
+    .book_list_genre{
+        font-size:19px;
+    }
+    .book_list_publication_date{
+        font-size:15px;
+    }
+    .book_list_price{
+        font-size:15px;
+    }
 </style>
 
 <script>
@@ -198,11 +217,13 @@
                                         <div class='numbertext'>$i / 5</div>
                                         <a href=$urlstring>
                                         <img id='slide_img' src='$row2[book_img_address]'>
-                                        <div class='slide_contents'> <br>$row2[book_title]<br><br>
-                                        $row2[book_writer]<br><br>
-                                        $row2[book_genre]<br><br>
-                                        발간일 : $row2[book_publication_date]<br><br>
-                                        가격 : $row2[book_price]</div></a>
+                                        <div class='slide_contents'> <br>
+                                        <li><span class='book_list_title'> <b>$row2[book_title]</span></b></li><br>
+                                        <li><span class='book_list_writer'>$row2[book_writer]</span></li>
+                                        <li><span class='book_list_genre'>$row2[book_genre]</span></li>
+                                        <li><span class='book_list_publication_date'>$row2[book_publication_date] (발간)</span></li>
+                                        <li><span class='book_list_price'>$row2[book_price]원</span></li>
+                                        </div></a>
                                         </div>";
                                         $i--;
                                     }
