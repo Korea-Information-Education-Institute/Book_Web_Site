@@ -7,6 +7,23 @@
     <title>Document</title>
 </head>
 <style>
+    #searched_data{
+        width:200px;
+        height:25px;
+        padding-left:5px;
+        position:absolute;
+        top:10px;
+        left:281px;
+    }
+    #search_btn{
+        background-color:white;
+        position:absolute;
+        border:none;
+        cursor:pointer;
+    }
+    #search_btn:hover{
+        border:2px solid #D6D0D1;
+    }
     .book_list{
         width:970px;
         height:545px;
@@ -70,7 +87,7 @@
         border:none;
     }
 </style>
-<script type="text/javascript">
+<script>
     window.onfocus=function(){
     }
     window.onload=function(){
@@ -78,6 +95,7 @@
         window.moveTo(500,100);
         window.resizeTo(1000,860);
     }
+    
     function search_book_title(){
         var data=document.getElementById("searched_data").value;
         if(data==''){
@@ -141,7 +159,8 @@
 </script>
 
 <body>
-    <input type="text" id="searched_data" placeholder="검색"><button class="btn btn-search" id="search_btn" onclick="search_book_title()"><img class="btn__icon" width="26px" src="http://khsung0.dothome.co.kr/img/search_icon.png" alt="icon"></button><br><br><br>
+    <div style="text-align:center;">
+    <input type="text" id="searched_data" placeholder="검색"><button class="btn btn-search" id="search_btn" onclick="search_book_title()"><img class="btn__icon" width="26px" src="http://khsung0.dothome.co.kr/img/search_icon.png" alt="icon"></button></div><br><br>
     <div class="book_list">
     <?php
         $conn = mysqli_connect("localhost", "khsung0", "gmltjd1!" , "khsung0");

@@ -38,6 +38,28 @@
         padding:5px;
         font-size:18px;
     }
+    #submit_btn, #reset_btn, #list_btn{
+        width:80px;
+        height:40px;
+        border-radius:5px;
+        border:none;
+        cursor:pointer;
+        font-size:15px;
+    }
+    #submit_btn{
+        background-color:#51909E;
+        color:white;
+    }
+    #reset_btn{
+        background-color:#FD394C;
+        color:white;
+    }
+    #list_btn{
+        background-color:#E8E6E6;
+    }
+    #list_btn:hover{
+        background-color:#D6D0D1;
+    }
 </style>
 
 <script>
@@ -85,7 +107,7 @@
         ?>
         <div class="container">
             <div class="container_inner">
-                <h3>글쓰기 규칙 사항</h3><br>
+                <h3>글쓰기 규칙 사항</h3><button id="list_btn" style="position:absolute;top:33px;left:895px;" onClick="location.href='./road_map.php'"><span style="font-size:17px;">&#x02261;</span>&nbsp;목록</button><br>
                 <ol>
                     <li>자유롭게 추천 도서를 묶으면 됩니다</li>
                     <li>비속어를 포함한 비방, 비난에 해당할 경우 계정 삭제 조치가 이루어집니다.</li>
@@ -109,7 +131,7 @@
                     추천하는 사유를 자유롭게 작성해주세요. (최대 5000자)<br><br>
                     <textarea id="opinion" name="opinion" cols="136" rows="12" maxlength="5000" wrap="hard" required style="resize:none;padding:5px;"></textarea><br><br>
                     <div style="text-align:center;padding-top:20px;">
-                    <input type="submit" id="submit" value="작성완료">&nbsp;&nbsp;&nbsp;&nbsp;<input type="reset" id="reset" onclick="Reset();" value="초기화">
+                    <input type="submit" id="submit_btn" value="작성완료">&nbsp;&nbsp;&nbsp;&nbsp;<input type="reset" id="reset_btn" onclick="Reset();" value="초기화">
                     </div>
                 </form>
             </div>

@@ -22,11 +22,15 @@
     }
     .roadmap_list_box{
         text-align:left;
-        border:solid 1px black;
+        border-bottom: 1px solid black;
+        border-right: 1px solid black;
         padding-left:10px;
         padding-right:10px;
         height:130px;
         margin-bottom:27px;
+    }
+    .roadmap_list_box:hover{
+        box-shadow:1.5px 1.5px 1.5px 1.5px #B1B2B1;
     }
     .roadmap_list_box_table{
         width:450px;

@@ -42,6 +42,8 @@
         }
         .containerNav ul li {
             margin: 20px;
+            margin-left:120px;
+            margin-right:10px;
             padding: 13px;
             display: inline-block;
             font-size: 20px;

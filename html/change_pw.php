@@ -91,9 +91,9 @@
             <div class="container_inner">
             <p style='font-size:30px; font-weight:550;'>Change PW</p><br><br><br>
                 <form method="POST" name="change_pw" action="./change_pw_check.php" onsubmit="return input_check()">
-                    <p>현재 비밀번호&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="password" id="user_pw" name="user_pw"></p><br><br>
-                    <p>변경 비밀번호&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="password" id="change_user_pw"  name="change_user_pw"></p><br><br>
-                    <p>변경 비밀번호 확인&nbsp; <input type="password" id="change_user_pw1" name="change_user_pw1"></p><br><br>
+                    <p>현재 비밀번호&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="password" id="user_pw" name="user_pw" minlength="4"></p><br><br>
+                    <p>변경 비밀번호&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="password" id="change_user_pw"  name="change_user_pw" minlength="4"></p><br><br>
+                    <p>변경 비밀번호 확인&nbsp; <input type="password" id="change_user_pw1" name="change_user_pw1" minlength="4"></p><br><br>
                     <p><input type="submit" id="submit_btn" value="변경하기">&nbsp;&nbsp;&nbsp;&nbsp;<input type="reset" id="reset_btn" value="초기화"></p>
                 </form>
             </div>

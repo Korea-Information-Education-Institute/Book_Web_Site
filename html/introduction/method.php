@@ -49,6 +49,8 @@
             display: inline-block;
             font-size: 20px;
             border: 1px solid black;
+            margin-left:120px;
+            margin-right:10px;
         }
         
         hr{

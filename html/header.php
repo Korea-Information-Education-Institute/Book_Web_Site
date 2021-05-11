@@ -64,7 +64,7 @@
     }
     .btn-search{
         position:absolute;
-        left:90px;
+        left:340px;
         top:5px;
         z-index: 8;
         width:50px;
