@@ -32,6 +32,12 @@
     #square_book1>img:hover,#square_book2>img:hover,#square_book3>img:hover{
         box-shadow:2px 2px 2px 2px gray;
     }
+    #road_map_title{
+        width:200px;
+        height:20px;
+        padding:5px;
+        font-size:18px;
+    }
 </style>
 
 <script>

@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="ko">
-<?php session_start(); ?>
 <head>
     <meta charset="UTF-8">
     <?php include "./head.php"; ?>

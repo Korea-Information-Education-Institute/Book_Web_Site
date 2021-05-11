@@ -34,18 +34,42 @@
         color:white;
         transition-duration: 0.4s;
     }
+    .navbar__text{
+        color:#2D2E2D;
+    }
     .navbar__list:hover .navbar__text{
         color:white;
         transition-duration: 0.4s;
     }
     .navbar__list:hover{
-        background-color:black;
+        background-color:#676867;
         transition-duration: 0.4s;
     }
-    .search__bar{
-
+    .header__search{
     }
-    .btn-search{}
+    .search{
+        border:none;
+        position:absolute;
+        top:-40px;
+    }
+    .search__bar{
+        width:350px;
+        height:20px;
+        z-index: 7;
+        border:2px solid #B1B2B1;
+        border-radius:20px;
+    }
+    .search__bar:hover{
+        box-shadow:1.5px 1.5px 1.5px 1.5px #B1B2B1;
+    }
+    .btn-search{
+        position:absolute;
+        left:90px;
+        top:5px;
+        z-index: 8;
+        width:50px;
+    }
+ 
 </style>
 
 <script>

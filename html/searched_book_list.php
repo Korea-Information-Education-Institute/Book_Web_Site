@@ -63,6 +63,9 @@
         white-space : nowrap;
         display : inline-block;
     }
+    .book_list_box:hover{
+        box-shadow:1.5px 1.5px 1.5px 1.5px #B1B2B1;
+    }
     .book_list_box_img{
         width: 230px;
         position: absolute;
@@ -208,8 +211,8 @@
                                             <li><span class='book_list_genre'>$row[book_genre]</span></li>
                                             <li><span class='book_list_publication_date'>$row[book_publication_date] (발간)</span></li>
                                             <li><span class='book_list_price'>$row[book_price]원</span></li>
-                                        </div></a>
-                                    </div>";
+                                        </div>
+                                    </div></a>";
                                 }
                             }
                         }
