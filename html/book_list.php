@@ -41,6 +41,9 @@
     .aside p{
         padding-left: 15px;
     }
+    .aside a:hover{
+        text-decoration:underline;
+    }
     .book_index{
         margin-top: 30px;
         margin-left: 20px;

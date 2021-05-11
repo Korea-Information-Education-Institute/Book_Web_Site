@@ -12,14 +12,16 @@
         height:25px;
         padding-left:5px;
         position:absolute;
-        top:10px;
-        left:281px;
+        top:20px;
+        left:381px;
     }
     #search_btn{
         background-color:white;
         position:absolute;
         border:none;
         cursor:pointer;
+        left:595px;
+        top:19px;
     }
     #search_btn:hover{
         border:2px solid #D6D0D1;
@@ -85,6 +87,27 @@
         border-radius:5px;
         font-size:17px;
         border:none;
+    }
+    #add_btn,#cancel_btn{
+        width:80px;
+        height:30px;
+        border:none;
+        color:white;
+        border-radius:10px;
+        cursor:pointer;
+    }
+    #add_btn{
+        background-color:#27D791;
+    }
+    #add_btn:hover{
+        background-color:#17B174;
+    }
+    #cancel_btn{
+        background-color:#F24859;
+    }
+    
+    #cancel_btn:hover{
+        background-color:#FD2036;
     }
 </style>
 <script>
@@ -159,7 +182,7 @@
 </script>
 
 <body>
-    <div style="text-align:center;">
+    <div style="text-align:center;margin-bottom:30px;">
     <input type="text" id="searched_data" placeholder="검색"><button class="btn btn-search" id="search_btn" onclick="search_book_title()"><img class="btn__icon" width="26px" src="http://khsung0.dothome.co.kr/img/search_icon.png" alt="icon"></button></div><br><br>
     <div class="book_list">
     <?php
@@ -249,7 +272,7 @@
             echo "<button class='page_btn' onClick=location.href='./add_book_to_roadmap.php?$index[0]&page=$next'>&#62;</button>";
             echo "<button class='page_btn' onClick=location.href='./add_book_to_roadmap.php?$index[0]&page=$total_page_num'>>></button>";
         }
-        echo "<br><br><button onclick='add_book()'>추가하기</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button onclick='cancel()'>취소하기</button></div>";
+        echo "<br><br><button id='add_btn' onclick='add_book()'>추가하기</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button id='cancel_btn' onclick='cancel()'>취소하기</button></div>";
     ?>
     <br>
     
