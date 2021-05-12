@@ -203,7 +203,7 @@
                 </div>
                 <br><hr><br>
                 <div>
-                    <h2 style="text-align:left;margin-left:10px;">개요<button style="position:absolute;left:895px;top:733px;height:35px;cursor:pointer;width:80px;" value="edit" id='edit_btn' onclick="update_intro()">편집하기</button></h2>
+                    <h2 style="text-align:left;margin-left:10px;">책 소개<button style="position:absolute;left:895px;top:733px;height:35px;cursor:pointer;width:80px;" value="edit" id='edit_btn' onclick="update_intro()">편집하기</button></h2>
                 </div>
                 <br><hr>
                 <div style="overflow-y:auto; overflow-x:hidden; width:1000px; height:580px;">                    

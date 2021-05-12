@@ -96,6 +96,11 @@
             window.open(url,"ID check","width=500, height=250, scrollbars=no, resizeable=no");
         }
     }
+    function Reset(){
+        document.getElementById('check_id').disabled=false;
+		document.getElementById('checked_id').value=0;
+		document.getElementById('user_id').disabled=false;
+    }
 </script>
 
 <body>
@@ -118,7 +123,7 @@
                         <input type="radio" name="user_gender" value="m" required>남성
                         <input type="radio" name="user_gender" value="w">여성<br><br>
                     
-                    <p><input type="submit" id="submit" value="회원가입">&nbsp;&nbsp;&nbsp;&nbsp;<input type="reset" id="reset" value="초기화"></p>
+                    <p><input type="submit" id="submit" value="회원가입">&nbsp;&nbsp;&nbsp;&nbsp;<input type="reset" id="reset" onclick="Reset()" value="초기화"></p>
                 </form>
             </div>
         </div>

@@ -18,12 +18,12 @@
 		//회원가입 실패 코드
     		if($result===false){
 			echo "<script>window.alert('회원가입에 실패하였습니다.');</script>";
-   			echo "<script>location.href='./register.html';</script>";
+   			echo "<script>location.href='./register.php';</script>";
 
 		//회원가입 성공 코드
 		}else{	
    			echo "<script>window.alert('회원가입 하였습니다.');</script>";
-   			echo "<script>location.href='./index.php';</script>";
+   			echo "<script>location.href='./login.php';</script>";
 		}
 	}
 ?>
