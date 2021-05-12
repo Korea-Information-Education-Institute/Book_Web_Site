@@ -48,6 +48,12 @@
     }
     #edit_btn{
         float:right;
+        font-size:16px;
+        background-color:white;
+        color:#519D9E;
+        border-radius:5px;
+        border: 1px solid #519D9E;
+        cursor:pointer;
     }
     .paging{
         text-align:center;
@@ -150,7 +156,7 @@
                         }
                     }
                 }
-                echo "<div class='paging'>";
+                echo "<div class='paging'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;";
                 if($page<=1){
                 }else{
                     echo "<button class='page_btn' onClick=location.href='./road_map.php?page=1'><<</button>";
@@ -193,7 +199,7 @@
                     echo "<button class='page_btn' onClick=location.href='./road_map.php?page=$next'>&#62;</button>";
                     echo "<button class='page_btn' onClick=location.href='./road_map.php?page=$total_page_num'>>></button>";
                 } 
-                echo "<button id='edit_btn' align='right' onclick='login_check()'>글쓰기</button ></div>";
+                echo "<button id='edit_btn' align='right' onclick='login_check()'>&#9000;글쓰기</button ></div>";
             ?>
             </div>
         </div>

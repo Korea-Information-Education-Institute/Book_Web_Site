@@ -36,7 +36,7 @@
     }
     /* On hover, add a black background color with a little bit see-through */
     .prev:hover, .next:hover {
-    background-color: rgba(0,0,0,0.8);
+    background-color: #387573;
     }
     /* Number text (1/3 etc) */
     .numbertext {
