@@ -16,7 +16,6 @@
             }
             $conn = mysqli_connect("localhost", "khsung0", "gmltjd1!" , "khsung0");
             $result1 = mysqli_query($conn, $sql);
-
         }
 	} catch(exception $e) {		
 		$result['success']	= false;

@@ -12,7 +12,6 @@
 			echo "<script>opener.document.getElementById('checked_id').value=0;</script>";
 			echo "<script>alert('사용중인 ID입니다.');</script>";
 			echo "<script>window.close();</script>";
-
 		}else{
 			echo "<script>opener.document.getElementById('check_id').disabled=true;</script>";
 			echo "<script>opener.document.getElementById('checked_id').value=1;</script>";
@@ -21,7 +20,5 @@
 			echo "<script>window.close();</script>";
 		}
 	}
-	
-	//DB 닫기
 	mysqli_close($conn);
 ?>

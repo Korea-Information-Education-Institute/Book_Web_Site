@@ -16,7 +16,6 @@ header("Content-Type: text/html; charset=UTF-8");
 		$result['success']	= false;
 		$result['msg']		= "계정삭제 오류가 생겼습니다.";
 		$result['code']		= $e->getCode();
-
 	} finally {
 		echo json_encode($result, JSON_PRETTY_PRINT|JSON_UNESCAPED_UNICODE);
 	}

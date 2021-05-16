@@ -69,7 +69,6 @@
         z-index: 8;
         width:50px;
     }
- 
 </style>
 
 <script>

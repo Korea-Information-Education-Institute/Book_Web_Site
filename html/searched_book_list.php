@@ -50,7 +50,6 @@
         height: 1400px;
         float: left;
         margin-top: 30px;
-        
     }
     .book_list_box{
         border: 1px solid black;
@@ -85,7 +84,6 @@
         width: 200px;
         height: 230px;
     }
-   
     .footer{
         position:absolute;
         top:1700px;
@@ -137,7 +135,6 @@
     $temp_string = URLDecode($_SERVER['QUERY_STRING']);
     $book_title =explode('&',$temp_string);
 ?>
-
 <script>
     function book_genre(genre,genre_detail){
         url="http://khsung0.dothome.co.kr/html/change_book_list.php?"+genre+"/"+genre_detail;

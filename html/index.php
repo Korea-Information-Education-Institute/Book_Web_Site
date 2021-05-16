@@ -29,24 +29,19 @@
     transition: 0.6s ease;
     border-radius: 0 3px 3px 0;
     }
-    /* Position the "next button" to the right */
     .next {
     right: 0;
     border-radius: 3px 0 0 3px;
     }
-    /* On hover, add a black background color with a little bit see-through */
     .prev:hover, .next:hover {
     background-color: #387573;
     }
-    /* Number text (1/3 etc) */
     .numbertext {
-    /* color: #f2f2f2; */
     font-size: 13px;
     padding: 8px 12px;
     position: absolute;
     top: 0;
     }
-    /* The dots/bullets/indicators */
     .dot {
     cursor: pointer;
     height: 15px;
@@ -60,7 +55,6 @@
     .active, .dot:hover {
     background-color: #717171;
     }
-    /* Fading animation */
     .fade {
     -webkit-animation-name: fade;
     -webkit-animation-duration: 1.5s;
@@ -75,11 +69,9 @@
     from {opacity: .4} 
     to {opacity: 1}
     }
-    /* On smaller screens, decrease text size */
     @media only screen and (max-width: 300px) {
     .prev, .next,.text {font-size: 11px}
     }
-
     .slide_contents{
         position:absolute;
     }
@@ -158,7 +150,6 @@
 <script>
     var slideIndex = 1;
     showSlides(slideIndex);
-    //setTimeout(function(){plusSlides(1);}), 2000);
     function plusSlides(n) {
     showSlides(slideIndex += n);
     }
@@ -180,8 +171,6 @@
         }
         slides[slideIndex-1].style.display = "block";  
         dots[slideIndex-1].className += " active";
-        // setInterval(function(){showSlides(3);}), 2000);
-        //setTimeout(function(){plusSlides(1);}), 2000);
     }
 </script>
 <body>

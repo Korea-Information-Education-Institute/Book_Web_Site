@@ -23,5 +23,4 @@
 		echo "<script>window.alert('등록을 실패하였습니다.');</script>";
 		echo "<script>location.href='./road_map.php';</script>";
 	}
-
 ?>

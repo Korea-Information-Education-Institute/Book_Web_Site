@@ -34,7 +34,6 @@
 		$result['success']	= false;
 		$result['msg']		= $e->getMessage();
 		$result['code']		= $e->getCode();
-
 	} finally {
 		echo json_encode($result, JSON_PRETTY_PRINT|JSON_UNESCAPED_UNICODE);
 	}
