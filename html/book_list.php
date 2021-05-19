@@ -171,7 +171,7 @@
             <div class="book_index">
                 <br><h2><?php 
                     $genre=explode('/',$_SESSION['book_genre']);
-                    echo $genre[0].">".$genre[1];
+                    echo $genre[0]." > ".$genre[1];
                 ?></h2><br><br>
             </div> 
             
